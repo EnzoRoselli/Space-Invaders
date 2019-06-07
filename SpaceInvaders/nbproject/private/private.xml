@@ -3,10 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/usuario/Desktop/Proyectos%20de%20Netbeans/SpaceInvaders/src/display/Display.java</file>
+            <file>file:/C:/Users/usuario/Desktop/Proyectos%20de%20Netbeans/SpaceInvaders/src/game_screen/Player.java</file>
+            <file>file:/C:/Users/usuario/Desktop/Proyectos%20de%20Netbeans/SpaceInvaders/src/handler/EnemyBulletHandler.java</file>
+            <file>file:/C:/Users/usuario/Desktop/Proyectos%20de%20Netbeans/SpaceInvaders/src/game_screen/PlayerWeapon.java</file>
+            <file>file:/C:/Users/usuario/Desktop/Proyectos%20de%20Netbeans/SpaceInvaders/src/enemy_bullets/EnemyBasicBullet.java</file>
             <file>file:/C:/Users/usuario/Desktop/Proyectos%20de%20Netbeans/SpaceInvaders/src/state/StateMachine.java</file>
+            <file>file:/C:/Users/usuario/Desktop/Proyectos%20de%20Netbeans/SpaceInvaders/src/levels/Level1.java</file>
+            <file>file:/C:/Users/usuario/Desktop/Proyectos%20de%20Netbeans/SpaceInvaders/src/sound/Sound.java</file>
             <file>file:/C:/Users/usuario/Desktop/Proyectos%20de%20Netbeans/SpaceInvaders/src/game_screen/GameScreen.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Proyectos%20de%20Netbeans/SpaceInvaders/src/state/SuperStateMachine.java</file>
+            <file>file:/C:/Users/usuario/Desktop/Proyectos%20de%20Netbeans/SpaceInvaders/src/menu_screen/MenuScreen.java</file>
         </group>
     </open-files>
 </project-private>

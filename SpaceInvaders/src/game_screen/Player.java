@@ -13,8 +13,10 @@ import javax.imageio.ImageIO;
 public class Player implements KeyListener {
 
     private final double speed = 5.0d;
+    private int healt;
+    
     private BufferedImage pSprite;
-    private double xPos, yPos;
+    private double xPos, yPos,startXPos,startYPos;
     private int width, height;
     private Rectangle rect;
     private BasicBlocks blocks;
@@ -26,10 +28,13 @@ public class Player implements KeyListener {
 
         this.xPos = xPos;
         this.yPos = yPos;
+        this.startXPos=xPos;
+        this.startYPos=yPos;
         this.width = width;
         this.height = height;
+        this.healt=3;
 
-        rect = new Rectangle((int) xPos, (int) yPos, width, height);
+        rect = new Rectangle((int) xPos, (int) yPos+25, width, height-25);
 
         try {
 
@@ -46,6 +51,20 @@ public class Player implements KeyListener {
     public PlayerWeapon getPlayerWeapon(){
         return playerWeapons;
     }
+
+    public Rectangle getRect() {
+        return rect;
+    }
+
+    public int getHealt() {
+        return healt;
+    }
+
+    public void setHealt(int healt) {
+        this.healt = healt;
+    }
+    
+    
     
     public void draw(Graphics2D g) {
 
@@ -71,6 +90,23 @@ public class Player implements KeyListener {
         if (shoot) {
             playerWeapons.shootBullet(xPos+22, yPos, 5, 15); //Posicion de las balas salen del medio de la nave, del cañon, y ancho y alto de las balas
         }
+    }
+    
+    public void hit(){
+        setHealt(getHealt()-1);
+    }
+    
+    public void reset() {
+        healt=3;
+        left=false;
+        right=false;
+        shoot=false;
+        
+        xPos=startXPos;
+        yPos=startYPos;
+        rect.x=(int)xPos;
+        rect.y=(int)yPos+25;
+        playerWeapons.reset();
     }
 
     @Override
@@ -110,5 +146,7 @@ public class Player implements KeyListener {
 			shoot = false;
 		}
     }
+
+    
 
 }

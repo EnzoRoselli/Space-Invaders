@@ -22,7 +22,7 @@ public class Display extends Canvas implements Runnable {
         setSize(WIDTH, HEIGHT);
 
         state = new StateMachine(this);
-        //state.setState((byte) 0);
+        state.setState((byte) 0);
 
     }
 

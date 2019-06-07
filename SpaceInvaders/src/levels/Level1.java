@@ -8,6 +8,7 @@ import game_screen.Player;
 import handler.EnemyBulletHandler;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
+import sound.Sound;
 
 
 public class Level1 implements SuperLevel{
@@ -15,18 +16,15 @@ public class Level1 implements SuperLevel{
     private Player player;
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
     private EnemyBulletHandler bulletHandler;
+    private Sound beep,boop;
+    private boolean beepboop;
 
         public Level1(Player player,EnemyBulletHandler bulletHandler){
 		this.player = player;
                 this.bulletHandler=bulletHandler;
-                /*for (int y = 0; y < 5; y++) {
-                    for (int x = 0; x < 10; x++) {
-                        //Enemy e=new EnemyBasic(150 +(x*30), 50 + (y*30), 25, 25, "/images/Player.png");
-                        Enemy e=new EnemyBasic(50, 50, 25, 25, "/images/Player.png");
-                        enemies.add(e);
-                    }
-            }*/
                 addEnemies();
+                beep=new Sound("/sounds/beep.wav");
+                boop=new Sound("/sounds/boop.wav");
 	}
         
     @Override
@@ -77,6 +75,15 @@ public class Level1 implements SuperLevel{
         for (int i = 0; i < 10; i++) {
             enemies.get(i).changeDirection(delta);
         }
+        
+        if(beepboop){
+            beepboop=false;
+            boop.play();
+        }else{
+            beepboop=true;
+            beep.play();
+        }
+        
     }
     
     public void addEnemies() {
@@ -90,12 +97,19 @@ public class Level1 implements SuperLevel{
 
     @Override
     public boolean isGameOver() {
-        return true;
+        
+        boolean check=false;
+        
+        if(player.getHealt()<=0){
+            check=true;
+        }
+        
+        return check;
     }
 
     @Override
     public boolean isComplete() {
-        return true;
+        return enemies.isEmpty();
     }
 
     @Override
@@ -105,6 +119,9 @@ public class Level1 implements SuperLevel{
 
     @Override
     public void reset() {
-        
+        player.reset();
+        enemies.clear();
+        addEnemies();
+        bulletHandler.reset();
     }
 }

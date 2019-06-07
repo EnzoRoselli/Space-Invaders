@@ -53,7 +53,11 @@ public class EnemyBasicBullet extends EnemyWeaponType {
 
     @Override
     public boolean collision(Rectangle rect) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(bullet !=null && bullet.intersects(rect)){
+            return true;
+        }
+        
+        return true;
     }
 
     @Override
@@ -85,12 +89,12 @@ public class EnemyBasicBullet extends EnemyWeaponType {
 
     @Override
     public int getxPos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return xPos;
     }
 
     @Override
     public int getyPos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return yPos;
     }
 
 }

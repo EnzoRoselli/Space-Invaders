@@ -1,50 +1,51 @@
-
 package state;
 
 import game_screen.GameScreen;
 import java.awt.Canvas;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
+import menu_screen.MenuScreen;
 
 public class StateMachine {
-    
-    private ArrayList<SuperStateMachine> states=new ArrayList<SuperStateMachine>();
+
+    private ArrayList<SuperStateMachine> states = new ArrayList<SuperStateMachine>();
     private Canvas canvas;
-    private int selectState=0;
+    private int selectState = 0;
     SuperStateMachine game;
-    
-    public StateMachine(Canvas canvas){
-        
-        game=new GameScreen();
+
+    public StateMachine(Canvas canvas) {
+
+        SuperStateMachine game = new GameScreen(this);
+        SuperStateMachine menu = new MenuScreen(this);
+        states.add(menu);
         states.add(game);
-        this.canvas=canvas;
+        this.canvas = canvas;
     }
-    
-    public void draw(Graphics2D g){
-        
+
+    public void draw(Graphics2D g) {
+
         states.get(selectState).draw(g);
-        
+
     }
-    
-    public void update(double delta){
-        
+
+    public void update(double delta) {
+
         states.get(selectState).update(delta);
     }
-    
-    public void setState(byte i){
-        
+
+    public void setState(byte i) {
+
         for (int j = 0; j < canvas.getKeyListeners().length; j++) {
-            
+
             canvas.removeKeyListener(canvas.getKeyListeners()[j]);
         }
-        selectState=i;
+        selectState = i;
         states.get(selectState).initCanvas(canvas);
     }
-    
-    public int getState(){
-        
+
+    public int getState() {
+
         return selectState;
     }
-    
-    
+
 }

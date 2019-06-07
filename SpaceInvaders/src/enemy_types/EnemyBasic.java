@@ -14,6 +14,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.imageio.ImageIO;
+import sound.Sound;
 import sprite.SpriteAnimation;
 import timer.Timer;
 
@@ -26,6 +27,7 @@ public class EnemyBasic extends Enemy {
     
     private int shootTime;
     private Timer shootTimer;
+    private Sound explosionSound;
 
     public EnemyBasic(double xPos, double yPos, int rows, int columns,EnemyBulletHandler bulletHandler) {
 
@@ -42,6 +44,7 @@ public class EnemyBasic extends Enemy {
         
         shootTimer=new Timer();
         shootTime=new Random().nextInt(12000); //valor rand entre 0 y 12k
+        explosionSound=new Sound("/sounds/explosion.wav");
     }
 
     public Rectangle getRect() {
@@ -89,6 +92,9 @@ public class EnemyBasic extends Enemy {
         }
 
         if (enemySprite.isSpriteAnimDestroyed()) {
+            if(!explosionSound.isPlaying())
+            explosionSound.play();
+            
             return true;
         }
 
