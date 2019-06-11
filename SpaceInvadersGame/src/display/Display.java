@@ -1,5 +1,6 @@
 package display;
 
+import View.Menu;
 import state.StateMachine;
 import java.awt.Canvas;
 import java.awt.Color;
@@ -18,6 +19,7 @@ public class Display extends Canvas implements Runnable {
     private Level1 level;
     private int FPS;
     private static Display show;
+    private static Menu hi;
 
     public Display() {
 

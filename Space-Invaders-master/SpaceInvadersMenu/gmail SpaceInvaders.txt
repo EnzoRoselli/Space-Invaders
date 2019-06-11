@@ -1,2 +1,0 @@
-gmail: SpaceInvadersProyect@gmail.com
-password: chocolateperrito
