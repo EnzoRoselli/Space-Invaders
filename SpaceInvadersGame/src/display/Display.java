@@ -123,6 +123,7 @@ public class Display extends Canvas implements Runnable {
 
             if (draw(bs) && update(delta)) {
                 show.stop();
+                System.exit(0);
             }
         }
     }

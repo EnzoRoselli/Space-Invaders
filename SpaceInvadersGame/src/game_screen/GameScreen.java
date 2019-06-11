@@ -26,7 +26,7 @@ public class GameScreen implements SuperStateMachine {
 
         blocks = new BasicBlocks();
         bulletHandler = new EnemyBulletHandler();
-        player = new Player(Display.getWIDTH()/2-50, Display.getHEIGHT()-75, 50, 50, blocks);
+        player = new Player(Display.getWIDTH()/2-50, Display.getHEIGHT()-75, 50, 30, blocks);
         level = new Level1(player, bulletHandler);
 
     }

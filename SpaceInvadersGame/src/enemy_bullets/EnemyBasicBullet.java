@@ -16,7 +16,7 @@ public class EnemyBasicBullet extends EnemyWeaponType {
     private int xPos, yPos;
 
     public EnemyBasicBullet(double xPos, double yPos) {
-        bullet = new Rectangle((int) xPos, (int) yPos, 5, 5);
+        bullet = new Rectangle((int) xPos, (int) yPos, 5, 10);
         setxPos((int) xPos);
         setyPos((int) yPos);
     }
