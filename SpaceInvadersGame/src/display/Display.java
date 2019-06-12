@@ -1,7 +1,7 @@
 package display;
 
 import View.Menu;
-import state.StateMachine;
+import game_screen.GameScreen;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -15,19 +15,19 @@ public class Display extends Canvas implements Runnable {
     private boolean running = false;
     private Thread thread;
     private static int frames = 0;
-    private static StateMachine state;
     private Level1 level;
     private int FPS;
     private static Display show;
     private static Menu hi;
+    private static GameScreen game;
 
     public Display() {
 
         setSize(WIDTH, HEIGHT);
         setFocusable(true);
 
-        state = new StateMachine(this);
-        state.setState((byte) 0);
+        game=new GameScreen();
+        game.initCanvas(this);
 
     }
 
@@ -139,7 +139,7 @@ public class Display extends Canvas implements Runnable {
                 g.setColor(Color.BLACK);
                 g.fillRect(0, 0, WIDTH + 50, HEIGHT + 50);
 
-                check = state.draw(g);
+                check = game.draw(g);
 
                 g.dispose(); //libera recursos del sistema q use una vez terminada su tarea
 
@@ -154,7 +154,7 @@ public class Display extends Canvas implements Runnable {
 
     public boolean update(double delta) {
 
-        return state.update(delta);
+        return game.update(delta);
 
     }
 

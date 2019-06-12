@@ -36,11 +36,7 @@ public class SpriteAnimation {
 			int spriteHeight = pSprite.getHeight() / rows;
 			for(int y = 0; y < rows; y++) {
 				for(int x = 0; x < columns; x++){
-					addSprite(pSprite
-							, 0 + (x * spriteWidth)
-							, 0 + (y * spriteHeight)
-							, spriteWidth
-							, spriteHeight);
+					addSprite(pSprite,(x * spriteWidth),(y * spriteHeight), spriteWidth, spriteHeight);
 				}
 			}
 					
@@ -115,8 +111,8 @@ public class SpriteAnimation {
 		this.loop = loop;
 	}
 
-	public boolean isSpriteAnimDestroyed() {
-		if (sprites == null)
+	public boolean isSpriteAnimDestroyed() { 
+		if (sprites == null) //si todos los aliens fueron destruidos
 			return true;
 
 		return false;

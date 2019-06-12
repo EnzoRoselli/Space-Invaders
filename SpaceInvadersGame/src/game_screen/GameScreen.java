@@ -2,7 +2,6 @@ package game_screen;
 
 import display.Display;
 import handler.EnemyBulletHandler;
-import state.SuperStateMachine;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Font;
@@ -10,7 +9,7 @@ import java.awt.Graphics2D;
 import levels.Level1;
 import timer.TickTimer;
 
-public class GameScreen implements SuperStateMachine {
+public class GameScreen{
 
     private Player player;
     private BasicBlocks blocks;
@@ -24,7 +23,7 @@ public class GameScreen implements SuperStateMachine {
 
     public GameScreen() {
 
-        blocks = new BasicBlocks();
+        blocks = new BasicBlocks(); //los 4 bloques
         bulletHandler = new EnemyBulletHandler();
         player = new Player(Display.getWIDTH()/2-50, Display.getHEIGHT()-75, 50, 30, blocks);
         level = new Level1(player, bulletHandler);
@@ -35,19 +34,14 @@ public class GameScreen implements SuperStateMachine {
         return SCORE;
     }
 
-    @Override
+    
     public boolean update(double delta) {
 
         player.update(delta);
         level.update(delta, blocks);
 
-        if (level.isGameOver()) {
-            /*gameOverTimer.tick(delta);
-            if (gameOverTimer.isEventReady()) {
-                level.reset();
-                blocks.reset();
-                SCORE = 0;
-            }*/
+        if (level.isGameOver(blocks)) {
+
             return true;
         }
 
@@ -60,7 +54,7 @@ public class GameScreen implements SuperStateMachine {
 return false;
     }
 
-    @Override
+    
     public boolean draw(Graphics2D g) {
 
         g.setColor(Color.white);
@@ -73,7 +67,7 @@ return false;
         blocks.draw(g);
         level.draw(g);
 
-        if (level.isGameOver()) {
+        if (level.isGameOver(blocks)) {
             g.setColor(Color.red);
             g.setFont(gameScreen);
             String gameOver = "GAME OVER!";
@@ -92,9 +86,7 @@ return false;
       return false;  
     }
 
-    @Override
-    public void initCanvas(Canvas canvas
-    ) {
+    public void initCanvas(Canvas canvas) {
         canvas.addKeyListener(player);
     }
 

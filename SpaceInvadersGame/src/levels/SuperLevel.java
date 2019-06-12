@@ -13,7 +13,7 @@ public interface SuperLevel {
 
     void changeDirectionAllEnemies(double delta);
 
-    boolean isGameOver();
+    boolean isGameOver(BasicBlocks blocks);
 
     boolean isComplete();
 

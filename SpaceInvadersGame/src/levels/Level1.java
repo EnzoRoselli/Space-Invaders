@@ -50,7 +50,7 @@ public class Level1 implements SuperLevel {
             enemies.get(i).update(delta, player, blocks);
         }
         for (int i = 0; i < enemies.size(); i++) {
-            enemies.get(i).collide(i, player, blocks, enemies);
+            enemies.get(i).collidePlayerBullet(i, player, enemies);
         }
         hasDirectionChange(delta);
         bulletHandler.update(delta, blocks, player);
@@ -98,14 +98,19 @@ public class Level1 implements SuperLevel {
     }
 
     @Override
-    public boolean isGameOver() {
+    public boolean isGameOver(BasicBlocks blocks) {
 
-        /*boolean check=false;
+        boolean check=false;
+        
+        for (int i = 0; i < enemies.size(); i++) {
+            if(enemies.get(i).collideEnemiesBlocks(i, blocks, enemies))
+                check=true;
+        }
         
         if(player.getHealth()<=0){
             check=true;
-        }*/
-        return player.getHealth() <= 0;
+        }
+        return check;
     }
 
     @Override

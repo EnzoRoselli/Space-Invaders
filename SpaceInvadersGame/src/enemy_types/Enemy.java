@@ -19,7 +19,8 @@ public abstract class Enemy {
     public abstract void changeDirection(double delta);
 
     public abstract boolean deathScene();
-    public abstract boolean collide(int i, Player player, BasicBlocks blocks, ArrayList<Enemy> enemies);
+    public abstract boolean collidePlayerBullet(int i, Player player, ArrayList<Enemy> enemies);
+    public abstract boolean collideEnemiesBlocks(int i,BasicBlocks blocks, ArrayList<Enemy> enemies);
     public abstract boolean isOutOfBounds();
     
     public EnemyBulletHandler getBulletHandler() {
