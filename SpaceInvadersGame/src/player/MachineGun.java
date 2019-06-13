@@ -1,16 +1,18 @@
-package player_bullets;
+package player;
 
 import display.Display;
-import game_screen.BasicBlocks;
+import blocks.BasicBlocks;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Polygon;
 import java.awt.Rectangle;
 
-public class MachineGun extends PlayerWeaponType {
+public class MachineGun{
 
     private Rectangle bullet;
     private final double speed = 2.5d;
+    private double xPos, yPos;
+    private int width, height;
 
     public MachineGun(double xPos, double yPos, int width, int height) {
         this.setxPos(xPos);
@@ -21,7 +23,42 @@ public class MachineGun extends PlayerWeaponType {
         this.bullet = new Rectangle((int) getxPos(), (int) getyPos(), getWidth(), getHeight());
     }
 
-    @Override
+    
+    //GETTERS
+    public double getxPos() {
+        return xPos;
+    }
+
+    public double getyPos() {
+        return yPos;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    //SETTERS
+    public void setxPos(double xPos) {
+        this.xPos = xPos;
+    }
+
+    public void setyPos(double yPos) {
+        this.yPos = yPos;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    
     public void draw(Graphics2D g) {
         if (bullet == null) {
             return;
@@ -31,7 +68,7 @@ public class MachineGun extends PlayerWeaponType {
         g.fill(bullet);
     }
 
-    @Override
+    
     public void update(double delta, BasicBlocks blocks) {
         if (bullet == null) {
             return;
@@ -43,7 +80,7 @@ public class MachineGun extends PlayerWeaponType {
         isOutofBounds(); //destruye la bala cuando sale de la pantalla
     }
 
-    @Override
+    
     public boolean collisionRect(Rectangle rect) {
         if (this.bullet == null) {
             return false;
@@ -57,13 +94,13 @@ public class MachineGun extends PlayerWeaponType {
         return false;
     }
 
-    @Override
+    
     public boolean collisionPoly(Polygon poly) {
         // TODO Auto-generated method stub
         return false;
     }
 
-    @Override
+    
     public boolean destroy() {
         if (bullet == null) {
             return true;
@@ -72,7 +109,7 @@ public class MachineGun extends PlayerWeaponType {
         return false;
     }
 
-    @Override
+    
     protected void wallCollide(BasicBlocks blocks) {
         for (int i = 0; i < blocks.getWall().size(); i++) {
             if (bullet.intersects(blocks.getWall().get(i))) {
@@ -83,7 +120,7 @@ public class MachineGun extends PlayerWeaponType {
         }
     }
 
-    @Override
+    
     protected void isOutofBounds() {
         if (this.bullet == null) {
             return;

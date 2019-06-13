@@ -3,12 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders-master/SpaceInvadersGame/src/game_screen/Player.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders-master/SpaceInvadersGame/src/enemy_types/EnemyBasic.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders-master/SpaceInvadersGame/src/sprite/SpriteAnimation.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders-master/SpaceInvadersGame/src/game_screen/GameScreen.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders-master/SpaceInvadersGame/src/display/Display.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders-master/SpaceInvadersGame/src/levels/Level1.java</file>
+            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersGame/src/enemy/EnemyBasic.java</file>
+            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersGame/src/levels/Level1.java</file>
+            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersGame/src/game_screen/GameScreen.java</file>
+            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersGame/src/player/PlayerWeapon.java</file>
+            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersGame/src/player/MachineGun.java</file>
+            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersGame/src/enemy/EnemyBulletHandler.java</file>
+            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersGame/src/display/Display.java</file>
+            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersGame/src/player/Player.java</file>
         </group>
     </open-files>
 </project-private>

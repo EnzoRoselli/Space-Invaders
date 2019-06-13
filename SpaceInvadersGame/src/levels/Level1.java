@@ -1,18 +1,17 @@
 package levels;
 
-import enemy_types.Enemy;
-import enemy_types.EnemyBasic;
-import game_screen.BasicBlocks;
-import game_screen.Player;
-import handler.EnemyBulletHandler;
+import enemy.EnemyBasic;
+import blocks.BasicBlocks;
+import player.Player;
+import enemy.EnemyBulletHandler;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 import sound.Sound;
 
-public class Level1 implements SuperLevel {
+public class Level1 {
 
     private Player player;
-    private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+    private ArrayList<EnemyBasic> enemies = new ArrayList<EnemyBasic>();
     private EnemyBulletHandler bulletHandler;
     private Sound beep, boop;
     private boolean beepboop;
@@ -22,11 +21,11 @@ public class Level1 implements SuperLevel {
         this.bulletHandler = bulletHandler;
         addEnemies();
 
-        beep = new Sound("/sounds/beep.wav");
-        boop = new Sound("/sounds/boop.wav");
+        beep = new Sound("/res/beep.wav");
+        boop = new Sound("/res/boop.wav");
     }
 
-    @Override
+    
     public void draw(Graphics2D g) {
 
         if (enemies == null) {
@@ -39,7 +38,7 @@ public class Level1 implements SuperLevel {
         bulletHandler.draw(g);
     }
 
-    @Override
+    
     public void update(double delta, BasicBlocks blocks) {
 
         if (enemies == null) {
@@ -57,7 +56,7 @@ public class Level1 implements SuperLevel {
 
     }
 
-    @Override
+    
     public void hasDirectionChange(double delta) {
 
         if (enemies == null) {
@@ -71,7 +70,7 @@ public class Level1 implements SuperLevel {
         }
     }
 
-    @Override
+    
     public void changeDirectionAllEnemies(double delta) {
 
         for (int i = 0; i < enemies.size(); i++) {
@@ -91,20 +90,22 @@ public class Level1 implements SuperLevel {
     public void addEnemies() {
         for (int y = 0; y < 5; y++) {
             for (int x = 0; x < 10; x++) {
-                Enemy e = new EnemyBasic(150 + (x * 40), 25 + (y * 40), 1, 3, bulletHandler);
+                EnemyBasic e = new EnemyBasic(150 + (x * 40), 25 + (y * 40), 1, 3, bulletHandler);
                 enemies.add(e);
             }
         }
     }
 
-    @Override
+    
     public boolean isGameOver(BasicBlocks blocks) {
 
         boolean check=false;
         
         for (int i = 0; i < enemies.size(); i++) {
+            if(enemies !=null){
             if(enemies.get(i).collideEnemiesBlocks(i, blocks, enemies))
                 check=true;
+            }
         }
         
         if(player.getHealth()<=0){
@@ -113,17 +114,17 @@ public class Level1 implements SuperLevel {
         return check;
     }
 
-    @Override
+    
     public boolean isComplete() {
         return enemies.isEmpty(); //Metodo de java, devuelve true si el array esta vacio
     }
 
-    @Override
+    
     public void destory() {
 
     }
 
-    @Override
+    
     public void reset() {
         player.reset();
         enemies.clear();

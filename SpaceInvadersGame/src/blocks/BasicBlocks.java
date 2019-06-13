@@ -1,5 +1,5 @@
 
-package game_screen;
+package blocks;
 
 import java.awt.Color;
 import java.awt.Graphics2D;

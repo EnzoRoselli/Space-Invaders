@@ -1,6 +1,7 @@
-package game_screen;
+package player;
 
 import display.Display;
+import blocks.BasicBlocks;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
@@ -38,7 +39,7 @@ public class Player implements KeyListener {
 
         try {
 
-            URL url = this.getClass().getResource("/images/Player.png");
+            URL url = this.getClass().getResource("/res/Player.png");
             pSprite = ImageIO.read(url);
 
         } catch (IOException e) {}

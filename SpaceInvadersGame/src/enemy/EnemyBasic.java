@@ -1,29 +1,27 @@
-package enemy_types;
+package enemy;
 
 import display.Display;
-import enemy_bullets.EnemyBasicBullet;
-import game_screen.BasicBlocks;
+import enemy.EnemyBasicBullet;
+import blocks.BasicBlocks;
 import game_screen.GameScreen;
-import game_screen.Player;
-import handler.EnemyBulletHandler;
+import player.Player;
+import enemy.EnemyBulletHandler;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
-import javax.imageio.ImageIO;
 import sound.Sound;
 import sprite.SpriteAnimation;
 import timer.Timer;
 
-public class EnemyBasic extends Enemy {
+public class EnemyBasic{
 
     private double speed = 1.0d;
     private Rectangle rect;
     private SpriteAnimation enemySprite;
     private BufferedImage eSprite;
+    private EnemyBulletHandler bulletHandler;
 
     private int shootTime;
     private Timer shootTimer;
@@ -31,9 +29,9 @@ public class EnemyBasic extends Enemy {
 
     public EnemyBasic(double xPos, double yPos, int rows, int columns, EnemyBulletHandler bulletHandler) {
 
-        super(bulletHandler);
+        this.bulletHandler = bulletHandler;
 
-        enemySprite = new SpriteAnimation(xPos, yPos, rows, columns, 300, "/images/Invaders.png");
+        enemySprite = new SpriteAnimation(xPos, yPos, rows, columns, 300, "/res/Invaders.png");
 
         enemySprite.setWidth(25);
         enemySprite.setHeight(25);
@@ -44,23 +42,27 @@ public class EnemyBasic extends Enemy {
 
         shootTimer = new Timer();
         shootTime = new Random().nextInt(12000); //valor rand entre 0 y 12k
-        explosionSound = new Sound("/sounds/explosion.wav");
+        explosionSound = new Sound("/res/explosion.wav");
     }
 
     public Rectangle getRect() {
         return rect;
     }
+    
+    public EnemyBulletHandler getBulletHandler() {
+		return bulletHandler;
+	}
 
     public void setRect(Rectangle rect) {
         this.rect = rect;
     }
 
-    @Override
+    
     public void draw(Graphics2D g) {
         enemySprite.draw(g);
     }
 
-    @Override
+    
     public void update(double delta, Player player, BasicBlocks blocks) {
         enemySprite.update(delta);
 
@@ -73,7 +75,7 @@ public class EnemyBasic extends Enemy {
         }
     }
 
-    @Override
+    
     public void changeDirection(double delta) {
 
         speed *= -1.15d;
@@ -84,7 +86,7 @@ public class EnemyBasic extends Enemy {
         this.getRect().y = (int) enemySprite.getyPos();
     }
 
-    @Override
+    
     public boolean deathScene() {
 
         if (!enemySprite.getPlay()) {
@@ -102,8 +104,8 @@ public class EnemyBasic extends Enemy {
         return false;
     }
 
-    @Override
-    public boolean collidePlayerBullet(int i, Player player, ArrayList<Enemy> enemies) {
+    
+    public boolean collidePlayerBullet(int i, Player player, ArrayList<EnemyBasic> enemies) {
 
         if (enemySprite.getPlay()) {
             if (enemies.get(i).deathScene()) {
@@ -118,7 +120,7 @@ public class EnemyBasic extends Enemy {
                 enemySprite.resetLimit(); //elimina uno del arreglo de sprites
                 enemySprite.setAnimationSpeed(120);//velocidad de la animacion de muerte
                 enemySprite.setPlay(true, true);
-                GameScreen.getSCORE();
+                GameScreen.setSCORE(GameScreen.getSCORE()+300);
                 return true;
             }
         }
@@ -126,7 +128,7 @@ public class EnemyBasic extends Enemy {
         return false;
     }
     
-    public boolean collideEnemiesBlocks(int i,BasicBlocks blocks, ArrayList<Enemy> enemies) {
+    public boolean collideEnemiesBlocks(int i,BasicBlocks blocks, ArrayList<EnemyBasic> enemies) {
 
         if (enemySprite.getPlay()) {
             if (enemies.get(i).deathScene()) {
@@ -147,7 +149,7 @@ public class EnemyBasic extends Enemy {
         return false;
     }
 
-    @Override
+    
     public boolean isOutOfBounds() {
 
         if (rect.x > 0 && rect.x < Display.getWIDTH() - rect.width) {

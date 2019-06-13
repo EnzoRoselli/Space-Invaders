@@ -1,25 +1,24 @@
-package game_screen;
+package player;
 
+import blocks.BasicBlocks;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
-import player_bullets.MachineGun;
-import player_bullets.PlayerWeaponType;
 import sound.Sound;
 import timer.Timer;
 
 public class PlayerWeapon {
 
     private Timer timer;
-    private ArrayList<PlayerWeaponType> weapons = new ArrayList<PlayerWeaponType>();
+    private ArrayList<MachineGun> weapons = new ArrayList<MachineGun>();
     private Sound shootSound;
 
     public PlayerWeapon() {
 
         timer = new Timer();
-        shootSound=new Sound("/sounds/shoot.wav");
+        shootSound=new Sound("/res/shoot.wav");
     }
     
-    public ArrayList<PlayerWeaponType> getWeapons(){
+    public ArrayList<MachineGun> getWeapons(){
         return weapons;
     }
 

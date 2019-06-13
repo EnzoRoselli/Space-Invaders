@@ -1,15 +1,15 @@
 
-package enemy_bullets;
+package enemy;
 
 import display.Display;
-import game_screen.BasicBlocks;
-import game_screen.Player;
+import blocks.BasicBlocks;
+import player.Player;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
 
-public class EnemyBasicBullet extends EnemyWeaponType {
+public class EnemyBasicBullet {
 
     private Rectangle bullet;
     private double speed = 2.5d;
@@ -31,7 +31,7 @@ public class EnemyBasicBullet extends EnemyWeaponType {
         this.yPos = yPos;
     }
 
-    @Override
+    
     public void draw(Graphics2D g) {
         if (bullet == null) {
 			return;
@@ -41,7 +41,7 @@ public class EnemyBasicBullet extends EnemyWeaponType {
 		g.fill(bullet);
     }
 
-    @Override
+    
     public void update(double delta, BasicBlocks blocks, Player player) {
         
         if (bullet == null) {
@@ -55,7 +55,7 @@ public class EnemyBasicBullet extends EnemyWeaponType {
 		wallCollide(blocks);
     }
 
-    @Override
+    
     public boolean collision(Rectangle rect) {
         if(bullet !=null && bullet.intersects(rect)){
             return true;
@@ -64,12 +64,12 @@ public class EnemyBasicBullet extends EnemyWeaponType {
         return false;
     }
 
-    @Override
+    
     public boolean destory() {
         return false;
     }
 
-    @Override
+    
     protected void wallCollide(BasicBlocks blocks) {
        if (bullet == null) {
 			return;
@@ -84,19 +84,19 @@ public class EnemyBasicBullet extends EnemyWeaponType {
 		}
     }
 
-    @Override
+    
     protected void isOutofBounds() {
         if(bullet != null && bullet.y < 0 || bullet.y > Display.getHEIGHT() || bullet.x < 0 || bullet.x > Display.getWIDTH()){
 			bullet = null;
 		}
     }
 
-    @Override
+    
     public int getxPos() {
         return xPos;
     }
 
-    @Override
+    
     public int getyPos() {
         return yPos;
     }

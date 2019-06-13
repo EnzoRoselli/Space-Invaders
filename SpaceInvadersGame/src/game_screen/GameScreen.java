@@ -1,7 +1,9 @@
 package game_screen;
 
+import blocks.BasicBlocks;
+import player.Player;
 import display.Display;
-import handler.EnemyBulletHandler;
+import enemy.EnemyBulletHandler;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Font;
@@ -10,6 +12,8 @@ import levels.Level1;
 import timer.TickTimer;
 
 public class GameScreen{
+
+    
 
     private Player player;
     private BasicBlocks blocks;
@@ -32,6 +36,10 @@ public class GameScreen{
 
     public static int getSCORE() {
         return SCORE;
+    }
+    
+    public static void setSCORE(int SCORE) {
+        GameScreen.SCORE=SCORE;
     }
 
     
@@ -58,7 +66,7 @@ return false;
     public boolean draw(Graphics2D g) {
 
         g.setColor(Color.white);
-        g.drawString("Score: " + SCORE, 5, 15);
+        g.drawString("Score: " + getSCORE(), 5, 15);
 
         g.setColor(Color.red);
         g.drawString("Healt: " + player.getHealth(), 5, 35);
@@ -86,7 +94,7 @@ return false;
       return false;  
     }
 
-    public void initCanvas(Canvas canvas) {
+    public void initCanvas(Canvas canvas) { //movilidad a la nave
         canvas.addKeyListener(player);
     }
 

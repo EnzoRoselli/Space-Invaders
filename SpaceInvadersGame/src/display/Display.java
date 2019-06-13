@@ -27,7 +27,7 @@ public class Display extends Canvas implements Runnable {
         setFocusable(true);
 
         game=new GameScreen();
-        game.initCanvas(this);
+        game.initCanvas(this); 
 
     }
 
@@ -38,6 +38,7 @@ public class Display extends Canvas implements Runnable {
     public static void executeGame() {
         show = new Display();
         JFrame frame = new JFrame();
+        //frame.setUndecorated(true);
         frame.add(show);
         frame.pack(); //El tamaño se ajusta segun lo que haya adentro del marco
         frame.setTitle("Space Invaders");
@@ -45,6 +46,7 @@ public class Display extends Canvas implements Runnable {
         frame.setResizable(false); //No se puede cambiar el tamaño una vez ejecutado
         frame.setVisible(true);
         frame.setLocationRelativeTo(null); //Centra el marco
+        
         show.start();
 
     }

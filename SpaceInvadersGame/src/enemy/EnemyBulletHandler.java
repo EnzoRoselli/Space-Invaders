@@ -1,22 +1,22 @@
-package handler;
+package enemy;
 
-import enemy_bullets.EnemyWeaponType;
-import game_screen.BasicBlocks;
-import game_screen.Player;
+import enemy.EnemyBasicBullet;
+import blocks.BasicBlocks;
+import player.Player;
 import java.awt.Graphics2D;
 import java.util.List;
 import java.util.ArrayList;
 
 public class EnemyBulletHandler {
 
-    private List<EnemyWeaponType> weaponTypes = new ArrayList<>();
+    private List<EnemyBasicBullet> weaponTypes = new ArrayList<>();
 
-    public void addBullet(EnemyWeaponType weaponType) {
+    public void addBullet(EnemyBasicBullet weaponType) {
         this.weaponTypes.add(weaponType);
     }
 
     public void draw(Graphics2D g) {
-        for (EnemyWeaponType enemyWeaponType : weaponTypes) {
+        for (EnemyBasicBullet enemyWeaponType : weaponTypes) {
             enemyWeaponType.draw(g);
         }
     }
