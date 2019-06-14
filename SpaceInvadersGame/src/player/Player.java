@@ -35,7 +35,7 @@ public class Player implements KeyListener {
         this.height = height;
         this.health = 3;
 
-        rect = new Rectangle((int) xPos, (int) yPos+5, width, height-25);
+        rect = new Rectangle((int) xPos, (int) yPos + 5, width, height - 25);
 
         try {
 
@@ -147,4 +147,4 @@ public class Player implements KeyListener {
         }
     }
 
-}
+}//fin de la clase

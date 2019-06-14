@@ -26,15 +26,15 @@ public class Display extends Canvas implements Runnable {
         setSize(WIDTH, HEIGHT);
         setFocusable(true);
 
-        game=new GameScreen();
-        game.initCanvas(this); 
+        game = new GameScreen();
+        game.initCanvas(this);
 
     }
 
     public static void main(String args[]) {
         executeGame();
     }
-    
+
     public static void executeGame() {
         show = new Display();
         JFrame frame = new JFrame();
@@ -46,7 +46,7 @@ public class Display extends Canvas implements Runnable {
         frame.setResizable(false); //No se puede cambiar el tamaño una vez ejecutado
         frame.setVisible(true);
         frame.setLocationRelativeTo(null); //Centra el marco
-        
+
         show.start();
 
     }
@@ -160,4 +160,4 @@ public class Display extends Canvas implements Runnable {
 
     }
 
-}
+}//fin de la clase

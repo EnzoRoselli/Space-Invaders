@@ -20,7 +20,7 @@ public class EnemyBulletHandler {
     }
 
     public void update(double delta, BasicBlocks blocks, Player player) {
-        
+
         for (int i = 0; i < weaponTypes.size(); i++) {
             weaponTypes.get(i).update(delta, blocks, player);
             if (weaponTypes.get(i).collision(player.getRect())) {
@@ -33,6 +33,5 @@ public class EnemyBulletHandler {
     public void reset() {
         weaponTypes.clear();
     }
-    
-    
+
 }//end of class

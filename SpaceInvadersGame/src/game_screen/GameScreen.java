@@ -11,9 +11,7 @@ import java.awt.Graphics2D;
 import levels.Level1;
 import timer.TickTimer;
 
-public class GameScreen{
-
-    
+public class GameScreen {
 
     private Player player;
     private BasicBlocks blocks;
@@ -29,7 +27,7 @@ public class GameScreen{
 
         blocks = new BasicBlocks(); //los 4 bloques
         bulletHandler = new EnemyBulletHandler();
-        player = new Player(Display.getWIDTH()/2-50, Display.getHEIGHT()-75, 50, 30, blocks);
+        player = new Player(Display.getWIDTH() / 2 - 50, Display.getHEIGHT() - 75, 50, 30, blocks);
         level = new Level1(player, bulletHandler);
 
     }
@@ -37,12 +35,11 @@ public class GameScreen{
     public static int getSCORE() {
         return SCORE;
     }
-    
+
     public static void setSCORE(int SCORE) {
-        GameScreen.SCORE=SCORE;
+        GameScreen.SCORE = SCORE;
     }
 
-    
     public boolean update(double delta) {
 
         player.update(delta);
@@ -59,10 +56,9 @@ public class GameScreen{
                 level.reset();
             }
         }
-return false;
+        return false;
     }
 
-    
     public boolean draw(Graphics2D g) {
 
         g.setColor(Color.white);
@@ -91,11 +87,11 @@ return false;
             int completeWidth = g.getFontMetrics().stringWidth(complete);
             g.drawString(complete, (Display.getWIDTH() / 2) - (completeWidth / 2), Display.getHEIGHT() / 2);
         }
-      return false;  
+        return false;
     }
 
     public void initCanvas(Canvas canvas) { //movilidad a la nave
         canvas.addKeyListener(player);
     }
 
-}
+}//fin de la clase

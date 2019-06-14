@@ -15,10 +15,10 @@ public class PlayerWeapon {
     public PlayerWeapon() {
 
         timer = new Timer();
-        shootSound=new Sound("/res/shoot.wav");
+        shootSound = new Sound("/res/shoot.wav");
     }
-    
-    public ArrayList<MachineGun> getWeapons(){
+
+    public ArrayList<MachineGun> getWeapons() {
         return weapons;
     }
 
@@ -41,7 +41,7 @@ public class PlayerWeapon {
 
     public void shootBullet(double xPos, double yPos, int width, int height) { //Posicion de las balas salen del medio de la nave, del cañon, y ancho y alto de las balas
         if (timer.timerEvent(500)) {
-            if(shootSound.isPlaying()){
+            if (shootSound.isPlaying()) {
                 shootSound.stop();
             }
             shootSound.play();
@@ -52,4 +52,4 @@ public class PlayerWeapon {
     void reset() {
         weapons.clear();
     }
-}
+}//fin de la clase

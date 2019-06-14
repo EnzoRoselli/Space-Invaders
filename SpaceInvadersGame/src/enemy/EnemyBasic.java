@@ -1,11 +1,9 @@
 package enemy;
 
 import display.Display;
-import enemy.EnemyBasicBullet;
 import blocks.BasicBlocks;
 import game_screen.GameScreen;
 import player.Player;
-import enemy.EnemyBulletHandler;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
@@ -15,7 +13,7 @@ import sound.Sound;
 import sprite.SpriteAnimation;
 import timer.Timer;
 
-public class EnemyBasic{
+public class EnemyBasic {
 
     private double speed = 1.0d;
     private Rectangle rect;
@@ -48,21 +46,19 @@ public class EnemyBasic{
     public Rectangle getRect() {
         return rect;
     }
-    
+
     public EnemyBulletHandler getBulletHandler() {
-		return bulletHandler;
-	}
+        return bulletHandler;
+    }
 
     public void setRect(Rectangle rect) {
         this.rect = rect;
     }
 
-    
     public void draw(Graphics2D g) {
         enemySprite.draw(g);
     }
 
-    
     public void update(double delta, Player player, BasicBlocks blocks) {
         enemySprite.update(delta);
 
@@ -75,7 +71,6 @@ public class EnemyBasic{
         }
     }
 
-    
     public void changeDirection(double delta) {
 
         speed *= -1.15d;
@@ -86,7 +81,6 @@ public class EnemyBasic{
         this.getRect().y = (int) enemySprite.getyPos();
     }
 
-    
     public boolean deathScene() {
 
         if (!enemySprite.getPlay()) {
@@ -104,7 +98,6 @@ public class EnemyBasic{
         return false;
     }
 
-    
     public boolean collidePlayerBullet(int i, Player player, ArrayList<EnemyBasic> enemies) {
 
         if (enemySprite.getPlay()) {
@@ -120,15 +113,15 @@ public class EnemyBasic{
                 enemySprite.resetLimit(); //elimina uno del arreglo de sprites
                 enemySprite.setAnimationSpeed(120);//velocidad de la animacion de muerte
                 enemySprite.setPlay(true, true);
-                GameScreen.setSCORE(GameScreen.getSCORE()+300);
+                GameScreen.setSCORE(GameScreen.getSCORE() + 300);
                 return true;
             }
         }
 
         return false;
     }
-    
-    public boolean collideEnemiesBlocks(int i,BasicBlocks blocks, ArrayList<EnemyBasic> enemies) {
+
+    public boolean collideEnemiesBlocks(int i, BasicBlocks blocks, ArrayList<EnemyBasic> enemies) {
 
         if (enemySprite.getPlay()) {
             if (enemies.get(i).deathScene()) {
@@ -149,7 +142,6 @@ public class EnemyBasic{
         return false;
     }
 
-    
     public boolean isOutOfBounds() {
 
         if (rect.x > 0 && rect.x < Display.getWIDTH() - rect.width) {
@@ -158,4 +150,4 @@ public class EnemyBasic{
         return true;
     }
 
-}
+}//fin de la clase

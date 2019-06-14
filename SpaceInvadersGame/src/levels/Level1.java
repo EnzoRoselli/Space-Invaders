@@ -26,7 +26,6 @@ public class Level1 {
         boop = new Sound("/res/boop.wav");
     }
 
-    
     public void draw(Graphics2D g) {
 
         if (enemies == null) {
@@ -39,7 +38,6 @@ public class Level1 {
         bulletHandler.draw(g);
     }
 
-    
     public void update(double delta, BasicBlocks blocks) {
 
         if (enemies == null) {
@@ -57,7 +55,6 @@ public class Level1 {
 
     }
 
-    
     public void hasDirectionChange(double delta) {
 
         if (enemies == null) {
@@ -71,7 +68,6 @@ public class Level1 {
         }
     }
 
-    
     public void changeDirectionAllEnemies(double delta) {
 
         for (int i = 0; i < enemies.size(); i++) {
@@ -97,34 +93,32 @@ public class Level1 {
         }
     }
 
-    
     public boolean isGameOver(BasicBlocks blocks) {
 
-        boolean check=false;
-        
+        boolean check = false;
+
         for (int i = 0; i < enemies.size(); i++) {
-            if(enemies !=null){
-            if(enemies.get(i).collideEnemiesBlocks(i, blocks, enemies))
-                check=true;
+            if (enemies != null) {
+                if (enemies.get(i).collideEnemiesBlocks(i, blocks, enemies)) {
+                    check = true;
+                }
             }
         }
-        
-        if(player.getHealth()<=0){
-            check=true;
+
+        if (player.getHealth() <= 0) {
+            check = true;
         }
         return check;
     }
 
-    
     public boolean isComplete() {
         return enemies.isEmpty(); //Metodo de java, devuelve true si el array esta vacio
     }
 
-    
     public void reset() {
         player.reset();
         enemies.clear();
         addEnemies();
         bulletHandler.reset();
     }
-}
+}//fin de la clase

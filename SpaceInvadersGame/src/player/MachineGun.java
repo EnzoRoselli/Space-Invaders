@@ -7,7 +7,7 @@ import java.awt.Graphics2D;
 import java.awt.Polygon;
 import java.awt.Rectangle;
 
-public class MachineGun{
+public class MachineGun {
 
     private Rectangle bullet;
     private final double speed = 2.5d;
@@ -23,7 +23,6 @@ public class MachineGun{
         this.bullet = new Rectangle((int) getxPos(), (int) getyPos(), getWidth(), getHeight());
     }
 
-    
     //GETTERS
     public double getxPos() {
         return xPos;
@@ -58,7 +57,6 @@ public class MachineGun{
         this.height = height;
     }
 
-    
     public void draw(Graphics2D g) {
         if (bullet == null) {
             return;
@@ -68,7 +66,6 @@ public class MachineGun{
         g.fill(bullet);
     }
 
-    
     public void update(double delta, BasicBlocks blocks) {
         if (bullet == null) {
             return;
@@ -80,7 +77,6 @@ public class MachineGun{
         isOutofBounds(); //destruye la bala cuando sale de la pantalla
     }
 
-    
     public boolean collisionRect(Rectangle rect) {
         if (this.bullet == null) {
             return false;
@@ -94,13 +90,11 @@ public class MachineGun{
         return false;
     }
 
-    
     public boolean collisionPoly(Polygon poly) {
         // TODO Auto-generated method stub
         return false;
     }
 
-    
     public boolean destroy() {
         if (bullet == null) {
             return true;
@@ -109,7 +103,6 @@ public class MachineGun{
         return false;
     }
 
-    
     protected void wallCollide(BasicBlocks blocks) {
         for (int i = 0; i < blocks.getWall().size(); i++) {
             if (bullet.intersects(blocks.getWall().get(i))) {
@@ -120,7 +113,6 @@ public class MachineGun{
         }
     }
 
-    
     protected void isOutofBounds() {
         if (this.bullet == null) {
             return;
@@ -131,4 +123,4 @@ public class MachineGun{
         }
     }
 
-}
+}//fin de la clase
