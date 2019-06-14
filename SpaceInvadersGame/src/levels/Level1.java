@@ -11,10 +11,11 @@ import sound.Sound;
 public class Level1 {
 
     private Player player;
-    private ArrayList<EnemyBasic> enemies = new ArrayList<EnemyBasic>();
+    private ArrayList<EnemyBasic> enemies = new ArrayList<>();
     private EnemyBulletHandler bulletHandler;
     private Sound beep, boop;
     private boolean beepboop;
+    private EnemyBasic e;
 
     public Level1(Player player, EnemyBulletHandler bulletHandler) {
         this.player = player;
@@ -90,7 +91,7 @@ public class Level1 {
     public void addEnemies() {
         for (int y = 0; y < 5; y++) {
             for (int x = 0; x < 10; x++) {
-                EnemyBasic e = new EnemyBasic(150 + (x * 40), 25 + (y * 40), 1, 3, bulletHandler);
+                e = new EnemyBasic(150 + (x * 40), 25 + (y * 40), 1, 3, bulletHandler);
                 enemies.add(e);
             }
         }
@@ -117,11 +118,6 @@ public class Level1 {
     
     public boolean isComplete() {
         return enemies.isEmpty(); //Metodo de java, devuelve true si el array esta vacio
-    }
-
-    
-    public void destory() {
-
     }
 
     

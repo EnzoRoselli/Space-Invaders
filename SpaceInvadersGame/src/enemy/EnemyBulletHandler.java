@@ -1,15 +1,13 @@
 package enemy;
 
-import enemy.EnemyBasicBullet;
 import blocks.BasicBlocks;
 import player.Player;
 import java.awt.Graphics2D;
-import java.util.List;
 import java.util.ArrayList;
 
 public class EnemyBulletHandler {
 
-    private List<EnemyBasicBullet> weaponTypes = new ArrayList<>();
+    private ArrayList<EnemyBasicBullet> weaponTypes = new ArrayList<>();
 
     public void addBullet(EnemyBasicBullet weaponType) {
         this.weaponTypes.add(weaponType);

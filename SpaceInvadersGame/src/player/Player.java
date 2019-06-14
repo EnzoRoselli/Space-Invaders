@@ -42,7 +42,9 @@ public class Player implements KeyListener {
             URL url = this.getClass().getResource("/res/Player.png");
             pSprite = ImageIO.read(url);
 
-        } catch (IOException e) {}
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         this.blocks = blocks; //cuenta como los 4 bloques juntos
         playerWeapons = new PlayerWeapon();
