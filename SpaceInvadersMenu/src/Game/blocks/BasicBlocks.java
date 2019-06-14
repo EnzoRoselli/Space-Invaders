@@ -49,7 +49,7 @@ public class BasicBlocks {
      * Creates a block in an X,Y specified coordinates
      * 
      * @param xPos X Position where the block is going to be created.
-     * @param yPos y Position where the block is going to be created.
+     * @param yPos Y Position where the block is going to be created.
      */
     
     public void Bunker(int xPos, int yPos) {

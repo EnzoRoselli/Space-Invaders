@@ -14,7 +14,7 @@ import Game.sprite.SpriteAnimation;
 import Game.timer.Timer;
 
 /**
- *
+ * EnemyBasic class allows to create, update and draw the game enemies.
  * @author InvadersTeam
  */
 public class EnemyBasic {
@@ -30,11 +30,12 @@ public class EnemyBasic {
     private Sound explosionSound;
 
     /**
-     *
-     * @param xPos
-     * @param yPos
-     * @param rows
-     * @param columns
+     * Creates a new Enemy object in an specified X,Y coordinate.
+     * 
+     * @param xPos X Position where the Enemy object is going to be created.
+     * @param yPos Y Position where the Enemy object is going to be created.
+     * @param rows Enemy height.
+     * @param columns Enemy width.
      * @param bulletHandler
      */
     public EnemyBasic(double xPos, double yPos, int rows, int columns, EnemyBulletHandler bulletHandler) {
@@ -142,9 +143,9 @@ public class EnemyBasic {
 
     /**
      *
-     * @param i
-     * @param player
-     * @param enemies
+     * @param i Enemies index.
+     * @param player Player figure.
+     * @param enemies Arraylist of enemies.
      * @return
      */
     public boolean collidePlayerBullet(int i, Player player, ArrayList<EnemyBasic> enemies) {
@@ -200,7 +201,7 @@ public class EnemyBasic {
 
     /**
      *
-     * @return
+     * @return true if it is out of the display bounds
      */
     public boolean isOutOfBounds() {
 

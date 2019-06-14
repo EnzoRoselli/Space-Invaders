@@ -19,7 +19,7 @@ public class SpriteAnimation {
 
     private boolean loop = false;
     private boolean play = false;
-    private boolean destoryAfterAnim = false;
+    private boolean destroyAfterAnim = false;
 
     private Timer timer;
     private int animationSpeed;
@@ -28,13 +28,13 @@ public class SpriteAnimation {
     private int limit;
 
     /**
-     *
-     * @param xPos
-     * @param yPos
-     * @param rows
-     * @param columns
-     * @param animationSpeed
-     * @param imgPath
+     * Creates 
+     * @param xPos Specified X coordinate where the sprites are going to be created
+     * @param yPos Specified Y coordinate where the sprites are going to be created
+     * @param rows Sprite height
+     * @param columns Sprite width 
+     * @param animationSpeed Sprite's animation speed.
+     * @param imgPath Sprite image URL.
      */
     public SpriteAnimation(double xPos, double yPos, int rows, int columns, int animationSpeed, String imgPath) {
         this.animationSpeed = animationSpeed;
@@ -60,8 +60,9 @@ public class SpriteAnimation {
     }
 
     /**
+     * Draws sprites.
      *
-     * @param g
+     * @param g  
      */
     public void draw(Graphics2D g) {
         if (isSpriteAnimDestroyed()) {
@@ -89,7 +90,7 @@ public class SpriteAnimation {
     }
 
     /**
-     *
+     * Stops sprite animation
      */
     public void stopAnimation() {
         loop = false;
@@ -97,14 +98,18 @@ public class SpriteAnimation {
     }
 
     /**
-     *
+     * 
      */
     public void resetSprite() {
         loop = false;
         play = false;
         currentSprite = 0;
     }
-
+    
+    /**
+     * Loops sprite animation.
+     */
+    
     private void loopAnimation() {
         if (timer.isTimerReady(animationSpeed) && currentSprite == limit) {
             currentSprite = 0;
@@ -113,12 +118,16 @@ public class SpriteAnimation {
             currentSprite++;
         }
     }
-
+    
+    /**
+     * 
+     */
+    
     private void playAnimation() {
-        if (timer.isTimerReady(animationSpeed) && currentSprite != limit && !isDestoryAfterAnim()) {
+        if (timer.isTimerReady(animationSpeed) && currentSprite != limit && !isDestroyAfterAnim()) {
             play = false;
             currentSprite = 0;
-        } else if (timer.isTimerReady(animationSpeed) && currentSprite == limit && isDestoryAfterAnim()) {
+        } else if (timer.isTimerReady(animationSpeed) && currentSprite == limit && isDestroyAfterAnim()) {
             sprites = null;
         } else if (timer.timerEvent(animationSpeed) && currentSprite != limit) {
             currentSprite++;
@@ -194,7 +203,7 @@ public class SpriteAnimation {
         }
 
         this.play = play;
-        this.setDestoryAfterAnim(destoryAfterAnim);
+        this.setDestroyAfterAnim(destoryAfterAnim);
     }
 
     /**
@@ -233,29 +242,29 @@ public class SpriteAnimation {
      *
      * @return
      */
-    public boolean isDestoryAfterAnim() {
-        return destoryAfterAnim;
+    public boolean isDestroyAfterAnim() {
+        return destroyAfterAnim;
     }
 
     /**
-     *
-     * @param destoryAfterAnim
+     * 
+     * @param destroyAfterAnim
      */
-    public void setDestoryAfterAnim(boolean destoryAfterAnim) {
-        this.destoryAfterAnim = destoryAfterAnim;
+    public void setDestroyAfterAnim(boolean destroyAfterAnim) {
+        this.destroyAfterAnim = destroyAfterAnim;
     }
 
     /**
      *
-     * @return
+     * @return sprite width.
      */
     public int getWidth() {
         return width;
     }
 
     /**
-     *
-     * @param width
+     * Sets sprite width.
+     * @param width sprite width.
      */
     public void setWidth(int width) {
         this.width = width;
@@ -263,15 +272,15 @@ public class SpriteAnimation {
 
     /**
      *
-     * @return
+     * @return sprite height.
      */
     public int getHeight() {
         return height;
     }
 
     /**
-     *
-     * @param height
+     * Sets sprite height.
+     * @param height sprite height.
      */
     public void setHeight(int height) {
         this.height = height;
@@ -279,15 +288,15 @@ public class SpriteAnimation {
 
     /**
      *
-     * @return
+     * @return Sprite speed.
      */
     public int getAnimationSpeed() {
         return animationSpeed;
     }
 
     /**
-     *
-     * @param animationSpeed
+     * Sets sprite animatin speed.
+     * @param animationSpeed Sprite speed.
      */
     public void setAnimationSpeed(int animationSpeed) {
         this.animationSpeed = animationSpeed;
@@ -295,15 +304,18 @@ public class SpriteAnimation {
 
     /**
      *
-     * @return
+     * 0 = closed arms.
+     * 1 = extended arms.
+     * 2 = invasor explotion.
+     * @return Invader arm position.
      */
     public int getLimit() {
         return limit;
     }
 
     /**
-     *
-     * @param limit
+     * Changes invaders arm position from close to open and vice versa
+     * @param limit Invader arm position.
      */
     public void setLimit(int limit) {
         if (limit > 0) {
@@ -316,6 +328,7 @@ public class SpriteAnimation {
     /**
      *
      */
+    
     public void resetLimit() {
         limit = sprites.size() - 1;
     }
