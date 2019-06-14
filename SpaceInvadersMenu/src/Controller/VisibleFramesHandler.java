@@ -16,4 +16,9 @@ public class VisibleFramesHandler<K extends javax.swing.JFrame, T extends javax.
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
     }
+    
+    public void invisibleFrame(T frame) {
+        frame.setVisible(false);
+        frame.dispose();
+    }
 }

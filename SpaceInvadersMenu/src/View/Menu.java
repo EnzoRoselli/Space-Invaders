@@ -101,7 +101,8 @@ public class Menu extends javax.swing.JFrame implements ImessageForUser {
     }// </editor-fold>//GEN-END:initComponents
 
     private void playBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playBtnActionPerformed
-         Display.executeGame();
+        visible.invisibleFrame(this);
+        Display.executeGame();
     }//GEN-LAST:event_playBtnActionPerformed
 
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
