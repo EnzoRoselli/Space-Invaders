@@ -1,8 +1,20 @@
 package Controller;
 
+/**
+ *
+ * @author InvadersTeam
+ */
 public class Security{
 
     /* Retorna un hash a partir de un tipo y un texto */
+
+    /**
+     *
+     * @param txt
+     * @param hashType
+     * @return
+     */
+
     public static String getHash(String txt, String hashType) {
         try {
             java.security.MessageDigest md = java.security.MessageDigest.getInstance(hashType);
@@ -19,11 +31,25 @@ public class Security{
     }
 
     /* Retorna un hash MD5 a partir de un texto */
+
+    /**
+     *
+     * @param txt
+     * @return
+     */
+
     public static String md5(String txt) {
         return Security.getHash(txt, "MD5");
     }
 
     /* Retorna un hash SHA1 a partir de un texto */
+
+    /**
+     *
+     * @param txt
+     * @return
+     */
+
     public static String sha1(String txt) {
         return Security.getHash(txt, "SHA1");
     }

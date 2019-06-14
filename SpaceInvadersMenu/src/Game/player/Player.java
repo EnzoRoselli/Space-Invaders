@@ -11,6 +11,10 @@ import java.io.IOException;
 import java.net.URL;
 import javax.imageio.ImageIO;
 
+/**
+ *
+ * @author InvadersTeam
+ */
 public class Player implements KeyListener {
 
     private final double speed = 5.0d;
@@ -25,6 +29,14 @@ public class Player implements KeyListener {
 
     private boolean left = false, right = false, shoot = false;
 
+    /**
+     *
+     * @param xPos
+     * @param yPos
+     * @param width
+     * @param height
+     * @param blocks
+     */
     public Player(double xPos, double yPos, int width, int height, BasicBlocks blocks) {
 
         this.xPos = xPos;
@@ -50,28 +62,52 @@ public class Player implements KeyListener {
         playerWeapons = new PlayerWeapon();
     }
 
+    /**
+     *
+     * @return
+     */
     public PlayerWeapon getPlayerWeapon() {
         return playerWeapons;
     }
 
+    /**
+     *
+     * @return
+     */
     public Rectangle getRect() {
         return rect;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getHealth() {
         return health;
     }
 
+    /**
+     *
+     * @param health
+     */
     public void setHealth(int health) {
         this.health = health;
     }
 
+    /**
+     *
+     * @param g
+     */
     public void draw(Graphics2D g) {
 
         g.drawImage(pSprite, (int) xPos, (int) yPos, width, height, null);
         playerWeapons.draw(g);
     }
 
+    /**
+     *
+     * @param delta
+     */
     public void update(double delta) { //esta a la escucha de cuando se apretan esas teclas
 
         if (right && !left && xPos < Display.getWIDTH() - width - 10) { //si se apreta derecha y si la nave no esta a 10 pixeles del borde
@@ -92,10 +128,16 @@ public class Player implements KeyListener {
         }
     }
 
+    /**
+     *
+     */
     public void hit() {
         setHealth(getHealth() - 1);
     }
 
+    /**
+     *
+     */
     public void reset() {
         health = 3;
         left = false;

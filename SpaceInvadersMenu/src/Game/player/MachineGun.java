@@ -7,6 +7,10 @@ import java.awt.Graphics2D;
 import java.awt.Polygon;
 import java.awt.Rectangle;
 
+/**
+ *
+ * @author InvadersTeam
+ */
 public class MachineGun {
 
     private Rectangle bullet;
@@ -14,6 +18,13 @@ public class MachineGun {
     private double xPos, yPos;
     private int width, height;
 
+    /**
+     *
+     * @param xPos
+     * @param yPos
+     * @param width
+     * @param height
+     */
     public MachineGun(double xPos, double yPos, int width, int height) {
         this.setxPos(xPos);
         this.setyPos(yPos);
@@ -24,39 +35,77 @@ public class MachineGun {
     }
 
     //GETTERS
+
+    /**
+     *
+     * @return
+     */
     public double getxPos() {
         return xPos;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getyPos() {
         return yPos;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getWidth() {
         return width;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getHeight() {
         return height;
     }
 
     //SETTERS
+
+    /**
+     *
+     * @param xPos
+     */
     public void setxPos(double xPos) {
         this.xPos = xPos;
     }
 
+    /**
+     *
+     * @param yPos
+     */
     public void setyPos(double yPos) {
         this.yPos = yPos;
     }
 
+    /**
+     *
+     * @param width
+     */
     public void setWidth(int width) {
         this.width = width;
     }
 
+    /**
+     *
+     * @param height
+     */
     public void setHeight(int height) {
         this.height = height;
     }
 
+    /**
+     *
+     * @param g
+     */
     public void draw(Graphics2D g) {
         if (bullet == null) {
             return;
@@ -66,6 +115,11 @@ public class MachineGun {
         g.fill(bullet);
     }
 
+    /**
+     *
+     * @param delta
+     * @param blocks
+     */
     public void update(double delta, BasicBlocks blocks) {
         if (bullet == null) {
             return;
@@ -77,6 +131,11 @@ public class MachineGun {
         isOutofBounds(); //destruye la bala cuando sale de la pantalla
     }
 
+    /**
+     *
+     * @param rect
+     * @return
+     */
     public boolean collisionRect(Rectangle rect) {
         if (this.bullet == null) {
             return false;
@@ -90,11 +149,20 @@ public class MachineGun {
         return false;
     }
 
+    /**
+     *
+     * @param poly
+     * @return
+     */
     public boolean collisionPoly(Polygon poly) {
         // TODO Auto-generated method stub
         return false;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean destroy() {
         if (bullet == null) {
             return true;
@@ -103,6 +171,10 @@ public class MachineGun {
         return false;
     }
 
+    /**
+     *
+     * @param blocks
+     */
     protected void wallCollide(BasicBlocks blocks) {
         for (int i = 0; i < blocks.getWall().size(); i++) {
             if (bullet.intersects(blocks.getWall().get(i))) {
@@ -113,6 +185,9 @@ public class MachineGun {
         }
     }
 
+    /**
+     *
+     */
     protected void isOutofBounds() {
         if (this.bullet == null) {
             return;

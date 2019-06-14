@@ -7,6 +7,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
+/**
+ *
+ * @author InvadersTeam
+ */
 public class SQL implements Iquerys, ImessageForUser {
 
     private Statement statement;
@@ -14,9 +18,16 @@ public class SQL implements Iquerys, ImessageForUser {
     private Connection connection;
     private ResultSet resultset;
 
+    /**
+     *
+     */
     public SQL() {
     }
 
+    /**
+     *
+     * @return
+     */
     public Connection connectionDB() {
         try {
             Class.forName(DRIVER);
@@ -32,6 +43,12 @@ public class SQL implements Iquerys, ImessageForUser {
         return connection;
     }
 
+    /**
+     *
+     * @param user_gmail
+     * @param password
+     * @return
+     */
     public String logInDB(String user_gmail, String password) {
         String check = NO;
         try {
@@ -55,6 +72,10 @@ public class SQL implements Iquerys, ImessageForUser {
         return check;
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<String> dataBaseToArray() {
         ArrayList<String> users = new ArrayList();
         
@@ -76,6 +97,14 @@ public class SQL implements Iquerys, ImessageForUser {
         return users;
     }
 
+    /**
+     *
+     * @param name
+     * @param lastName
+     * @param nickName
+     * @param password
+     * @param gmail
+     */
     public void signInDB(String name, String lastName, String nickName, String password, String gmail) {
         String query = INSERTUSER;
         try {
@@ -93,6 +122,12 @@ public class SQL implements Iquerys, ImessageForUser {
         }
     }
 
+    /**
+     *
+     * @param nickName
+     * @param gmail
+     * @return
+     */
     public String nicknameOrGmailUsed(String nickName, String gmail) { //agregar genericidad aca
         String check = NO;
 

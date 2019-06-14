@@ -7,10 +7,17 @@ import MVC.Interface.*;
  */
 public class Exceptions extends Exception implements ImessageForUser{
     
+    /**
+     *
+     */
     public Exceptions(/*String message*/){
         /*super(message);*/
     }
     
+    /**
+     *
+     * @return
+     */
     public String connectionFailed() //Por ahora queda asi pero hay que hacerlo bien
     {       
     return CONNECTION_FAILED;

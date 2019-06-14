@@ -14,16 +14,30 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.activation.DataHandler;
 
+/**
+ *
+ * @author InvadersTeam
+ */
 public class SignInHandler implements Iencryption,ImessageForUser{
 
     private SQL statement;
     private Maths number;
 
+    /**
+     *
+     */
     public SignInHandler() {
         statement = new SQL();
         number = new Maths();
     }
 
+    /**
+     *
+     * @param error
+     * @param user
+     * @param code
+     * @return
+     */
     public String signInManager(String error, User user, String code) {
         if (error.equals(NO)) {
             error = this.textAreasCompleted(user);
@@ -54,12 +68,22 @@ public class SignInHandler implements Iencryption,ImessageForUser{
         return error;
     }
     
+    /**
+     *
+     * @param pass
+     * @return
+     */
     @Override
     public String encryptedPassword(String pass){
         String encryptedPass = Security.md5(pass);
         return encryptedPass;
     }
 
+    /**
+     *
+     * @param password
+     * @return
+     */
     public String minimumSize(String password) {
         if (password.length() < 6) {
             return MINIMUM_SIZE;
@@ -67,6 +91,11 @@ public class SignInHandler implements Iencryption,ImessageForUser{
         return NO;
     }
     
+    /**
+     *
+     * @param password
+     * @return
+     */
     public String maximumSize(String password) {
         if (password.length() > 15) {
             return MAXIMUM_SIZE;
@@ -74,6 +103,11 @@ public class SignInHandler implements Iencryption,ImessageForUser{
         return NO;
     }
 
+    /**
+     *
+     * @param user
+     * @return
+     */
     public String textAreasCompleted(User user) {
         if (user.getName().equals("") || user.getLastName().equals("") || user.getNickName().equals("")
                 || user.getPassword().equals("") || user.getRePassword().equals("") || user.getMail().equals("")) {
@@ -82,6 +116,11 @@ public class SignInHandler implements Iencryption,ImessageForUser{
         return NO;
     }
 
+    /**
+     *
+     * @param user
+     * @return
+     */
     public String gmailAndNicknameUsed(User user) {
         String catcher = statement.nicknameOrGmailUsed(user.getNickName(), user.getGmail());
         if (!catcher.equals(NO)) {
@@ -90,6 +129,11 @@ public class SignInHandler implements Iencryption,ImessageForUser{
         return NO;
     }
 
+    /**
+     *
+     * @param user
+     * @return
+     */
     public String comparePasswords(User user) {
         if (!user.getPassword().equals(user.getRePassword())) {
             return DIFFERENT_PASS;
@@ -97,10 +141,20 @@ public class SignInHandler implements Iencryption,ImessageForUser{
         return NO;
     }
 
+    /**
+     *
+     * @param user
+     * @return
+     */
     public String showWelcomeMessage(User user) {
         return user.showWelcome();
     }
 
+    /**
+     *
+     * @param correo
+     * @return
+     */
     public String isEmail(String correo) {
         Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
         Matcher mather = pattern.matcher(correo);
@@ -110,6 +164,12 @@ public class SignInHandler implements Iencryption,ImessageForUser{
         return INSERT_VALID_GMAIL;
     }
 
+    /**
+     *
+     * @param gmail
+     * @param random
+     * @return
+     */
     public String gmailValidated(String gmail, String random) {
         try {
             Properties myProperties = new Properties();

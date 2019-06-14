@@ -11,6 +11,10 @@ import javax.sound.sampled.DataLine.Info;
 import javax.sound.sampled.LineEvent;
 import javax.sound.sampled.LineListener;
 
+/**
+ *
+ * @author InvadersTeam
+ */
 public class Sound implements LineListener {
 
     private Clip soundClip;
@@ -19,6 +23,10 @@ public class Sound implements LineListener {
     private AudioFormat format;
     private DataLine.Info info;
 
+    /**
+     *
+     * @param path
+     */
     public Sound(String path) {
         try {
             url = getClass().getResource(path);
@@ -40,19 +48,32 @@ public class Sound implements LineListener {
         }
     }
 
+    /**
+     *
+     */
     public void play() {
         soundClip.start();
     }
 
+    /**
+     *
+     */
     public void loop() {
         soundClip.loop(Clip.LOOP_CONTINUOUSLY);
     }
 
+    /**
+     *
+     */
     public void stop() {
         soundClip.stop();
         soundClip.setFramePosition(1);
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isPlaying() {
         return soundClip.isRunning();
     }

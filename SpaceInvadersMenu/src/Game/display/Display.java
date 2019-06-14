@@ -10,6 +10,10 @@ import java.awt.image.BufferStrategy;
 import javax.swing.JFrame;
 import Game.levels.Level1;
 
+/**
+ *
+ * @author InvadersTeam
+ */
 public class Display extends Canvas implements Runnable {
 
     private static int WIDTH = 800, HEIGHT = 600;
@@ -24,6 +28,9 @@ public class Display extends Canvas implements Runnable {
     private static GameScreen game;
     private static JFrame frame;
 
+    /**
+     *
+     */
     public Display() {
 
         menu = new Menu();
@@ -37,10 +44,17 @@ public class Display extends Canvas implements Runnable {
 
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String args[]) {
         executeGame();
     }
 
+    /**
+     *
+     */
     public static void executeGame() {
         show = new Display();
         frame = new JFrame();
@@ -57,14 +71,25 @@ public class Display extends Canvas implements Runnable {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public static int getWIDTH() {
         return WIDTH;
     }
 
+    /**
+     *
+     * @return
+     */
     public static int getHEIGHT() {
         return HEIGHT;
     }
 
+    /**
+     *
+     */
     public synchronized void start() {
 
         if (!running) {
@@ -77,6 +102,9 @@ public class Display extends Canvas implements Runnable {
 
     }
 
+    /**
+     *
+     */
     public synchronized void stop() {
 
         if (running) {
@@ -137,6 +165,11 @@ public class Display extends Canvas implements Runnable {
         }
     }
 
+    /**
+     *
+     * @param bs
+     * @return
+     */
     public boolean draw(BufferStrategy bs) {
 
         boolean check = false;
@@ -161,6 +194,11 @@ public class Display extends Canvas implements Runnable {
         return check;
     }
 
+    /**
+     *
+     * @param delta
+     * @return
+     */
     public boolean update(double delta) {
 
         return game.update(delta);

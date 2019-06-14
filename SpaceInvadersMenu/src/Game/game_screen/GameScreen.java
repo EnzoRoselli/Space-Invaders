@@ -11,6 +11,10 @@ import java.awt.Graphics2D;
 import Game.levels.Level1;
 import Game.timer.TickTimer;
 
+/**
+ *
+ * @author InvadersTeam
+ */
 public class GameScreen {
 
     private Player player;
@@ -23,6 +27,9 @@ public class GameScreen {
     private TickTimer completeTimer = new TickTimer(180);
     private Font gameScreen = new Font("Arial", Font.PLAIN, 48);
 
+    /**
+     *
+     */
     public GameScreen() {
 
         blocks = new BasicBlocks(); //los 4 bloques
@@ -32,14 +39,27 @@ public class GameScreen {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public static int getSCORE() {
         return SCORE;
     }
 
+    /**
+     *
+     * @param SCORE
+     */
     public static void setSCORE(int SCORE) {
         GameScreen.SCORE = SCORE;
     }
 
+    /**
+     *
+     * @param delta
+     * @return
+     */
     public boolean update(double delta) {
 
         player.update(delta);
@@ -59,6 +79,11 @@ public class GameScreen {
         return false;
     }
 
+    /**
+     *
+     * @param g
+     * @return
+     */
     public boolean draw(Graphics2D g) {
 
         g.setColor(Color.white);
@@ -91,6 +116,10 @@ public class GameScreen {
         return false;
     }
 
+    /**
+     *
+     * @param canvas
+     */
     public void initCanvas(Canvas canvas) { //movilidad a la nave
         canvas.addKeyListener(player);
     }

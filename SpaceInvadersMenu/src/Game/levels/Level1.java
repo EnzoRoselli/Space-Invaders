@@ -8,6 +8,10 @@ import java.awt.Graphics2D;
 import java.util.ArrayList;
 import Game.sound.Sound;
 
+/**
+ *
+ * @author InvadersTeam
+ */
 public class Level1 {
 
     private Player player;
@@ -17,6 +21,11 @@ public class Level1 {
     private boolean beepboop;
     private EnemyBasic e;
 
+    /**
+     *
+     * @param player
+     * @param bulletHandler
+     */
     public Level1(Player player, EnemyBulletHandler bulletHandler) {
         this.player = player;
         this.bulletHandler = bulletHandler;
@@ -26,6 +35,10 @@ public class Level1 {
         boop = new Sound("/Game/res/boop.wav");
     }
 
+    /**
+     *
+     * @param g
+     */
     public void draw(Graphics2D g) {
 
         if (enemies == null) {
@@ -38,6 +51,11 @@ public class Level1 {
         bulletHandler.draw(g);
     }
 
+    /**
+     *
+     * @param delta
+     * @param blocks
+     */
     public void update(double delta, BasicBlocks blocks) {
 
         if (enemies == null) {
@@ -55,6 +73,10 @@ public class Level1 {
 
     }
 
+    /**
+     *
+     * @param delta
+     */
     public void hasDirectionChange(double delta) {
 
         if (enemies == null) {
@@ -68,6 +90,10 @@ public class Level1 {
         }
     }
 
+    /**
+     *
+     * @param delta
+     */
     public void changeDirectionAllEnemies(double delta) {
 
         for (int i = 0; i < enemies.size(); i++) {
@@ -84,6 +110,9 @@ public class Level1 {
 
     }
 
+    /**
+     *
+     */
     public void addEnemies() {
         for (int y = 0; y < 5; y++) {
             for (int x = 0; x < 10; x++) {
@@ -93,6 +122,11 @@ public class Level1 {
         }
     }
 
+    /**
+     *
+     * @param blocks
+     * @return
+     */
     public boolean isGameOver(BasicBlocks blocks) {
 
         boolean check = false;
@@ -111,10 +145,17 @@ public class Level1 {
         return check;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isComplete() {
         return enemies.isEmpty(); //Metodo de java, devuelve true si el array esta vacio
     }
 
+    /**
+     *
+     */
     public void reset() {
         player.reset();
         enemies.clear();

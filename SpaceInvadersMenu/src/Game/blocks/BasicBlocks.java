@@ -4,31 +4,55 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.util.ArrayList;
-
+/**
+ * This class creates, updates and draw the game bunkers
+ * @author InvadersTeam
+ */
 public class BasicBlocks {
 
     private ArrayList<Rectangle> wall = new ArrayList<Rectangle>();
 
+    /**
+     *  Creates four bunkers in a predetermined position.
+     */    
+    
     public BasicBlocks() {
         //Crea los 4 bunkers del juego
-        Blocks(75, 450);
-        Blocks(275, 450);
-        Blocks(475, 450);
-        Blocks(675, 450);
+        Bunker(75, 450);
+        Bunker(275, 450);
+        Bunker(475, 450);
+        Bunker(675, 450);
     }
-
+    
+     /**
+     *
+     * @return Arraylist where the bunkers are loaded
+     */
+    
     public ArrayList<Rectangle> getWall() {
         return wall;
     }
-
+    
+    /**
+     * Draws Paints a bunker green.
+     * @param g Renders colour.
+     */
+    
     public void draw(Graphics2D g) {
         g.setColor(Color.GREEN);
         for (int i = 0; i < wall.size(); i++) {
             g.fill(wall.get(i));
         }
     }
-
-    public void Blocks(int xPos, int yPos) {
+    
+    /**
+     * Creates a block in an X,Y specified coordinates
+     * 
+     * @param xPos X Position where the block is going to be created.
+     * @param yPos y Position where the block is going to be created.
+     */
+    
+    public void Bunker(int xPos, int yPos) {
 
         int wallWidth = 3;  //abertura de los bunkers
         int x = 0;
@@ -56,6 +80,13 @@ public class BasicBlocks {
         }
     }
 
+        /**
+     * Sets each brick width
+     * @param rows Number of blocks for each bunker
+     * @param xPos Specified X coordinate where the blocks are going to be created
+     * @param yPos Specified Y coordinate where the blocks are going to be created
+     */
+    
     public void row(int rows, int xPos, int yPos) { //ancho bloque, posicion "x" y posicion "y" 
         for (int i = 0; i < rows; i++) {
             Rectangle brick = new Rectangle(xPos + (i * 3), yPos, 3, 3);
@@ -63,13 +94,17 @@ public class BasicBlocks {
         }
     }
 
+     /**
+     *  Creates the bunkers again
+     */
+    
     public void reset() {
         wall.clear();
 
-        Blocks(75, 450);
-        Blocks(275, 450);
-        Blocks(475, 450);
-        Blocks(675, 450);
+        Bunker(75, 450);
+        Bunker(275, 450);
+        Bunker(475, 450);
+        Bunker(675, 450);
 
     }
 

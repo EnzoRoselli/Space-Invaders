@@ -4,14 +4,27 @@ import MVC.Interface.ImessageForUser;
 import MVC.Interface.Iencryption;
 import Model.*;
 
+/**
+ *
+ * @author InvadersTeam
+ */
 public class LogInHandler implements Iencryption,ImessageForUser {
 
     private SQL statement;
 
+    /**
+     *
+     */
     public LogInHandler() {
         statement = new SQL();
     }
 
+    /**
+     *
+     * @param error
+     * @param sesion
+     * @return
+     */
     public String logInManager(String error, Session sesion) {
         if (error.equals(NO)) {
             error = this.textAreasCompleted(sesion);
@@ -29,6 +42,12 @@ public class LogInHandler implements Iencryption,ImessageForUser {
     }
     
     //Agregar forgot password
+
+    /**
+     *
+     * @param password
+     * @return
+     */
     
     public String maximumSize(String password) {
         if (password.length() > 15) {
@@ -37,6 +56,11 @@ public class LogInHandler implements Iencryption,ImessageForUser {
         return NO;
     }
 
+    /**
+     *
+     * @param password
+     * @return
+     */
     public String minimumSize(String password) { ///meterla en una interface se usa 2 veces
         if (password.length() < 6) {
             return MINIMUM_SIZE;
@@ -44,6 +68,11 @@ public class LogInHandler implements Iencryption,ImessageForUser {
         return NO;
     }
 
+    /**
+     *
+     * @param sesion
+     * @return
+     */
     public String textAreasCompleted(Session sesion) {
         if (sesion.getUser_gmail().equals("") || sesion.getPassword().equals("")) {
             return TEXT_AREAS_COMPLETED;
@@ -51,6 +80,11 @@ public class LogInHandler implements Iencryption,ImessageForUser {
         return NO;
     }
 
+    /**
+     *
+     * @param pass
+     * @return
+     */
     @Override
     public String encryptedPassword(String pass) {
         String encryptedPass = Security.md5(pass);

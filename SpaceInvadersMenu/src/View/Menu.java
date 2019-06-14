@@ -13,6 +13,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ *
+ * @author InvadersTeam
+ */
 public class Menu extends javax.swing.JFrame implements ImessageForUser {
 
     private LogIn myLogIn;
@@ -22,6 +26,9 @@ public class Menu extends javax.swing.JFrame implements ImessageForUser {
     private VisibleFramesHandler visible;
     //private Display game;
     
+    /**
+     *
+     */
     public Menu() {
         initComponents();
         visible = new VisibleFramesHandler();

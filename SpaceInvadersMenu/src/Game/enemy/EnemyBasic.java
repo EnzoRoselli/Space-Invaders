@@ -13,6 +13,10 @@ import Game.sound.Sound;
 import Game.sprite.SpriteAnimation;
 import Game.timer.Timer;
 
+/**
+ *
+ * @author InvadersTeam
+ */
 public class EnemyBasic {
 
     private double speed = 1.0d;
@@ -25,6 +29,14 @@ public class EnemyBasic {
     private Timer shootTimer;
     private Sound explosionSound;
 
+    /**
+     *
+     * @param xPos
+     * @param yPos
+     * @param rows
+     * @param columns
+     * @param bulletHandler
+     */
     public EnemyBasic(double xPos, double yPos, int rows, int columns, EnemyBulletHandler bulletHandler) {
 
         this.bulletHandler = bulletHandler;
@@ -43,22 +55,44 @@ public class EnemyBasic {
         explosionSound = new Sound("/Game/res/explosion.wav");
     }
 
+    /**
+     *
+     * @return
+     */
     public Rectangle getRect() {
         return rect;
     }
 
+    /**
+     *
+     * @return
+     */
     public EnemyBulletHandler getBulletHandler() {
         return bulletHandler;
     }
 
+    /**
+     *
+     * @param rect
+     */
     public void setRect(Rectangle rect) {
         this.rect = rect;
     }
 
+    /**
+     *
+     * @param g
+     */
     public void draw(Graphics2D g) {
         enemySprite.draw(g);
     }
 
+    /**
+     *
+     * @param delta
+     * @param player
+     * @param blocks
+     */
     public void update(double delta, Player player, BasicBlocks blocks) {
         enemySprite.update(delta);
 
@@ -71,6 +105,10 @@ public class EnemyBasic {
         }
     }
 
+    /**
+     *
+     * @param delta
+     */
     public void changeDirection(double delta) {
 
         speed *= -1.15d;
@@ -81,6 +119,10 @@ public class EnemyBasic {
         this.getRect().y = (int) enemySprite.getyPos();
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean deathScene() {
 
         if (!enemySprite.getPlay()) {
@@ -98,6 +140,13 @@ public class EnemyBasic {
         return false;
     }
 
+    /**
+     *
+     * @param i
+     * @param player
+     * @param enemies
+     * @return
+     */
     public boolean collidePlayerBullet(int i, Player player, ArrayList<EnemyBasic> enemies) {
 
         if (enemySprite.getPlay()) {
@@ -121,6 +170,13 @@ public class EnemyBasic {
         return false;
     }
 
+    /**
+     *
+     * @param i
+     * @param blocks
+     * @param enemies
+     * @return
+     */
     public boolean collideEnemiesBlocks(int i, BasicBlocks blocks, ArrayList<EnemyBasic> enemies) {
 
         if (enemySprite.getPlay()) {
@@ -142,6 +198,10 @@ public class EnemyBasic {
         return false;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isOutOfBounds() {
 
         if (rect.x > 0 && rect.x < Display.getWIDTH() - rect.width) {
