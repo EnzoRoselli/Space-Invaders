@@ -72,7 +72,7 @@ public class SignIn extends javax.swing.JFrame implements ImessageForUser {
 
         SignInBtn.setBackground(new java.awt.Color(51, 0, 204));
         SignInBtn.setForeground(new java.awt.Color(255, 255, 255));
-        SignInBtn.setText("Sign in");
+        SignInBtn.setText("Sign up");
         SignInBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SignInBtnActionPerformed(evt);

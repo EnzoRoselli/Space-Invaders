@@ -1,8 +1,9 @@
 package Controller;
 
 public class VisibleFramesHandler<K extends javax.swing.JFrame, T extends javax.swing.JFrame> {
-
+   
     public VisibleFramesHandler() {
+        
     }
 
     public void invisibleAndVisibleFrame(T frame, K newFrame) {

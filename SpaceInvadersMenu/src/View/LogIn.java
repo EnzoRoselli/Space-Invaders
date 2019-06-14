@@ -69,7 +69,7 @@ public class LogIn extends javax.swing.JFrame implements ImessageForUser {
         });
         jPanel2.add(logInBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 100, -1));
 
-        SignInBtn.setText("Sign in");
+        SignInBtn.setText("Sign up");
         SignInBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SignInBtnActionPerformed(evt);

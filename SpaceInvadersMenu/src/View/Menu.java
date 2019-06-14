@@ -2,10 +2,8 @@ package View;
 
 import MVC.Interface.ImessageForUser;
 import Controller.*;
-import Juego.*;
 import Model.SQL;
-import display.Display;
-import java.awt.Color;
+import Game.display.Display;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -17,7 +15,6 @@ import org.json.JSONObject;
 
 public class Menu extends javax.swing.JFrame implements ImessageForUser {
 
-    private SimulacionJuego simulator;
     private LogIn myLogIn;
     private SettingsMenu mySettings;
     private SQL statement;

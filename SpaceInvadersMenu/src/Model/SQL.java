@@ -1,7 +1,5 @@
 package Model;
 
-import Controller.User;
-import MVC.Exception.Exceptions;
 import MVC.Interface.*;
 import java.sql.*;
 import java.util.ArrayList;
@@ -15,11 +13,8 @@ public class SQL implements Iquerys, ImessageForUser {
     private PreparedStatement pStatement;
     private Connection connection;
     private ResultSet resultset;
-    private Exceptions exe;
-    /*LA CONCHA DE TU MADRE OLBOI*/
 
     public SQL() {
-        exe = new Exceptions();
     }
 
     public Connection connectionDB() {
@@ -28,10 +23,10 @@ public class SQL implements Iquerys, ImessageForUser {
             connection = DriverManager.getConnection(PORT, USER, PASSWORD);
             System.out.println("Successful connection");
         } catch (ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(null, exe.connectionFailed());//Provisional , acomodar bien con clase exceptions
+            JOptionPane.showMessageDialog(null, "Connection failed");//Provisional , acomodar bien con clase exceptions
             Logger.getLogger(SQL.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, exe.connectionFailed());//Provisional , acomodar bien con clase exceptions
+            JOptionPane.showMessageDialog(null, "Connection failed");//Provisional , acomodar bien con clase exceptions
             Logger.getLogger(SQL.class.getName()).log(Level.SEVERE, null, ex);
         }
         return connection;
