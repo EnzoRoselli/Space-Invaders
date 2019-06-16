@@ -124,6 +124,7 @@ public class Display extends Canvas implements Runnable {
     @Override
     public void run() {
 
+        boolean bool = false;
         long timer = System.currentTimeMillis();
         long lastLoopTime = System.nanoTime(); //nanoSegundos en ese instante
         final int TARGET_FPS = 60; //cuantas actualizaciones queremos por segundo
@@ -150,17 +151,17 @@ public class Display extends Canvas implements Runnable {
             }
 
             draw(bs);
-            update(delta);
+            bool=update(delta);
 
             try {
                 Thread.sleep(((lastLoopTime - System.nanoTime()) + OPTIMAL_TIME) / 1000000); //duerme el hilo para q el juego se ejecute a 60fps
             } catch (Exception e) {
             };
+            
+            if (bool) {
 
-            if (draw(bs) && update(delta)) {
                 visible.invisibleAndVisibleFrame(frame, menu);
                 show.stop();
-
             }
         }
     }

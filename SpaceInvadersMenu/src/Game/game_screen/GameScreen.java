@@ -1,5 +1,6 @@
 package Game.game_screen;
 
+import Controller.ScoreAndUserCatcher;
 import Game.blocks.BasicBlocks;
 import Game.player.Player;
 import Game.display.Display;
@@ -66,6 +67,7 @@ public class GameScreen {
         level.update(delta, blocks);
 
         if (level.isGameOver(blocks)) {
+            ScoreAndUserCatcher.setScore(SCORE);
             setSCORE(0);
             return true;
         }

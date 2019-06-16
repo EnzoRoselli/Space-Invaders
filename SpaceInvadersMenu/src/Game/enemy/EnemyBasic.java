@@ -15,6 +15,7 @@ import Game.timer.Timer;
 
 /**
  * EnemyBasic class allows to create, update and draw the game enemies.
+ *
  * @author InvadersTeam
  */
 public class EnemyBasic {
@@ -31,7 +32,7 @@ public class EnemyBasic {
 
     /**
      * Creates a new Enemy object in an specified X,Y coordinate.
-     * 
+     *
      * @param xPos X Position where the Enemy object is going to be created.
      * @param yPos Y Position where the Enemy object is going to be created.
      * @param rows Enemy height.
@@ -173,24 +174,14 @@ public class EnemyBasic {
 
     /**
      *
-     * @param i
      * @param blocks
      * @param enemies
      * @return
      */
-    public boolean collideEnemiesBlocks(int i, BasicBlocks blocks, ArrayList<EnemyBasic> enemies) {
-
-        if (enemySprite.getPlay()) {
-            if (enemies.get(i).deathScene()) {
-                enemies.remove(i);
-            }
-            return false;
-        }
+    public boolean collideEnemiesBlocks(BasicBlocks blocks, ArrayList<EnemyBasic> enemies) {
 
         for (int b = 0; b < blocks.getWall().size(); b++) {
-
-            if (rect.intersects(blocks.getWall().get(i))) {
-
+            if (rect.intersects(blocks.getWall().get(b))) {
                 return true;
             }
 

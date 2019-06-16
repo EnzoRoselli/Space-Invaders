@@ -129,6 +129,7 @@ public class LogIn extends javax.swing.JFrame implements ImessageForUser {
         control = new LogInHandler();
         String pass = new String(this.passwordText.getPassword());
         sesion = new Session(this.userText.getText(), pass);
+        ScoreAndUserCatcher.setGmail(this.userText.getText());
         error = control.logInManager(error, sesion);
 
         if (error.equals(NO)) {

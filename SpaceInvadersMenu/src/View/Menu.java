@@ -25,7 +25,7 @@ public class Menu extends javax.swing.JFrame implements ImessageForUser {
     private JSON jsonHandler;
     private VisibleFramesHandler visible;
     //private Display game;
-    
+
     /**
      *
      */
