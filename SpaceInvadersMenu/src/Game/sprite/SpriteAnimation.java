@@ -239,8 +239,8 @@ public class SpriteAnimation {
     
     /**
      * Stops loop animation and sets as true destroyAfterAnim.
-     * @param play false y invasor is destroyed.
-     * @param destroyAfterAnim true if invasor is destroyed.
+     * @param play false if invader is destroyed.
+     * @param destroyAfterAnim true if invader is destroyed.
      */
     public void setPlay(boolean play, boolean destroyAfterAnim) {
         if (loop) {
@@ -300,7 +300,7 @@ public class SpriteAnimation {
     
     /**
      *
-     * @return True if invasor is destroyed.
+     * @return True if invader is destroyed.
      */
     public boolean isDestroyAfterAnim() {
         return destroyAfterAnim;
@@ -310,7 +310,7 @@ public class SpriteAnimation {
     
     
     /**
-     * Sets invasor's destruction status.
+     * Sets invader's destruction status.
      * @param destroyAfterAnim True if it is destroyed.
      */
     public void setDestroyAfterAnim(boolean destroyAfterAnim) {
@@ -322,7 +322,7 @@ public class SpriteAnimation {
     
     /**
      *
-     * @return invasor width.
+     * @return invader's width.
      */
     public int getWidth() {
         return width;
@@ -332,8 +332,8 @@ public class SpriteAnimation {
     
     
     /**
-     * Sets invasor width.
-     * @param width ivasor width.
+     * Sets invader's width.
+     * @param width invasor width.
      */
     public void setWidth(int width) {
         this.width = width;
@@ -344,7 +344,7 @@ public class SpriteAnimation {
     
     /**
      * 
-     * @return invasor height.
+     * @return invader's height.
      */
     public int getHeight() {
         return height;
@@ -354,7 +354,7 @@ public class SpriteAnimation {
     
     
     /**
-     * Sets invasor height.
+     * Sets invader's height.
      * @param height invasor height.
      */
     public void setHeight(int height) {
@@ -366,7 +366,7 @@ public class SpriteAnimation {
     
     /**
      *
-     * @return invasor speed.
+     * @return invader's speed.
      */
     public int getAnimationSpeed() {
         return animationSpeed;
@@ -376,7 +376,7 @@ public class SpriteAnimation {
     
     
     /**
-     * Sets sprite animatin speed.
+     * Sets invader's animation speed.
      * @param animationSpeed Sprite speed.
      */
     public void setAnimationSpeed(int animationSpeed) {
@@ -387,7 +387,7 @@ public class SpriteAnimation {
     
     
     /**
-     * Returns invader arm position.
+     * Returns invader's arm position.
 
      * @return      
      * 0 = closed arms.<p>
@@ -403,7 +403,7 @@ public class SpriteAnimation {
     
     
     /**
-     * Changes invaders arm position from close to open and vice versa
+     * Changes invader's arm position from close to open and vice versa
      * @param limit Invader arm position.<p>
      * 0 = closed arms.<p>
      * 1 = extended arms.<p>
@@ -421,7 +421,7 @@ public class SpriteAnimation {
     
     
     /**
-     * Sets invasor arms to the initial position.
+     * Sets invader's arms to the initial position.
      */
     
     public void resetLimit() {
@@ -433,7 +433,7 @@ public class SpriteAnimation {
     
     /**
      *
-     * @return 
+     * @return true if animation is playing.
      */
     public boolean getPlay() {
         return play;
