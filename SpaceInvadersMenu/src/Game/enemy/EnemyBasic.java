@@ -14,7 +14,7 @@ import Game.sprite.SpriteAnimation;
 import Game.timer.Timer;
 
 /**
- * EnemyBasic class allows to create, update and draw the game enemies.
+ * Constructor that creates a new Enemy object in an specified X,Y coordinate.
  *
  * @author InvadersTeam
  */
@@ -31,13 +31,15 @@ public class EnemyBasic {
     private Sound explosionSound;
 
     /**
-     * Creates a new Enemy object in an specified X,Y coordinate.
-     *
+     * Constructor that creates a new Enemy object in an specified X,Y coordinate.
+     * 
      * @param xPos X Position where the Enemy object is going to be created.
      * @param yPos Y Position where the Enemy object is going to be created.
      * @param rows Enemy height.
      * @param columns Enemy width.
-     * @param bulletHandler
+     * @param bulletHandler Creates and manage bullets 
+     * @see EnemyBulletHandler.
+     * 
      */
     public EnemyBasic(double xPos, double yPos, int rows, int columns, EnemyBulletHandler bulletHandler) {
 
@@ -67,7 +69,7 @@ public class EnemyBasic {
 
     /**
      *
-     * @return
+     * @return the bullet handler.
      */
     public EnemyBulletHandler getBulletHandler() {
         return bulletHandler;
@@ -82,8 +84,8 @@ public class EnemyBasic {
     }
 
     /**
-     *
-     * @param g
+     * Draws the enemies.
+     * @param g 
      */
     public void draw(Graphics2D g) {
         enemySprite.draw(g);
@@ -96,7 +98,7 @@ public class EnemyBasic {
      * @param blocks
      */
     public void update(double delta, Player player, BasicBlocks blocks) {
-        enemySprite.update(delta);
+        enemySprite.update();
 
         enemySprite.setxPos(enemySprite.getxPos() - (delta * speed));
         this.getRect().x = (int) enemySprite.getxPos();
@@ -108,7 +110,7 @@ public class EnemyBasic {
     }
 
     /**
-     *
+     * Changes Invasors direction.
      * @param delta
      */
     public void changeDirection(double delta) {
@@ -122,8 +124,8 @@ public class EnemyBasic {
     }
 
     /**
-     *
-     * @return
+     * Shows an invasor explotion.
+     * @return true when explosion soound is played.
      */
     public boolean deathScene() {
 
