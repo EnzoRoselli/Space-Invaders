@@ -8,8 +8,9 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
 /**
- *
+ * This class draws a bullet
  * @author InvadersTeam
+ * @since March 2019
  */
 public class EnemyBasicBullet {
 
@@ -18,9 +19,9 @@ public class EnemyBasicBullet {
     private int xPos, yPos;
 
     /**
-     *
-     * @param xPos
-     * @param yPos
+     * The constructor creates a new bullet in an specified X,Y coordinates.
+     * @param xPos Specified X coordinate where the bullet is going to be created
+     * @param yPos Specified Y coordinate where the bullet is going to be created     
      */
     public EnemyBasicBullet(double xPos, double yPos) {
         bullet = new Rectangle((int) xPos, (int) yPos, 5, 10);
@@ -31,23 +32,23 @@ public class EnemyBasicBullet {
     //Setters
 
     /**
-     *
-     * @param xPos
+     * Sets an specified X coordinates as a position.
+     * @param xPos Specified X coordinate where the bullet is going to be created 
      */
     public void setxPos(int xPos) {
         this.xPos = xPos;
     }
 
     /**
-     *
-     * @param yPos
+     *  Sets an specified Y coordinates as a position.
+     * @param yPos Specified Y coordinate where the bullet is going to be created 
      */
     public void setyPos(int yPos) {
         this.yPos = yPos;
     }
 
     /**
-     *
+     * Draws a bullet.
      * @param g
      */
     public void draw(Graphics2D g) {
@@ -60,10 +61,10 @@ public class EnemyBasicBullet {
     }
 
     /**
-     *
-     * @param delta
-     * @param blocks
-     * @param player
+     * Updates bullet status.
+     * @param delta optimal speed.
+     * @param blocks Four blocks bunker.
+     * @param player Spaceship.
      */
     public void update(double delta, BasicBlocks blocks, Player player) {
 
@@ -80,8 +81,8 @@ public class EnemyBasicBullet {
 
     /**
      *
-     * @param rect
-     * @return
+     * @param rect hitbox. Could either be a bunker block or player.
+     * @return True if bullet collides any rectangle.
      */
     public boolean collision(Rectangle rect) {
         if (bullet != null && bullet.intersects(rect)) {
@@ -93,15 +94,16 @@ public class EnemyBasicBullet {
 
     /**
      *
-     * @return
+     * @return Bullet destruction status.<p>
+     * True if destroyed.
      */
-    public boolean destory() {
+    public boolean destroy() {
         return false;
     }
 
     /**
-     *
-     * @param blocks
+     * If a bullets collides the wall, a block will be removed.
+     * @param blocks Four blocks bunker.
      */
     protected void wallCollide(BasicBlocks blocks) {
         if (bullet == null) {
@@ -128,7 +130,7 @@ public class EnemyBasicBullet {
 
     /**
      *
-     * @return
+     * @return X coordinate where the bullet is located.
      */
     public int getxPos() {
         return xPos;
@@ -136,7 +138,7 @@ public class EnemyBasicBullet {
 
     /**
      *
-     * @return
+     * @return Y coordinate where the bullet is located.
      */
     public int getyPos() {
         return yPos;

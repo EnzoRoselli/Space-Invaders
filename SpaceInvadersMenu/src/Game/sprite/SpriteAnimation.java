@@ -9,8 +9,10 @@ import javax.imageio.ImageIO;
 import Game.timer.Timer;
 
 /**
- *
+ * this class allows to configure the enemy animation.
  * @author InvadersTeam
+ * @since March 2019
+ * 
  */
 public class SpriteAnimation {
 
@@ -238,8 +240,8 @@ public class SpriteAnimation {
     
     
     /**
-     * Stops loop animation and sets as true destroyAfterAnim.
-     * @param play false if invader is destroyed.
+     * Stops loop animation and sets as true destroyAfterAnim and play.
+     * @param play true if invader is destroyed.
      * @param destroyAfterAnim true if invader is destroyed.
      */
     public void setPlay(boolean play, boolean destroyAfterAnim) {

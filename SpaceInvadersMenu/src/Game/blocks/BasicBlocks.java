@@ -13,7 +13,7 @@ public class BasicBlocks {
     private ArrayList<Rectangle> wall = new ArrayList<Rectangle>();
 
     /**
-     *  Creates four bunkers in a predetermined position.
+     *  The constructor creates four bunkers in a predetermined position.
      */    
     
     public BasicBlocks() {
@@ -24,9 +24,11 @@ public class BasicBlocks {
         Bunker(675, 450);
     }
     
+    
+    
      /**
      *
-     * @return Arraylist where the bunkers are loaded
+     * @return wall: Arraylist where the bunkers are loaded
      */
     
     public ArrayList<Rectangle> getWall() {
@@ -34,7 +36,7 @@ public class BasicBlocks {
     }
     
     /**
-     * Draws Paints a bunker green.
+     * Draws and paints a bunker green.
      * @param g Renders colour.
      */
     

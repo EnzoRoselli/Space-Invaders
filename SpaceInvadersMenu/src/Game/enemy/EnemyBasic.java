@@ -14,16 +14,16 @@ import Game.sprite.SpriteAnimation;
 import Game.timer.Timer;
 
 /**
- * Constructor that creates a new Enemy object in an specified X,Y coordinate.
- *
+ * EnemyBasic class allows to create, update and draw the game enemies.
  * @author InvadersTeam
+ * @since March 2019
+ * 
  */
 public class EnemyBasic {
 
     private double speed = 1.0d;
     private Rectangle rect;
     private SpriteAnimation enemySprite;
-    private BufferedImage eSprite;
     private EnemyBulletHandler bulletHandler;
 
     private int shootTime;
@@ -61,7 +61,7 @@ public class EnemyBasic {
 
     /**
      *
-     * @return
+     * @return invader rectangle/hitbox.
      */
     public Rectangle getRect() {
         return rect;
@@ -76,15 +76,15 @@ public class EnemyBasic {
     }
 
     /**
-     *
-     * @param rect
+     * Assigns a Rectangle hitbox to rect attribute.
+     * @param rect invader hitbox.
      */
     public void setRect(Rectangle rect) {
         this.rect = rect;
     }
 
     /**
-     * Draws the enemies.
+     * Draws the invaders.
      * @param g 
      */
     public void draw(Graphics2D g) {
@@ -92,10 +92,10 @@ public class EnemyBasic {
     }
 
     /**
-     *
-     * @param delta
-     * @param player
-     * @param blocks
+     * Updates invaders status.
+     * @param delta frame reset auxiliar.
+     * @param player Spaceship.
+     * @param blocks Four blocks Bunker.
      */
     public void update(double delta, Player player, BasicBlocks blocks) {
         enemySprite.update();
@@ -110,8 +110,8 @@ public class EnemyBasic {
     }
 
     /**
-     * Changes Invasors direction.
-     * @param delta
+     * Changes Invaders direction.
+     * @param delta optimal speed.
      */
     public void changeDirection(double delta) {
 
@@ -124,7 +124,7 @@ public class EnemyBasic {
     }
 
     /**
-     * Shows an invasor explotion.
+     * Shows an invader explosion.
      * @return true when explosion soound is played.
      */
     public boolean deathScene() {
@@ -140,16 +140,16 @@ public class EnemyBasic {
 
             return true;
         }
-
+        
         return false;
     }
 
     /**
-     *
+     * Destroys an invader when hitted by a bullet and increases player score.
      * @param i Enemies index.
      * @param player Player figure.
      * @param enemies Arraylist of enemies.
-     * @return
+     * @return True if the invader collides a player's bullet
      */
     public boolean collidePlayerBullet(int i, Player player, ArrayList<EnemyBasic> enemies) {
 
@@ -163,7 +163,7 @@ public class EnemyBasic {
         for (int w = 0; w < player.getPlayerWeapon().getWeapons().size(); w++) {
             if (enemies != null && player.getPlayerWeapon().getWeapons().get(w).collisionRect(((EnemyBasic) enemies.get(i)).getRect())) {
 
-                enemySprite.resetLimit(); //elimina uno del arreglo de sprites
+                enemySprite.resetLimit();
                 enemySprite.setAnimationSpeed(120);//velocidad de la animacion de muerte
                 enemySprite.setPlay(true, true);
                 GameScreen.setSCORE(GameScreen.getSCORE() + 300);
@@ -175,10 +175,11 @@ public class EnemyBasic {
     }
 
     /**
-     *
-     * @param blocks
-     * @param enemies
-     * @return
+     * 
+     * Checks out if the invaders collide the bunker.
+     * @param blocks Four blocks bunker.
+     * @param enemies Invaders army arraylist.
+     * @return True if invaders collide with the bunker.
      */
     public boolean collideEnemiesBlocks(BasicBlocks blocks, ArrayList<EnemyBasic> enemies) {
 
