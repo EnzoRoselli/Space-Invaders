@@ -95,7 +95,7 @@ public class BasicBlocks {
     }
 
      /**
-     *  Creates the bunkers again
+     *  Creates the four bunkers again.
      */
     
     public void reset() {

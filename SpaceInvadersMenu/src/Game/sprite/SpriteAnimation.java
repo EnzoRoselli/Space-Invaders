@@ -28,7 +28,7 @@ public class SpriteAnimation {
     private int limit;
 
     /**
-     * Creates 
+     * Creates invaders animation.
      * @param xPos Specified X coordinate where the sprites are going to be created
      * @param yPos Specified Y coordinate where the sprites are going to be created
      * @param rows Sprite height
@@ -58,6 +58,11 @@ public class SpriteAnimation {
         timer = new Timer();
         limit = sprites.size() - 1;
     }
+    
+    
+    
+    
+    
 
     /**
      * Draws sprites.
@@ -72,11 +77,14 @@ public class SpriteAnimation {
         g.drawImage(sprites.get(currentSprite), (int) getxPos(), (int) getyPos(), width, height, null);
     }
 
+    
+    
+    
+    
     /**
-     *
-     * @param delta
+     * Updates invaders status.
      */
-    public void update(double delta) {
+    public void update() { /// borro double delta como parametro
         if (isSpriteAnimDestroyed()) {
             return;
         }
@@ -89,6 +97,9 @@ public class SpriteAnimation {
         }
     }
 
+    
+    
+    
     /**
      * Stops sprite animation
      */
@@ -97,6 +108,10 @@ public class SpriteAnimation {
         play = false;
     }
 
+    
+    
+    
+    
     /**
      * 
      */
@@ -105,6 +120,10 @@ public class SpriteAnimation {
         play = false;
         currentSprite = 0;
     }
+    
+    
+    
+    
     
     /**
      * Loops sprite animation.
@@ -119,8 +138,12 @@ public class SpriteAnimation {
         }
     }
     
+    
+    
+    
+    
     /**
-     * 
+     * Starts sprites animation.
      */
     
     private void playAnimation() {
@@ -134,41 +157,57 @@ public class SpriteAnimation {
         }
     }
 
+    
+    
+    
+    
     /**
      *
-     * @return
+     * @return sprites index. 0, 1 or 2.
      */
     public byte getCurrentSprite() {
         return currentSprite;
     }
 
+    
+    
+    
     /**
-     *
+     * Assigns value to currentSprite 
      * @param currentSprite
      */
     public void setCurrentSprite(byte currentSprite) {
         this.currentSprite = currentSprite;
     }
 
+    
+    
+    
     /**
      *
-     * @return
+     * @return true true if animation loop is active.
      */
     public boolean isLoop() {
         return loop;
     }
 
+    
+    
+    
+    
     /**
-     *
-     * @param loop
+     * 
+     * @param loop true if animation loop is active.
      */
     public void setLoop(boolean loop) {
         this.loop = loop;
     }
 
+    
+    
+    
     /**
-     *
-     * @return
+     * @return true if there is no invader left to destroy.
      */
     public boolean isSpriteAnimDestroyed() {
         if (sprites == null) //si todos los aliens fueron destruidos
@@ -179,121 +218,163 @@ public class SpriteAnimation {
         return false;
     }
 
+    
+    
+    
     /**
-     *
-     * @param spriteMap
-     * @param xPos
-     * @param yPos
-     * @param width
-     * @param height
+     * Adds a new invader to the map.
+     * @param spriteMap image map.
+     * @param xPos Specified X coordinate where the new invader is going to be added.
+     * @param yPos Specified Y coordinate where the new invader is going to be added.
+     * @param width new invader width.
+     * @param height new invader height.
      */
     public void addSprite(BufferedImage spriteMap, int xPos, int yPos,
             int width, int height) {
         sprites.add(spriteMap.getSubimage(xPos, yPos, width, height));
     }
 
+    
+    
+    
     /**
-     *
-     * @param play
-     * @param destoryAfterAnim
+     * Stops loop animation and sets as true destroyAfterAnim.
+     * @param play false y invasor is destroyed.
+     * @param destroyAfterAnim true if invasor is destroyed.
      */
-    public void setPlay(boolean play, boolean destoryAfterAnim) {
+    public void setPlay(boolean play, boolean destroyAfterAnim) {
         if (loop) {
             loop = false;
         }
 
         this.play = play;
-        this.setDestroyAfterAnim(destoryAfterAnim);
+        this.setDestroyAfterAnim(destroyAfterAnim);
     }
 
+    
+    
+    
     /**
-     *
-     * @return
+     * Gets the X coordinate position.
+     * @return An X coordinate position.
      */
     public double getxPos() {
         return xPos;
     }
 
+    
+    
+    
     /**
-     *
-     * @param xPos
+     * Sets an X coordinate position.
+     * @param xPos X coordinate position.
      */
     public void setxPos(double xPos) {
         this.xPos = xPos;
     }
 
+    
+    
+    
     /**
-     *
-     * @return
+     * Gets the Y coordinate position.
+     * @return Y coordinate position
      */
     public double getyPos() {
         return yPos;
     }
 
+    
+    
+    
     /**
-     *
-     * @param yPos
+     * Sets Y coordinate position.
+     * @param yPos Y coordinate position.
      */
     public void setyPos(double yPos) {
         this.yPos = yPos;
     }
 
+    
+    
+    
     /**
      *
-     * @return
+     * @return True if invasor is destroyed.
      */
     public boolean isDestroyAfterAnim() {
         return destroyAfterAnim;
     }
 
+    
+    
+    
     /**
-     * 
-     * @param destroyAfterAnim
+     * Sets invasor's destruction status.
+     * @param destroyAfterAnim True if it is destroyed.
      */
     public void setDestroyAfterAnim(boolean destroyAfterAnim) {
         this.destroyAfterAnim = destroyAfterAnim;
     }
 
+    
+    
+    
     /**
      *
-     * @return sprite width.
+     * @return invasor width.
      */
     public int getWidth() {
         return width;
     }
 
+    
+    
+    
     /**
-     * Sets sprite width.
-     * @param width sprite width.
+     * Sets invasor width.
+     * @param width ivasor width.
      */
     public void setWidth(int width) {
         this.width = width;
     }
 
+    
+    
+    
     /**
-     *
-     * @return sprite height.
+     * 
+     * @return invasor height.
      */
     public int getHeight() {
         return height;
     }
 
+    
+    
+    
     /**
-     * Sets sprite height.
-     * @param height sprite height.
+     * Sets invasor height.
+     * @param height invasor height.
      */
     public void setHeight(int height) {
         this.height = height;
     }
 
+    
+    
+    
     /**
      *
-     * @return Sprite speed.
+     * @return invasor speed.
      */
     public int getAnimationSpeed() {
         return animationSpeed;
     }
 
+    
+    
+    
     /**
      * Sets sprite animatin speed.
      * @param animationSpeed Sprite speed.
@@ -302,20 +383,31 @@ public class SpriteAnimation {
         this.animationSpeed = animationSpeed;
     }
 
+    
+    
+    
     /**
-     *
-     * 0 = closed arms.
-     * 1 = extended arms.
+     * Returns invader arm position.
+
+     * @return      
+     * 0 = closed arms.<p>
+     * 1 = extended arms.<p>
      * 2 = invasor explotion.
-     * @return Invader arm position.
+     * 
      */
     public int getLimit() {
         return limit;
     }
 
+    
+    
+    
     /**
      * Changes invaders arm position from close to open and vice versa
-     * @param limit Invader arm position.
+     * @param limit Invader arm position.<p>
+     * 0 = closed arms.<p>
+     * 1 = extended arms.<p>
+     * 2 = invasor explotion.
      */
     public void setLimit(int limit) {
         if (limit > 0) {
@@ -325,17 +417,23 @@ public class SpriteAnimation {
         }
     }
 
+    
+    
+    
     /**
-     *
+     * Sets invasor arms to the initial position.
      */
     
     public void resetLimit() {
         limit = sprites.size() - 1;
     }
 
+    
+    
+    
     /**
      *
-     * @return
+     * @return 
      */
     public boolean getPlay() {
         return play;
