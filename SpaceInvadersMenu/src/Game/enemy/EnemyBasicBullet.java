@@ -32,7 +32,7 @@ public class EnemyBasicBullet {
     //Setters
 
     /**
-     * Sets an specified X coordinates as a position.
+     * Sets an specified X coordinates as a bullet position.
      * @param xPos Specified X coordinate where the bullet is going to be created 
      */
     public void setxPos(int xPos) {
@@ -40,7 +40,7 @@ public class EnemyBasicBullet {
     }
 
     /**
-     *  Sets an specified Y coordinates as a position.
+     * Sets an specified Y coordinates as a bullet position.
      * @param yPos Specified Y coordinate where the bullet is going to be created 
      */
     public void setyPos(int yPos) {
@@ -120,7 +120,7 @@ public class EnemyBasicBullet {
     }
 
     /**
-     *
+     * Erase the bullet if it is out of the display bounds.
      */
     protected void isOutofBounds() {
         if (bullet != null && bullet.y < 0 || bullet.y > Display.getHEIGHT() || bullet.x < 0 || bullet.x > Display.getWIDTH()) {
