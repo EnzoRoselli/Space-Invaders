@@ -131,10 +131,10 @@ public class Level1 {
 
         boolean check = false;
 
-        for (int i = 0; i < enemies.size(); i++) {
+        for (int i = 0; i < enemies.size() /*&& enemies.get(i).collideEnemiesBlocks(i, blocks, enemies)*/; i++) {
             if (enemies != null) {
-                if (enemies.get(i).collideEnemiesBlocks(i, blocks, enemies)) {
-                    check = true;
+                if (enemies.get(i).collideEnemiesBlocks(blocks, enemies)) {
+                    return true;
                 }
             }
         }
