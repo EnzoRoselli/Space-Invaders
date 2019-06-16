@@ -13,8 +13,9 @@ import Game.levels.Level1;
 import Game.timer.TickTimer;
 
 /**
- *
+ * This class sets the game screen. It creates the player, the bunker, the bullets, score and enemies.
  * @author InvadersTeam
+ * @since March 2019
  */
 public class GameScreen {
 
@@ -29,7 +30,7 @@ public class GameScreen {
     private Font gameScreen = new Font("Arial", Font.PLAIN, 48);
 
     /**
-     *
+     * This constructor creates the four bloks bunker, the player, the bullet handler and the level setting, which contains te enemies.
      */
     public GameScreen() {
 
@@ -42,24 +43,24 @@ public class GameScreen {
 
     /**
      *
-     * @return
+     * @return The player score.
      */
     public static int getSCORE() {
         return SCORE;
     }
 
     /**
-     *
-     * @param SCORE
+     * Assigns value to the screen score.
+     * @param SCORE The player score.
      */
     public static void setSCORE(int SCORE) {
         GameScreen.SCORE = SCORE;
     }
 
     /**
-     *
-     * @param delta
-     * @return
+     * Checks out if the game has ended.
+     * @param delta Optimal speed.
+     * @return True if game is finished.
      */
     public boolean update(double delta) {
 
@@ -82,9 +83,9 @@ public class GameScreen {
     }
 
     /**
-     *
+     * Draws the whole screen. Regard the game status, the screen drawing will be different.
      * @param g
-     * @return
+     * @return True if the player loose, false if the level was completed or if it is still playing.
      */
     public boolean draw(Graphics2D g) {
 
@@ -119,7 +120,7 @@ public class GameScreen {
     }
 
     /**
-     *
+     * Initiates the spaceship motion.
      * @param canvas
      */
     public void initCanvas(Canvas canvas) { //movilidad a la nave

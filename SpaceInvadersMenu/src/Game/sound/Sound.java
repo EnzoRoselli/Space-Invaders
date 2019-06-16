@@ -12,8 +12,9 @@ import javax.sound.sampled.LineEvent;
 import javax.sound.sampled.LineListener;
 
 /**
- *
+ * This class creates the sound effects.
  * @author InvadersTeam
+ * @since March 2019
  */
 public class Sound implements LineListener {
 
@@ -24,8 +25,8 @@ public class Sound implements LineListener {
     private DataLine.Info info;
 
     /**
-     *
-     * @param path
+     * This constructor creates the sound clips.
+     * @param path Sound URL
      */
     public Sound(String path) {
         try {
@@ -49,21 +50,21 @@ public class Sound implements LineListener {
     }
 
     /**
-     *
+     * Plays sound.
      */
     public void play() {
         soundClip.start();
     }
 
     /**
-     *
+     * Plays sound loop.
      */
     public void loop() {
         soundClip.loop(Clip.LOOP_CONTINUOUSLY);
     }
 
     /**
-     *
+     * Stops sound.
      */
     public void stop() {
         soundClip.stop();
@@ -71,8 +72,8 @@ public class Sound implements LineListener {
     }
 
     /**
-     *
-     * @return
+     * 
+     * @return True if the sound is playing.
      */
     public boolean isPlaying() {
         return soundClip.isRunning();

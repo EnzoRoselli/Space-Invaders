@@ -12,8 +12,9 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 
 /**
- *
+ * 
  * @author InvadersTeam
+ * @since March 2019
  */
 public class Player implements KeyListener {
 
@@ -30,12 +31,12 @@ public class Player implements KeyListener {
     private boolean left = false, right = false, shoot = false;
 
     /**
-     *
-     * @param xPos
-     * @param yPos
-     * @param width
-     * @param height
-     * @param blocks
+     * This constructor assigns value to the player attributes and creates the weapon.
+     * @param xPos Specified X coordinate where the player is going to be created.
+     * @param yPos Specified Y coordinate where the player is going to be created. 
+     * @param width Player width.
+     * @param height Player height.
+     * @param blocks Four blocks bunker.
      */
     public Player(double xPos, double yPos, int width, int height, BasicBlocks blocks) {
 
@@ -61,41 +62,43 @@ public class Player implements KeyListener {
         this.blocks = blocks; //cuenta como los 4 bloques juntos
         playerWeapons = new PlayerWeapon();
     }
+    
+    
 
     /**
-     *
-     * @return
+     * Gets the players weapon.
+     * @return The players weapon.
      */
     public PlayerWeapon getPlayerWeapon() {
         return playerWeapons;
     }
 
     /**
-     *
-     * @return
+     * Gets the player rectangle
+     * @return The player rectangle
      */
     public Rectangle getRect() {
         return rect;
     }
 
     /**
-     *
-     * @return
+     * Gets player's health value.
+     * @return Player's health.
      */
     public int getHealth() {
         return health;
     }
 
     /**
-     *
-     * @param health
+     * Sets player's health value.
+     * @param health Player's health.
      */
     public void setHealth(int health) {
         this.health = health;
     }
 
     /**
-     *
+     * Draws players weapon.
      * @param g
      */
     public void draw(Graphics2D g) {
@@ -105,8 +108,8 @@ public class Player implements KeyListener {
     }
 
     /**
-     *
-     * @param delta
+     * Updates player hitbox and bullets position.
+     * @param delta Optimal speed.
      */
     public void update(double delta) { //esta a la escucha de cuando se apretan esas teclas
 
@@ -129,14 +132,14 @@ public class Player implements KeyListener {
     }
 
     /**
-     *
+     * If hitted by a bullet, the player health decreases by one.
      */
     public void hit() {
         setHealth(getHealth() - 1);
     }
 
     /**
-     *
+     * Restorse player health and position.
      */
     public void reset() {
         health = 3;

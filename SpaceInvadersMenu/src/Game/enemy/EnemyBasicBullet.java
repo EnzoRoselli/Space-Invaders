@@ -20,8 +20,8 @@ public class EnemyBasicBullet {
 
     /**
      * The constructor creates a new bullet in an specified X,Y coordinates.
-     * @param xPos Specified X coordinate where the bullet is going to be created
-     * @param yPos Specified Y coordinate where the bullet is going to be created     
+     * @param xPos Specified X coordinate where the bullet is going to be created.
+     * @param yPos Specified Y coordinate where the bullet is going to be created.    
      */
     public EnemyBasicBullet(double xPos, double yPos) {
         bullet = new Rectangle((int) xPos, (int) yPos, 5, 10);
@@ -64,9 +64,8 @@ public class EnemyBasicBullet {
      * Updates bullet status.
      * @param delta optimal speed.
      * @param blocks Four blocks bunker.
-     * @param player Spaceship.
      */
-    public void update(double delta, BasicBlocks blocks, Player player) {
+    public void update(double delta, BasicBlocks blocks) {
 
         if (bullet == null) {
             return;

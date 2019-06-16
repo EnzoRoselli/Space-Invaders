@@ -43,7 +43,7 @@ public class EnemyBulletHandler {
     public void update(double delta, BasicBlocks blocks, Player player) {
 
         for (int i = 0; i < weaponTypes.size(); i++) {
-            weaponTypes.get(i).update(delta, blocks, player);
+            weaponTypes.get(i).update(delta, blocks);
             if (weaponTypes.get(i).collision(player.getRect())) {
                 weaponTypes.remove(i);
                 player.hit();

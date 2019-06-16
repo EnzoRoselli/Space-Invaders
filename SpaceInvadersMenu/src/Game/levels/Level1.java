@@ -9,8 +9,9 @@ import java.util.ArrayList;
 import Game.sound.Sound;
 
 /**
- *
+ * This class contains the level configuration. Enemies, player, bullets and sounds.
  * @author InvadersTeam
+ * @since March 2019
  */
 public class Level1 {
 
@@ -22,9 +23,9 @@ public class Level1 {
     private EnemyBasic e;
 
     /**
-     *
-     * @param player
-     * @param bulletHandler
+     * This constructor assigns a player, a bullet, .wav files to the sound attributes and it also adds enemies.
+     * @param player Player which will be assigned.
+     * @param bulletHandler Bullet Handler which will be assigned.
      */
     public Level1(Player player, EnemyBulletHandler bulletHandler) {
         this.player = player;
@@ -36,7 +37,7 @@ public class Level1 {
     }
 
     /**
-     *
+     * Draws the enemies and their bullets.
      * @param g
      */
     public void draw(Graphics2D g) {
@@ -52,9 +53,9 @@ public class Level1 {
     }
 
     /**
-     *
-     * @param delta
-     * @param blocks
+     * Updates enemies, player and bunker status. It also makes the invaders to change their direction.
+     * @param delta Optimal speed.
+     * @param blocks Four blocks bunker.
      */
     public void update(double delta, BasicBlocks blocks) {
 
@@ -74,8 +75,8 @@ public class Level1 {
     }
 
     /**
-     *
-     * @param delta
+     * Changes invaders direction when they get to  the screen limits.
+     * @param delta Optimal speed.
      */
     public void hasDirectionChange(double delta) {
 
@@ -91,8 +92,8 @@ public class Level1 {
     }
 
     /**
-     *
-     * @param delta
+     * Change direction and sound of all invaders. 
+     * @param delta Optimal speed.
      */
     public void changeDirectionAllEnemies(double delta) {
 
@@ -111,7 +112,7 @@ public class Level1 {
     }
 
     /**
-     *
+     * Adds enemies to the screen.
      */
     public void addEnemies() {
         for (int y = 0; y < 5; y++) {
@@ -122,16 +123,19 @@ public class Level1 {
         }
     }
 
+    
+    
+    
     /**
-     *
-     * @param blocks
-     * @return
+     * Checks out if the player looses.
+     * @param blocks Four blocks bunker.
+     * @return True if the invaders get to the bunker or if player health gets to 0.
      */
     public boolean isGameOver(BasicBlocks blocks) {
 
         boolean check = false;
 
-        for (int i = 0; i < enemies.size() /*&& enemies.get(i).collideEnemiesBlocks(i, blocks, enemies)*/; i++) {
+        for (int i = 0; i < enemies.size() ; i++) {
             if (enemies != null) {
                 if (enemies.get(i).collideEnemiesBlocks(blocks, enemies)) {
                     return true;
@@ -146,15 +150,15 @@ public class Level1 {
     }
 
     /**
-     *
-     * @return
+     * Checks if the player get to kill all invaders.
+     * @return True if all invaders were destroyed.
      */
     public boolean isComplete() {
         return enemies.isEmpty(); //Metodo de java, devuelve true si el array esta vacio
     }
 
     /**
-     *
+     * Resets the level.
      */
     public void reset() {
         player.reset();
