@@ -1,8 +1,10 @@
 package Model;
 
+import Controller.ScoreAndUserCatcher;
 import MVC.Interface.*;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -48,6 +50,31 @@ public class SQL implements Iquerys, ImessageForUser {
     }
 
     /**
+     *
+     * @return
+     */
+    public TreeMap dataBaseToTreeMap() {
+        TreeMap<Integer,String> users = new TreeMap();
+        
+        try {
+            pStatement = connectionDB().prepareStatement("SELECT * FROM BASE_USUARIOS.USUARIO");
+            resultset = pStatement.executeQuery();
+
+            while (resultset.next()) {
+                users.put((Integer)resultset.getInt("score"), resultset.getString("nickName"));
+            }
+
+            resultset.close();
+            pStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, FILE_NOT_FOUND);
+            e.printStackTrace();
+        }
+        return users;
+    }
+    
+    /**
      * Checks out in the database if the acces credentials are valid.
      * @param user_gmail Player gmail account.
      * @param password Player password..
@@ -81,31 +108,6 @@ public class SQL implements Iquerys, ImessageForUser {
     }
 
     /**
-     *
-     * @return An Arraylist of String with all the nicknames registered in the data base.
-     */
-    public ArrayList<String> dataBaseToArray() {
-        ArrayList<String> users = new ArrayList();
-        
-        try {
-            pStatement = connectionDB().prepareStatement("SELECT * FROM BASE_USUARIOS.USUARIO");
-            resultset = pStatement.executeQuery();
-
-            while (resultset.next()) {
-                users.add(resultset.getString("nickName"));
-            }
-
-            resultset.close();
-            pStatement.close();
-            connection.close();
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, FILE_NOT_FOUND);
-            e.printStackTrace();
-        }
-        return users;
-    }
-
-    /**
      * Signs in a new player.
      * @param name Player name.
      * @param lastName Player lastname.
@@ -122,6 +124,22 @@ public class SQL implements Iquerys, ImessageForUser {
             pStatement.setString(1, nickName);
             pStatement.setString(2, password);
             pStatement.setString(5, gmail);
+            pStatement.setInt(6, 0);
+            pStatement.execute();
+            pStatement.close();
+            connection.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(SQL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void updateScoreDB(){
+    try {
+            pStatement = connectionDB().prepareStatement("UPDATE base_usuarios.usuario SET score=? WHERE (mail=? || nickName=?) && (score<?)");
+            pStatement.setInt(1, ScoreAndUserCatcher.getScore());
+            pStatement.setString(2, ScoreAndUserCatcher.getGmailAndNick());
+            pStatement.setString(3, ScoreAndUserCatcher.getGmailAndNick());
+            pStatement.setInt(4, ScoreAndUserCatcher.getScore());
             pStatement.execute();
             pStatement.close();
             connection.close();
@@ -167,4 +185,5 @@ public class SQL implements Iquerys, ImessageForUser {
         }
         return check;
     }
+
 }

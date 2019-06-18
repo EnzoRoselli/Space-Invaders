@@ -6,6 +6,7 @@ import Model.SQL;
 import Game.display.Display;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -22,8 +23,10 @@ public class Menu extends javax.swing.JFrame implements ImessageForUser {
     private LogIn myLogIn;
     private SettingsMenu mySettings;
     private SQL statement;
-    private JSON jsonHandler;
+    private BestPlayer bestPlayers;
     private VisibleFramesHandler visible;
+    private BestPlayers bestPlayersForm;
+    private BestPlayer bestPlayerHandler;
     //private Display game;
 
     /**
@@ -33,6 +36,8 @@ public class Menu extends javax.swing.JFrame implements ImessageForUser {
         initComponents();
         visible = new VisibleFramesHandler();
         setIconImage(new ImageIcon(getClass().getResource(ICON_ROUTE)).getImage());
+        bestPlayers = new BestPlayer();
+        bestPlayerHandler = new BestPlayer();
     }
 
     @SuppressWarnings("unchecked")
@@ -120,21 +125,11 @@ public class Menu extends javax.swing.JFrame implements ImessageForUser {
     }//GEN-LAST:event_settingsBtnActionPerformed
 
     private void bestPlayersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bestPlayersBtnActionPerformed
-        statement = new SQL();
-        jsonHandler = new JSON();
-        ArrayList<String> players = statement.dataBaseToArray();
-        JSONArray array = new JSONArray();
-        JSONObject object = new JSONObject();
         try {
-            for (String e : players) {
-                array.put(jsonHandler.getFormatoJson(e));
-            }
-            object.put("best players", players);
-            jsonHandler.createJSON(object);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        } catch (IOException ex) {
-            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+            visible.invisibleFrame(this);
+            bestPlayerHandler.listJSON();
+        } catch (JSONException ex) {
+            Logger.getLogger(BestPlayers.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_bestPlayersBtnActionPerformed
 

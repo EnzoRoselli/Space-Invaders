@@ -134,6 +134,7 @@ public class SignIn extends javax.swing.JFrame implements ImessageForUser {
         error = control.signInManager(error, user, number.randomNumber());
         if (error.equals(NO)) {
             confirmationCode = new ConfirmationCode(user, number.getLastRandom());
+            ScoreAndUserCatcher.setGmail(this.gmailTxt.getText());
             visible.invisibleAndVisibleFrame(this, confirmationCode);
         } else {
             JOptionPane.showMessageDialog(this, error);

@@ -5,8 +5,8 @@ package Controller;
  * @author InvadersTeam
  */
 public class ScoreAndUserCatcher {
-    private static int score;
-    private static String gmail;
+    private static int score=0;
+    private static String gmail="";
 
     public static int getScore() {
         return score;
@@ -16,7 +16,7 @@ public class ScoreAndUserCatcher {
         ScoreAndUserCatcher.score = score;
     }
 
-    public static String getGmail() {
+    public static String getGmailAndNick() {
         return gmail;
     }
 

@@ -2,6 +2,7 @@ package Controller;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -20,13 +21,15 @@ public class JSON {
 
     /**
      * Adds an object to Json file using "nickname" as the object name.
-     * @param player String with player information.
+     * @param 
      * @return Json object.
      * @throws JSONException
      */
-    public JSONObject getFormatoJson(String player) throws JSONException {
+    public JSONObject getFormatoJson(Integer score, String nickName) throws JSONException {
         JSONObject objeto = new JSONObject();
-        objeto.put("nickName",player);
+        objeto.put("score",score);
+        objeto.put("nickName",nickName);
+        
         return objeto;
     }
     
