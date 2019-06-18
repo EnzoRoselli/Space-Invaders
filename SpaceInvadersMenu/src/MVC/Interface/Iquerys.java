@@ -1,7 +1,7 @@
 package MVC.Interface;
 
 /**
- *
+ * This interface contains auxiliar strings for SQL management.
  * @author InvadersTeam
  */
 public interface Iquerys {

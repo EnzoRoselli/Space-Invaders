@@ -8,8 +8,12 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * This class
  * @author InvadersTeam
+ * @since March 2019
+ * @see iquerys.
+ * @see imessageForUser. 
+ * 
  */
 public class SQL implements Iquerys, ImessageForUser {
 
@@ -25,8 +29,8 @@ public class SQL implements Iquerys, ImessageForUser {
     }
 
     /**
-     *
-     * @return
+     * Makes the connection with the data base.
+     * @return Connection status.
      */
     public Connection connectionDB() {
         try {
@@ -44,10 +48,14 @@ public class SQL implements Iquerys, ImessageForUser {
     }
 
     /**
-     *
-     * @param user_gmail
-     * @param password
-     * @return
+     * Checks out in the database if the acces credentials are valid.
+     * @param user_gmail Player gmail account.
+     * @param password Player password..
+     * @return A String with an error message if either user or password where wrong or "NO" if 
+     * the acces credentials where correct.
+     * @see iquerys.
+     * @see imessageForUser.
+     * 
      */
     public String logInDB(String user_gmail, String password) {
         String check = NO;
@@ -74,7 +82,7 @@ public class SQL implements Iquerys, ImessageForUser {
 
     /**
      *
-     * @return
+     * @return An Arraylist of String with all the nicknames registered in the data base.
      */
     public ArrayList<String> dataBaseToArray() {
         ArrayList<String> users = new ArrayList();
@@ -98,12 +106,12 @@ public class SQL implements Iquerys, ImessageForUser {
     }
 
     /**
-     *
-     * @param name
-     * @param lastName
-     * @param nickName
-     * @param password
-     * @param gmail
+     * Signs in a new player.
+     * @param name Player name.
+     * @param lastName Player lastname.
+     * @param nickName Player nickname.
+     * @param password Player password.
+     * @param gmail Player gmail account.
      */
     public void signInDB(String name, String lastName, String nickName, String password, String gmail) {
         String query = INSERTUSER;
@@ -123,10 +131,13 @@ public class SQL implements Iquerys, ImessageForUser {
     }
 
     /**
-     *
-     * @param nickName
-     * @param gmail
-     * @return
+     * Checks out in the data base if either the nickname or email account 
+     * chosen by the new player are already used.
+     * @param nickName Player nickname.
+     * @param gmail Player gmail account.
+     * @return "NO" if neither nickname or email are already used. <p>
+     * "user" if nickname is already used.<p>
+     * "gmail" if nickname is already used.
      */
     public String nicknameOrGmailUsed(String nickName, String gmail) { //agregar genericidad aca
         String check = NO;

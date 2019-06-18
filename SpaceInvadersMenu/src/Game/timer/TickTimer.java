@@ -1,8 +1,9 @@
 package Game.timer;
 
 /**
- *
+ * This class creates the timer mechanism.
  * @author InvadersTeam
+ * @since March 2019
  */
 public class TickTimer {
 
@@ -18,8 +19,8 @@ public class TickTimer {
     }
 
     /**
-     *
-     * @param delta
+     * Increments tick by frame.
+     * @param delta Optimal speed.
      */
     public void tick(double delta) {
         if (tick <= tickTarget) {
@@ -28,8 +29,8 @@ public class TickTimer {
     }
 
     /**
-     *
-     * @return
+     * Resets timer when it reaches the time limit.
+     * @return true if reset.
      */
     public boolean isEventReady() {
         if (tick >= tickTarget) {
@@ -38,7 +39,11 @@ public class TickTimer {
         }
         return false;
     }
-
+    
+    
+    /**
+     * Resets timer.
+     */
     private void resetTimer() {
         tick = 0;
     }
