@@ -1,19 +1,16 @@
 package Controller;
 
 /**
- * This abstract class is the abstraction of a person.<p>
- * User has Person as a superclass.
+ *
  * @author InvadersTeam
- * @since March 2019.
- * @see User.
  */
 public abstract class Person {
     private final String name,lastName;
 
     /**
-     * This constructor receives and assigns the new person information.
-     * @param name Person's name.
-     * @param lastName Person's lastname.
+     *
+     * @param name
+     * @param lastName
      */
     public Person(String name, String lastName) {
         this.name = name;
@@ -22,7 +19,7 @@ public abstract class Person {
 
     /**
      *
-     * @return Person's name.
+     * @return
      */
     public String getName() {
         return name;
@@ -30,7 +27,7 @@ public abstract class Person {
 
     /**
      *
-     * @return Person's lastname.
+     * @return
      */
     public String getLastName() {
         return lastName;
@@ -38,7 +35,7 @@ public abstract class Person {
     
     /**
      *
-     * @return Welcome message.
+     * @return
      */
     public abstract String showWelcome();
 }

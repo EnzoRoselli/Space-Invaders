@@ -3,8 +3,8 @@ package Controller;
 /**
  *
  * @author InvadersTeam
- * @param <K> Extends javax.swing.JFrame.
- * @param <T> Extends javax.swing.JFrame.
+ * @param <K>
+ * @param <T>
  */
 public class VisibleFramesHandler<K extends javax.swing.JFrame, T extends javax.swing.JFrame> {
    
@@ -16,9 +16,9 @@ public class VisibleFramesHandler<K extends javax.swing.JFrame, T extends javax.
     }
 
     /**
-     * Exchange current frame with new frame.
-     * @param frame Current frame. Must extend from javax.swing.JFrame.
-     * @param newFrame New frame. Must extend from javax.swing.JFrame.
+     *
+     * @param frame
+     * @param newFrame
      */
     public void invisibleAndVisibleFrame(T frame, K newFrame) {
         frame.setVisible(false);
@@ -28,8 +28,8 @@ public class VisibleFramesHandler<K extends javax.swing.JFrame, T extends javax.
     }
     
     /**
-     * Sets a frame visible.
-     * @param frame Must extend from javax.swing.JFrame.
+     *
+     * @param frame
      */
     public void visibleFrame(T frame) {
         frame.setVisible(true);
@@ -37,8 +37,8 @@ public class VisibleFramesHandler<K extends javax.swing.JFrame, T extends javax.
     }
     
     /**
-     * Sets a frame invisible.
-     * @param frame Must extend from javax.swing.JFrame.
+     *
+     * @param frame
      */
     public void invisibleFrame(T frame) {
         frame.setVisible(false);

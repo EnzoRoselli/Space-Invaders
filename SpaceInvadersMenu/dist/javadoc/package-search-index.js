@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"Controller"},{"l":"Game.blocks"},{"l":"Game.display"},{"l":"Game.enemy"},{"l":"Game.game_screen"},{"l":"Game.levels"},{"l":"Game.player"},{"l":"Game.sound"},{"l":"Game.sprite"},{"l":"Game.timer"},{"l":"Juego"},{"l":"Model"},{"l":"MVC"},{"l":"MVC.Interface"},{"l":"View"}]

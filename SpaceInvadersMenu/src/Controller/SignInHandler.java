@@ -15,9 +15,8 @@ import javax.mail.internet.MimeMessage;
 import javax.activation.DataHandler;
 
 /**
- * This class allows to manage a new user registration.
+ *
  * @author InvadersTeam
- * @since March 2019
  */
 public class SignInHandler implements Iencryption,ImessageForUser{
 
@@ -105,10 +104,9 @@ public class SignInHandler implements Iencryption,ImessageForUser{
     }
 
     /**
-     * Checks out if all form fields are completed.
-     * @param user New user.
-     * @return "NO" if form is not completed.
-     * @see ImessageForUser.
+     *
+     * @param user
+     * @return
      */
     public String textAreasCompleted(User user) {
         if (user.getName().equals("") || user.getLastName().equals("") || user.getNickName().equals("")
@@ -119,10 +117,9 @@ public class SignInHandler implements Iencryption,ImessageForUser{
     }
 
     /**
-     * checks out if either nickname or gmail chosen by new user are available.
-     * @param user New user.
-     * @return "NO" if either nickname or gmail chosen by new user are available.
-     * @see ImessageForUser.
+     *
+     * @param user
+     * @return
      */
     public String gmailAndNicknameUsed(User user) {
         String catcher = statement.nicknameOrGmailUsed(user.getNickName(), user.getGmail());
@@ -133,10 +130,9 @@ public class SignInHandler implements Iencryption,ImessageForUser{
     }
 
     /**
-     * Compares control password with password.
-     * @param user New user.
-     * @return DIFFERENT_PASS if the control password doesn't match the password.
-     * @see ImessageForUser.
+     *
+     * @param user
+     * @return
      */
     public String comparePasswords(User user) {
         if (!user.getPassword().equals(user.getRePassword())) {
@@ -146,20 +142,18 @@ public class SignInHandler implements Iencryption,ImessageForUser{
     }
 
     /**
-     * Shows a welcome message.
-     * @param user New user.
-     * @return String with a welcome message.
+     *
+     * @param user
+     * @return
      */
     public String showWelcomeMessage(User user) {
         return user.showWelcome();
     }
 
     /**
-     * Verifies if the email account has a valid format.
-     * @param correo New user email account.
-     * @return "NO" if the email is valid<p>
-     * INSERT_VALID_GMAIL if it is not a valid email account.
-     * @see ImessageForUser.
+     *
+     * @param correo
+     * @return
      */
     public String isEmail(String correo) {
         Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
@@ -171,13 +165,10 @@ public class SignInHandler implements Iencryption,ImessageForUser{
     }
 
     /**
-     * Validates the new user  gmail acoount.
-     * @param gmail New user gmail account.
+     *
+     * @param gmail
      * @param random
-     * @return ."NO" if the gmail account exists.<p>
-     * "INVALID_EMAIL" if the gmail account doesn't exists.
-     * 
-     * @see ImessageForUser.
+     * @return
      */
     public String gmailValidated(String gmail, String random) {
         try {
