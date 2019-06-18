@@ -10,7 +10,7 @@ public interface Iencryption {
 
     /**
      *
-     * @param pass String password.
+     * @param pass
      * @return
      */
     String encryptedPassword(String pass);

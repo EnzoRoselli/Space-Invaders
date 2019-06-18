@@ -1,5 +1,8 @@
 package Controller;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * This class creates a new player.
  * @author InvadersTeam
