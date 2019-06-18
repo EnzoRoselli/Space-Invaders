@@ -1,7 +1,7 @@
 package MVC.Interface;
 
 /**
- * This interface contains auxiliar strings for SQL management.
+ *
  * @author InvadersTeam
  */
 public interface Iquerys {
@@ -44,5 +44,5 @@ public interface Iquerys {
     /**
      *
      */
-    public final String INSERTUSER = "INSERT INTO base_usuarios.usuario (nickName, password, nombre, apellido, mail) VALUES (?,?,?,?,?);";
+    public final String INSERTUSER = "INSERT INTO base_usuarios.usuario (nickName, password, nombre, apellido, mail, score) VALUES (?,?,?,?,?,?);";
 }

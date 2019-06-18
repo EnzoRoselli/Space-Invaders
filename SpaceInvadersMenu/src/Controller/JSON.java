@@ -24,9 +24,11 @@ public class JSON {
      * @return
      * @throws JSONException
      */
-    public JSONObject getFormatoJson(String player) throws JSONException {
+    public JSONObject getFormatoJson(Integer score, String nickName) throws JSONException {
         JSONObject objeto = new JSONObject();
-        objeto.put("nickName",player);
+        objeto.put("score",score);
+        objeto.put("nickName",nickName);
+        
         return objeto;
     }
     

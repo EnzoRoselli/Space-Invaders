@@ -56,7 +56,6 @@ public class SignIn extends javax.swing.JFrame implements ImessageForUser {
         jLabel2.setText("Last name:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 98, -1));
 
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Nickname:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 98, -1));
 
@@ -65,8 +64,8 @@ public class SignIn extends javax.swing.JFrame implements ImessageForUser {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 98, -1));
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Repeat password:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 130, -1));
+        jLabel5.setText("<html>Repeat password:<html>");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 60, -1));
         jPanel1.add(lastNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 170, -1));
         jPanel1.add(nickNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 170, -1));
 
@@ -134,6 +133,7 @@ public class SignIn extends javax.swing.JFrame implements ImessageForUser {
         error = control.signInManager(error, user, number.randomNumber());
         if (error.equals(NO)) {
             confirmationCode = new ConfirmationCode(user, number.getLastRandom());
+            ScoreAndUserCatcher.setGmail(this.gmailTxt.getText());
             visible.invisibleAndVisibleFrame(this, confirmationCode);
         } else {
             JOptionPane.showMessageDialog(this, error);
