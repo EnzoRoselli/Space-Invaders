@@ -1,0 +1,1142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="SpaceInvadersMenu">
+  <ClassDiagramComponents>
+    <Class name="BestPlayer" package="Controller" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="statement" type="SQL" visibility="private"/>
+        <Field name="jsonHandler" type="JSON" visibility="private"/>
+        <Field name="bestPlayersForm" type="BestPlayers" visibility="private"/>
+        <Field name="visible" type="VisibleFramesHandler" visibility="private"/>
+        <Field name="users" type="ArrayList&lt;OnlyBestPlayerUser&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="treeMapToJSON" returnType="String" visibility="public"/>
+        <Method name="JSONList" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="JSON" package="Controller" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getFormatoJson" returnType="JSONObject" visibility="public">
+          <Argument type="Integer" name="score"/>
+          <Argument type="String" name="nickName"/>
+        </Method>
+        <Method name="createJSON" returnType="void" visibility="public">
+          <Argument type="JSONObject" name="object"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LogInHandler" package="Controller" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="statement" type="SQL" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="logInManager" returnType="String" visibility="public">
+          <Argument type="String" name="error"/>
+          <Argument type="Session" name="sesion"/>
+        </Method>
+        <Method name="maximumSize" returnType="String" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="minimumSize" returnType="String" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="textAreasCompleted" returnType="String" visibility="public">
+          <Argument type="Session" name="sesion"/>
+        </Method>
+        <Method name="encryptedPassword" returnType="String" visibility="public">
+          <Argument type="String" name="pass"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Maths" package="Controller" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="INTERVAL" type="int" visibility="private" isFinal="true"/>
+        <Field name="random" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getLastRandom" returnType="String" visibility="public"/>
+        <Method name="randomNumber" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="OnlyBestPlayerUser" package="Controller" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="score" type="Integer" visibility="private"/>
+        <Field name="nickName" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="score"/>
+          <Argument type="String" name="nickName"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getScore" returnType="Integer" visibility="public"/>
+        <Method name="setScore" returnType="void" visibility="public">
+          <Argument type="int" name="score"/>
+        </Method>
+        <Method name="getNickName" returnType="String" visibility="public"/>
+        <Method name="setNickName" returnType="void" visibility="public">
+          <Argument type="String" name="nickName"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Person" package="Controller" visibility="public" isAbstract="true" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="lastName"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="getLastName" returnType="String" visibility="public"/>
+        <Method name="showWelcome" returnType="String" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="ScoreAndUserCatcher" package="Controller" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="score" type="int" visibility="private" isStatic="true"/>
+        <Field name="gmail" type="String" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getScore" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="setScore" returnType="void" visibility="public" isStatic="true">
+          <Argument type="int" name="score"/>
+        </Method>
+        <Method name="getGmailAndNick" returnType="String" visibility="public" isStatic="true"/>
+        <Method name="setGmail" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="gmail"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Security" package="Controller" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getHash" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="txt"/>
+          <Argument type="String" name="hashType"/>
+        </Method>
+        <Method name="md5" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="txt"/>
+        </Method>
+        <Method name="sha1" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="txt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Session" package="Controller" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="user_gmail" type="String" visibility="private"/>
+        <Field name="password" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="user"/>
+          <Argument type="String" name="password"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getUser_gmail" returnType="String" visibility="public"/>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="SignInHandler" package="Controller" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="statement" type="SQL" visibility="private"/>
+        <Field name="number" type="Maths" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="signInManager" returnType="String" visibility="public">
+          <Argument type="String" name="error"/>
+          <Argument type="User" name="user"/>
+          <Argument type="String" name="code"/>
+        </Method>
+        <Method name="encryptedPassword" returnType="String" visibility="public">
+          <Argument type="String" name="pass"/>
+        </Method>
+        <Method name="minimumSize" returnType="String" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="maximumSize" returnType="String" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="textAreasCompleted" returnType="String" visibility="public">
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="gmailAndNicknameUsed" returnType="String" visibility="public">
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="comparePasswords" returnType="String" visibility="public">
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="showWelcomeMessage" returnType="String" visibility="public">
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="isEmail" returnType="String" visibility="public">
+          <Argument type="String" name="correo"/>
+        </Method>
+        <Method name="gmailValidated" returnType="String" visibility="public">
+          <Argument type="String" name="gmail"/>
+          <Argument type="String" name="random"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="User" package="Controller" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields>
+        <Field name="nickName" type="String" visibility="private"/>
+        <Field name="rePassword" type="String" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="lastName"/>
+          <Argument type="String" name="nickName"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="rePassword"/>
+          <Argument type="String" name="gmail"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getGmail" returnType="String" visibility="public"/>
+        <Method name="getRePassword" returnType="String" visibility="public"/>
+        <Method name="getNickName" returnType="String" visibility="public"/>
+        <Method name="setNickName" returnType="void" visibility="public">
+          <Argument type="String" name="nickName"/>
+        </Method>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setPassword" returnType="void" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="getMail" returnType="String" visibility="public"/>
+        <Method name="setMail" returnType="void" visibility="public">
+          <Argument type="String" name="gmail"/>
+        </Method>
+        <Method name="showWelcome" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="VisibleFramesHandler" package="Controller" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="invisibleAndVisibleFrame" returnType="void" visibility="public">
+          <Argument type="T" name="frame"/>
+          <Argument type="K" name="newFrame"/>
+        </Method>
+        <Method name="visibleFrame" returnType="void" visibility="public">
+          <Argument type="T" name="frame"/>
+        </Method>
+        <Method name="invisibleFrame" returnType="void" visibility="public">
+          <Argument type="T" name="frame"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BasicBlocks" package="Game.blocks" visibility="public" xPosition="1220.0" yPosition="420.0">
+      <Fields>
+        <Field name="wall" type="ArrayList&lt;Rectangle&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getWall" returnType="ArrayList&lt;Rectangle&gt;" visibility="public"/>
+        <Method name="draw" returnType="void" visibility="public">
+          <Argument type="Graphics2D" name="g"/>
+        </Method>
+        <Method name="Bunker" returnType="void" visibility="public">
+          <Argument type="int" name="xPos"/>
+          <Argument type="int" name="yPos"/>
+        </Method>
+        <Method name="row" returnType="void" visibility="public">
+          <Argument type="int" name="rows"/>
+          <Argument type="int" name="xPos"/>
+          <Argument type="int" name="yPos"/>
+        </Method>
+        <Method name="reset" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Display" package="Game.display" visibility="public" xPosition="1520.0" yPosition="420.0">
+      <Fields>
+        <Field name="WIDTH" type="int" visibility="private" isStatic="true"/>
+        <Field name="running" type="boolean" visibility="private"/>
+        <Field name="thread" type="Thread" visibility="private"/>
+        <Field name="frames" type="int" visibility="private" isStatic="true"/>
+        <Field name="level" type="Level1" visibility="private"/>
+        <Field name="FPS" type="int" visibility="private"/>
+        <Field name="show" type="Display" visibility="private" isStatic="true"/>
+        <Field name="menu" type="Menu" visibility="private" isStatic="true"/>
+        <Field name="visible" type="VisibleFramesHandler" visibility="private"/>
+        <Field name="game" type="GameScreen" visibility="private" isStatic="true"/>
+        <Field name="frame" type="JFrame" visibility="private" isStatic="true"/>
+        <Field name="statement" type="SQL" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="executeGame" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="getWIDTH" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="getHEIGHT" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="start" returnType="void" visibility="public" isSynchronized="true"/>
+        <Method name="stop" returnType="void" visibility="public" isSynchronized="true"/>
+        <Method name="run" returnType="void" visibility="public"/>
+        <Method name="draw" returnType="boolean" visibility="public">
+          <Argument type="BufferStrategy" name="bs"/>
+        </Method>
+        <Method name="update" returnType="boolean" visibility="public">
+          <Argument type="double" name="delta"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="EnemyBasic" package="Game.enemy" visibility="public" xPosition="1820.0" yPosition="420.0">
+      <Fields>
+        <Field name="speed" type="double" visibility="private"/>
+        <Field name="rect" type="Rectangle" visibility="private"/>
+        <Field name="enemySprite" type="SpriteAnimation" visibility="private"/>
+        <Field name="bulletHandler" type="EnemyBulletHandler" visibility="private"/>
+        <Field name="shootTime" type="int" visibility="private"/>
+        <Field name="shootTimer" type="Timer" visibility="private"/>
+        <Field name="explosionSound" type="Sound" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="xPos"/>
+          <Argument type="double" name="yPos"/>
+          <Argument type="int" name="rows"/>
+          <Argument type="int" name="columns"/>
+          <Argument type="EnemyBulletHandler" name="bulletHandler"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRect" returnType="Rectangle" visibility="public"/>
+        <Method name="getBulletHandler" returnType="EnemyBulletHandler" visibility="public"/>
+        <Method name="setRect" returnType="void" visibility="public">
+          <Argument type="Rectangle" name="rect"/>
+        </Method>
+        <Method name="draw" returnType="void" visibility="public">
+          <Argument type="Graphics2D" name="g"/>
+        </Method>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="double" name="delta"/>
+          <Argument type="Player" name="player"/>
+          <Argument type="BasicBlocks" name="blocks"/>
+        </Method>
+        <Method name="changeDirection" returnType="void" visibility="public">
+          <Argument type="double" name="delta"/>
+        </Method>
+        <Method name="deathScene" returnType="boolean" visibility="public"/>
+        <Method name="collidePlayerBullet" returnType="boolean" visibility="public">
+          <Argument type="int" name="i"/>
+          <Argument type="Player" name="player"/>
+          <Argument type="ArrayList&lt;EnemyBasic&gt;" name="enemies"/>
+        </Method>
+        <Method name="collideEnemiesBlocks" returnType="boolean" visibility="public">
+          <Argument type="BasicBlocks" name="blocks"/>
+          <Argument type="ArrayList&lt;EnemyBasic&gt;" name="enemies"/>
+        </Method>
+        <Method name="isOutOfBounds" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EnemyBasicBullet" package="Game.enemy" visibility="public" xPosition="2120.0" yPosition="420.0">
+      <Fields>
+        <Field name="bullet" type="Rectangle" visibility="private"/>
+        <Field name="speed" type="double" visibility="private"/>
+        <Field name="xPos" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="xPos"/>
+          <Argument type="double" name="yPos"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setxPos" returnType="void" visibility="public">
+          <Argument type="int" name="xPos"/>
+        </Method>
+        <Method name="setyPos" returnType="void" visibility="public">
+          <Argument type="int" name="yPos"/>
+        </Method>
+        <Method name="draw" returnType="void" visibility="public">
+          <Argument type="Graphics2D" name="g"/>
+        </Method>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="double" name="delta"/>
+          <Argument type="BasicBlocks" name="blocks"/>
+        </Method>
+        <Method name="collision" returnType="boolean" visibility="public">
+          <Argument type="Rectangle" name="rect"/>
+        </Method>
+        <Method name="destroy" returnType="boolean" visibility="public"/>
+        <Method name="wallCollide" returnType="void" visibility="protected">
+          <Argument type="BasicBlocks" name="blocks"/>
+        </Method>
+        <Method name="isOutofBounds" returnType="void" visibility="protected"/>
+        <Method name="getxPos" returnType="int" visibility="public"/>
+        <Method name="getyPos" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EnemyBulletHandler" package="Game.enemy" visibility="public" xPosition="20.0" yPosition="820.0">
+      <Fields>
+        <Field name="weaponTypes" type="ArrayList&lt;EnemyBasicBullet&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="addBullet" returnType="void" visibility="public">
+          <Argument type="EnemyBasicBullet" name="weaponType"/>
+        </Method>
+        <Method name="draw" returnType="void" visibility="public">
+          <Argument type="Graphics2D" name="g"/>
+        </Method>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="double" name="delta"/>
+          <Argument type="BasicBlocks" name="blocks"/>
+          <Argument type="Player" name="player"/>
+        </Method>
+        <Method name="reset" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GameScreen" package="Game.game_screen" visibility="public" xPosition="320.0" yPosition="820.0">
+      <Fields>
+        <Field name="player" type="Player" visibility="private"/>
+        <Field name="blocks" type="BasicBlocks" visibility="private"/>
+        <Field name="level" type="Level1" visibility="private"/>
+        <Field name="SCORE" type="int" visibility="private" isStatic="true"/>
+        <Field name="bulletHandler" type="EnemyBulletHandler" visibility="private"/>
+        <Field name="gameOverTimer" type="TickTimer" visibility="private"/>
+        <Field name="completeTimer" type="TickTimer" visibility="private"/>
+        <Field name="gameScreen" type="Font" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getSCORE" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="setSCORE" returnType="void" visibility="public" isStatic="true">
+          <Argument type="int" name="SCORE"/>
+        </Method>
+        <Method name="update" returnType="boolean" visibility="public">
+          <Argument type="double" name="delta"/>
+        </Method>
+        <Method name="draw" returnType="boolean" visibility="public">
+          <Argument type="Graphics2D" name="g"/>
+        </Method>
+        <Method name="initCanvas" returnType="void" visibility="public">
+          <Argument type="Canvas" name="canvas"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Level1" package="Game.levels" visibility="public" xPosition="620.0" yPosition="820.0">
+      <Fields>
+        <Field name="player" type="Player" visibility="private"/>
+        <Field name="enemies" type="ArrayList&lt;EnemyBasic&gt;" visibility="private"/>
+        <Field name="bulletHandler" type="EnemyBulletHandler" visibility="private"/>
+        <Field name="beep" type="Sound" visibility="private"/>
+        <Field name="beepboop" type="boolean" visibility="private"/>
+        <Field name="e" type="EnemyBasic" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Player" name="player"/>
+          <Argument type="EnemyBulletHandler" name="bulletHandler"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public">
+          <Argument type="Graphics2D" name="g"/>
+        </Method>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="double" name="delta"/>
+          <Argument type="BasicBlocks" name="blocks"/>
+        </Method>
+        <Method name="hasDirectionChange" returnType="void" visibility="public">
+          <Argument type="double" name="delta"/>
+        </Method>
+        <Method name="changeDirectionAllEnemies" returnType="void" visibility="public">
+          <Argument type="double" name="delta"/>
+        </Method>
+        <Method name="addEnemies" returnType="void" visibility="public"/>
+        <Method name="isGameOver" returnType="boolean" visibility="public">
+          <Argument type="BasicBlocks" name="blocks"/>
+        </Method>
+        <Method name="isComplete" returnType="boolean" visibility="public"/>
+        <Method name="reset" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MachineGun" package="Game.player" visibility="public" xPosition="920.0" yPosition="820.0">
+      <Fields>
+        <Field name="bullet" type="Rectangle" visibility="private"/>
+        <Field name="speed" type="double" visibility="private" isFinal="true"/>
+        <Field name="xPos" type="double" visibility="private"/>
+        <Field name="width" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="xPos"/>
+          <Argument type="double" name="yPos"/>
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getxPos" returnType="double" visibility="public"/>
+        <Method name="getyPos" returnType="double" visibility="public"/>
+        <Method name="getWidth" returnType="int" visibility="public"/>
+        <Method name="getHeight" returnType="int" visibility="public"/>
+        <Method name="setxPos" returnType="void" visibility="public">
+          <Argument type="double" name="xPos"/>
+        </Method>
+        <Method name="setyPos" returnType="void" visibility="public">
+          <Argument type="double" name="yPos"/>
+        </Method>
+        <Method name="setWidth" returnType="void" visibility="public">
+          <Argument type="int" name="width"/>
+        </Method>
+        <Method name="setHeight" returnType="void" visibility="public">
+          <Argument type="int" name="height"/>
+        </Method>
+        <Method name="draw" returnType="void" visibility="public">
+          <Argument type="Graphics2D" name="g"/>
+        </Method>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="double" name="delta"/>
+          <Argument type="BasicBlocks" name="blocks"/>
+        </Method>
+        <Method name="collisionRect" returnType="boolean" visibility="public">
+          <Argument type="Rectangle" name="rect"/>
+        </Method>
+        <Method name="collisionPoly" returnType="boolean" visibility="public">
+          <Argument type="Polygon" name="poly"/>
+        </Method>
+        <Method name="destroy" returnType="boolean" visibility="public"/>
+        <Method name="wallCollide" returnType="void" visibility="protected">
+          <Argument type="BasicBlocks" name="blocks"/>
+        </Method>
+        <Method name="isOutofBounds" returnType="void" visibility="protected"/>
+      </Methods>
+    </Class>
+    <Class name="Player" package="Game.player" visibility="public" xPosition="1220.0" yPosition="820.0">
+      <Fields>
+        <Field name="speed" type="double" visibility="private" isFinal="true"/>
+        <Field name="health" type="int" visibility="private"/>
+        <Field name="pSprite" type="BufferedImage" visibility="private"/>
+        <Field name="xPos" type="double" visibility="private"/>
+        <Field name="width" type="int" visibility="private"/>
+        <Field name="rect" type="Rectangle" visibility="private"/>
+        <Field name="blocks" type="BasicBlocks" visibility="private"/>
+        <Field name="playerWeapons" type="PlayerWeapon" visibility="private"/>
+        <Field name="left" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="xPos"/>
+          <Argument type="double" name="yPos"/>
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+          <Argument type="BasicBlocks" name="blocks"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPlayerWeapon" returnType="PlayerWeapon" visibility="public"/>
+        <Method name="getRect" returnType="Rectangle" visibility="public"/>
+        <Method name="getHealth" returnType="int" visibility="public"/>
+        <Method name="setHealth" returnType="void" visibility="public">
+          <Argument type="int" name="health"/>
+        </Method>
+        <Method name="draw" returnType="void" visibility="public">
+          <Argument type="Graphics2D" name="g"/>
+        </Method>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="double" name="delta"/>
+        </Method>
+        <Method name="hit" returnType="void" visibility="public"/>
+        <Method name="reset" returnType="void" visibility="public"/>
+        <Method name="keyTyped" returnType="void" visibility="public">
+          <Argument type="KeyEvent" name="e"/>
+        </Method>
+        <Method name="keyPressed" returnType="void" visibility="public">
+          <Argument type="KeyEvent" name="e"/>
+        </Method>
+        <Method name="keyReleased" returnType="void" visibility="public">
+          <Argument type="KeyEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PlayerWeapon" package="Game.player" visibility="public" xPosition="1520.0" yPosition="820.0">
+      <Fields>
+        <Field name="timer" type="Timer" visibility="private"/>
+        <Field name="weapons" type="ArrayList&lt;MachineGun&gt;" visibility="private"/>
+        <Field name="shootSound" type="Sound" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getWeapons" returnType="ArrayList&lt;MachineGun&gt;" visibility="public"/>
+        <Method name="draw" returnType="void" visibility="public">
+          <Argument type="Graphics2D" name="g"/>
+        </Method>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="double" name="delta"/>
+          <Argument type="BasicBlocks" name="blocks"/>
+        </Method>
+        <Method name="shootBullet" returnType="void" visibility="public">
+          <Argument type="double" name="xPos"/>
+          <Argument type="double" name="yPos"/>
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+        </Method>
+        <Method name="reset" returnType="void" visibility="package"/>
+      </Methods>
+    </Class>
+    <Class name="Sound" package="Game.sound" visibility="public" xPosition="1820.0" yPosition="820.0">
+      <Fields>
+        <Field name="soundClip" type="Clip" visibility="private"/>
+        <Field name="url" type="URL" visibility="private"/>
+        <Field name="audioInputStream" type="AudioInputStream" visibility="private"/>
+        <Field name="format" type="AudioFormat" visibility="private"/>
+        <Field name="info" type="DataLine.Info" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="path"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="LineEvent" name="event"/>
+        </Method>
+        <Method name="play" returnType="void" visibility="public"/>
+        <Method name="loop" returnType="void" visibility="public"/>
+        <Method name="stop" returnType="void" visibility="public"/>
+        <Method name="isPlaying" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="SpriteAnimation" package="Game.sprite" visibility="public" xPosition="2120.0" yPosition="820.0">
+      <Fields>
+        <Field name="sprites" type="ArrayList&lt;BufferedImage&gt;" visibility="private"/>
+        <Field name="currentSprite" type="byte" visibility="private"/>
+        <Field name="loop" type="boolean" visibility="private"/>
+        <Field name="play" type="boolean" visibility="private"/>
+        <Field name="destroyAfterAnim" type="boolean" visibility="private"/>
+        <Field name="timer" type="Timer" visibility="private"/>
+        <Field name="animationSpeed" type="int" visibility="private"/>
+        <Field name="xPos" type="double" visibility="private"/>
+        <Field name="width" type="int" visibility="private"/>
+        <Field name="limit" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="xPos"/>
+          <Argument type="double" name="yPos"/>
+          <Argument type="int" name="rows"/>
+          <Argument type="int" name="columns"/>
+          <Argument type="int" name="animationSpeed"/>
+          <Argument type="String" name="imgPath"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public">
+          <Argument type="Graphics2D" name="g"/>
+        </Method>
+        <Method name="update" returnType="void" visibility="public"/>
+        <Method name="stopAnimation" returnType="void" visibility="public"/>
+        <Method name="resetSprite" returnType="void" visibility="public"/>
+        <Method name="loopAnimation" returnType="void" visibility="private"/>
+        <Method name="playAnimation" returnType="void" visibility="private"/>
+        <Method name="getCurrentSprite" returnType="byte" visibility="public"/>
+        <Method name="setCurrentSprite" returnType="void" visibility="public">
+          <Argument type="byte" name="currentSprite"/>
+        </Method>
+        <Method name="isLoop" returnType="boolean" visibility="public"/>
+        <Method name="setLoop" returnType="void" visibility="public">
+          <Argument type="boolean" name="loop"/>
+        </Method>
+        <Method name="isSpriteAnimDestroyed" returnType="boolean" visibility="public"/>
+        <Method name="addSprite" returnType="void" visibility="public">
+          <Argument type="BufferedImage" name="spriteMap"/>
+          <Argument type="int" name="xPos"/>
+          <Argument type="int" name="yPos"/>
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+        </Method>
+        <Method name="setPlay" returnType="void" visibility="public">
+          <Argument type="boolean" name="play"/>
+          <Argument type="boolean" name="destroyAfterAnim"/>
+        </Method>
+        <Method name="getxPos" returnType="double" visibility="public"/>
+        <Method name="setxPos" returnType="void" visibility="public">
+          <Argument type="double" name="xPos"/>
+        </Method>
+        <Method name="getyPos" returnType="double" visibility="public"/>
+        <Method name="setyPos" returnType="void" visibility="public">
+          <Argument type="double" name="yPos"/>
+        </Method>
+        <Method name="isDestroyAfterAnim" returnType="boolean" visibility="public"/>
+        <Method name="setDestroyAfterAnim" returnType="void" visibility="public">
+          <Argument type="boolean" name="destroyAfterAnim"/>
+        </Method>
+        <Method name="getWidth" returnType="int" visibility="public"/>
+        <Method name="setWidth" returnType="void" visibility="public">
+          <Argument type="int" name="width"/>
+        </Method>
+        <Method name="getHeight" returnType="int" visibility="public"/>
+        <Method name="setHeight" returnType="void" visibility="public">
+          <Argument type="int" name="height"/>
+        </Method>
+        <Method name="getAnimationSpeed" returnType="int" visibility="public"/>
+        <Method name="setAnimationSpeed" returnType="void" visibility="public">
+          <Argument type="int" name="animationSpeed"/>
+        </Method>
+        <Method name="getLimit" returnType="int" visibility="public"/>
+        <Method name="setLimit" returnType="void" visibility="public">
+          <Argument type="int" name="limit"/>
+        </Method>
+        <Method name="resetLimit" returnType="void" visibility="public"/>
+        <Method name="getPlay" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TickTimer" package="Game.timer" visibility="public" xPosition="20.0" yPosition="1220.0">
+      <Fields>
+        <Field name="tick" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="float" name="tickTarget"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="tick" returnType="void" visibility="public">
+          <Argument type="double" name="delta"/>
+        </Method>
+        <Method name="isEventReady" returnType="boolean" visibility="public"/>
+        <Method name="resetTimer" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="Timer" package="Game.timer" visibility="public" xPosition="320.0" yPosition="1220.0">
+      <Fields>
+        <Field name="prevTime" type="long" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getPrevTime" returnType="long" visibility="public"/>
+        <Method name="setPrevTime" returnType="void" visibility="public">
+          <Argument type="long" name="prevTime"/>
+        </Method>
+        <Method name="resetTimer" returnType="void" visibility="public"/>
+        <Method name="timerEvent" returnType="boolean" visibility="public">
+          <Argument type="int" name="timer"/>
+        </Method>
+        <Method name="isTimerReady" returnType="boolean" visibility="public">
+          <Argument type="int" name="timer"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SimulacionJuego" package="Juego" visibility="public" xPosition="620.0" yPosition="1220.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="SQL" package="Model" visibility="public" xPosition="920.0" yPosition="1220.0">
+      <Fields>
+        <Field name="statement" type="Statement" visibility="private"/>
+        <Field name="pStatement" type="PreparedStatement" visibility="private"/>
+        <Field name="connection" type="Connection" visibility="private"/>
+        <Field name="resultset" type="ResultSet" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="connectionDB" returnType="Connection" visibility="public"/>
+        <Method name="dataBaseToTreeMap" returnType="TreeMap" visibility="public"/>
+        <Method name="logInDB" returnType="String" visibility="public">
+          <Argument type="String" name="user_gmail"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="signInDB" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="lastName"/>
+          <Argument type="String" name="nickName"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="gmail"/>
+        </Method>
+        <Method name="updateScoreDB" returnType="void" visibility="public"/>
+        <Method name="nicknameOrGmailUsed" returnType="String" visibility="public">
+          <Argument type="String" name="nickName"/>
+          <Argument type="String" name="gmail"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Iencryption" package="MVC.Interface" visibility="public" xPosition="1220.0" yPosition="1220.0">
+      <Methods>
+        <Method name="encryptedPassword" returnType="String" visibility="package">
+          <Argument type="String" name="pass"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="ImessageForUser" package="MVC.Interface" visibility="public" xPosition="1520.0" yPosition="1220.0">
+      <Methods/>
+    </Interface>
+    <Interface name="Iquerys" package="MVC.Interface" visibility="public" xPosition="1820.0" yPosition="1220.0">
+      <Methods/>
+    </Interface>
+    <Class name="Main" package="MVC" visibility="public" xPosition="2120.0" yPosition="1220.0">
+      <Fields>
+        <Field name="visible" type="VisibleFramesHandler" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BestPlayers" package="View" visibility="public" xPosition="20.0" yPosition="1620.0">
+      <Fields>
+        <Field name="bestPlayerHandler" type="BestPlayer" visibility="private"/>
+        <Field name="visible" type="VisibleFramesHandler" visibility="private"/>
+        <Field name="myMenu" type="Menu" visibility="private"/>
+        <Field name="btnBack" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTableBestPlayers" type="javax.swing.JTable" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="btnBackActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="listBestPlayers" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;OnlyBestPlayerUser&gt;" name="users"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ConfirmationCode" package="View" visibility="public" xPosition="320.0" yPosition="1620.0">
+      <Fields>
+        <Field name="lastRandom" type="String" visibility="private"/>
+        <Field name="myMenu" type="Menu" visibility="private"/>
+        <Field name="control" type="SignInHandler" visibility="private"/>
+        <Field name="user" type="User" visibility="private"/>
+        <Field name="visible" type="VisibleFramesHandler" visibility="private"/>
+        <Field name="insertBtn" type="javax.swing.JButton" visibility="private"/>
+        <Field name="insertCodeTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="User" name="user"/>
+          <Argument type="String" name="random"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="insertBtnActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LogIn" package="View" visibility="public" xPosition="620.0" yPosition="1620.0">
+      <Fields>
+        <Field name="mySignIn" type="SignUp" visibility="private"/>
+        <Field name="myMenu" type="Menu" visibility="private"/>
+        <Field name="control" type="LogInHandler" visibility="private"/>
+        <Field name="sesion" type="Session" visibility="private"/>
+        <Field name="visible" type="VisibleFramesHandler" visibility="private"/>
+        <Field name="SignInBtn" type="javax.swing.JButton" visibility="private"/>
+        <Field name="exitBtn" type="javax.swing.JButton" visibility="private"/>
+        <Field name="forgotPasswordBtn" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="logInBtn" type="javax.swing.JButton" visibility="private"/>
+        <Field name="passwordText" type="javax.swing.JPasswordField" visibility="private"/>
+        <Field name="userText" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="userTextActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="SignInBtnActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="logInBtnMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="logInBtnActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="exitBtnActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Menu" package="View" visibility="public" xPosition="920.0" yPosition="1620.0">
+      <Fields>
+        <Field name="myLogIn" type="LogIn" visibility="private"/>
+        <Field name="mySettings" type="SettingsMenu" visibility="private"/>
+        <Field name="statement" type="SQL" visibility="private"/>
+        <Field name="bestPlayers" type="BestPlayer" visibility="private"/>
+        <Field name="visible" type="VisibleFramesHandler" visibility="private"/>
+        <Field name="bestPlayersForm" type="BestPlayers" visibility="private"/>
+        <Field name="bestPlayerHandler" type="BestPlayer" visibility="private"/>
+        <Field name="bestPlayersBtn" type="javax.swing.JButton" visibility="private"/>
+        <Field name="exitBtn" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="playBtn" type="javax.swing.JButton" visibility="private"/>
+        <Field name="settingsBtn" type="javax.swing.JButton" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="playBtnActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="exitBtnActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="settingsBtnActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="bestPlayersBtnActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="NewPassword" package="View" visibility="public" xPosition="1220.0" yPosition="1620.0">
+      <Fields>
+        <Field name="gmailTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="newPassTxt" type="javax.swing.JPasswordField" visibility="private"/>
+        <Field name="passTxt" type="javax.swing.JPasswordField" visibility="private"/>
+        <Field name="repeatNewPassTxt" type="javax.swing.JPasswordField" visibility="private"/>
+        <Field name="sendBtn" type="javax.swing.JButton" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="SettingsMenu" package="View" visibility="public" xPosition="1520.0" yPosition="1620.0">
+      <Fields>
+        <Field name="myMenu" type="Menu" visibility="private"/>
+        <Field name="visible" type="VisibleFramesHandler" visibility="private"/>
+        <Field name="changePassBtn" type="javax.swing.JButton" visibility="private"/>
+        <Field name="exitBtn" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="skinsBtn" type="javax.swing.JButton" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="exitBtnActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="changePassBtnActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SignUp" package="View" visibility="public" xPosition="1820.0" yPosition="1620.0">
+      <Fields>
+        <Field name="confirmationCode" type="ConfirmationCode" visibility="private"/>
+        <Field name="control" type="SignInHandler" visibility="private"/>
+        <Field name="user" type="User" visibility="private"/>
+        <Field name="number" type="Maths" visibility="private"/>
+        <Field name="visible" type="VisibleFramesHandler" visibility="private"/>
+        <Field name="myLogIn" type="LogIn" visibility="private"/>
+        <Field name="SignInBtn" type="javax.swing.JButton" visibility="private"/>
+        <Field name="backBtn" type="javax.swing.JButton" visibility="private"/>
+        <Field name="gmailTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="lastNameTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="nameTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="nickNameTxt" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="passwordTxt" type="javax.swing.JPasswordField" visibility="private"/>
+        <Field name="rePasswordTxt" type="javax.swing.JPasswordField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="SignInBtnActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="passwordTxtActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="gmailTxtActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="backBtnActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="visible" source="MVC.Main" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.player.Player" target="Game.player.PlayerWeapon" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="shootSound" source="Game.player.PlayerWeapon" target="Game.sound.Sound" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="control" source="View.SignUp" target="Controller.SignInHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="timer" source="Game.player.PlayerWeapon" target="Game.timer.Timer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Controller.SignInHandler" target="MVC.Interface.ImessageForUser"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="View.SignUp" target="MVC.Interface.ImessageForUser"/>
+    <HasRelation name="bulletHandler" source="Game.levels.Level1" target="Game.enemy.EnemyBulletHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="explosionSound" source="Game.enemy.EnemyBasic" target="Game.sound.Sound" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="game" source="Game.display.Display" target="Game.game_screen.GameScreen" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Model.SQL" target="MVC.Interface.Iquerys"/>
+    <HasRelation name="bulletHandler" source="Game.enemy.EnemyBasic" target="Game.enemy.EnemyBulletHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="completeTimer" source="Game.game_screen.GameScreen" target="Game.timer.TickTimer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bestPlayerHandler" source="View.BestPlayers" target="Controller.BestPlayer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="statement" source="Controller.SignInHandler" target="Model.SQL" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Controller.LogInHandler" target="MVC.Interface.Iencryption"/>
+    <HasRelation name="user" source="View.ConfirmationCode" target="Controller.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mySettings" source="View.Menu" target="View.SettingsMenu" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="SettingsMenu"/>
+    <HasRelation name="bestPlayersForm" source="Controller.BestPlayer" target="View.BestPlayers" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="statement" source="Game.display.Display" target="Model.SQL" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="control" source="View.LogIn" target="Controller.LogInHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="playerWeapons" source="Game.player.Player" target="Game.player.PlayerWeapon" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="menu" source="Game.display.Display" target="View.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="player" source="Game.levels.Level1" target="Game.player.Player" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="View.Menu" target="MVC.Interface.ImessageForUser"/>
+    <HasRelation name="enemySprite" source="Game.enemy.EnemyBasic" target="Game.sprite.SpriteAnimation" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="myLogIn" source="View.Menu" target="View.LogIn" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="timer" source="Game.sprite.SpriteAnimation" target="Game.timer.Timer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="control" source="View.ConfirmationCode" target="Controller.SignInHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="statement" source="View.Menu" target="Model.SQL" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.player.PlayerWeapon" target="Game.player.MachineGun" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="statement" source="Controller.LogInHandler" target="Model.SQL" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="View.LogIn" target="MVC.Interface.ImessageForUser"/>
+    <HasRelation name="visible" source="Game.display.Display" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="enemies" source="Game.levels.Level1" target="Game.enemy.EnemyBasic" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;EnemyBasic&gt;"/>
+    <HasRelation name="level" source="Game.display.Display" target="Game.levels.Level1" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="View.BestPlayers" target="Game.player.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Controller.User" target="Controller.Person"/>
+    <UseRelation source="Game.enemy.EnemyBasic" target="Game.enemy.EnemyBulletHandler" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.enemy.EnemyBasic" target="Game.player.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="player" source="Game.game_screen.GameScreen" target="Game.player.Player" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="visible" source="View.ConfirmationCode" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="shootTimer" source="Game.enemy.EnemyBasic" target="Game.timer.Timer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="visible" source="View.LogIn" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bestPlayersForm" source="View.Menu" target="View.BestPlayers" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="number" source="View.SignUp" target="Controller.Maths" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="level" source="Game.game_screen.GameScreen" target="Game.levels.Level1" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.player.MachineGun" target="Game.blocks.BasicBlocks" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bestPlayerHandler" source="View.Menu" target="Controller.BestPlayer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="myMenu" source="View.ConfirmationCode" target="View.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Model.SQL" target="MVC.Interface.ImessageForUser"/>
+    <HasRelation name="statement" source="Controller.BestPlayer" target="Model.SQL" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.player.PlayerWeapon" target="Game.blocks.BasicBlocks" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="users" source="Controller.BestPlayer" target="Controller.OnlyBestPlayerUser" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;OnlyBestPlayerUser&gt;"/>
+    <UseRelation source="Controller.LogInHandler" target="Controller.Session" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mySignIn" source="View.LogIn" target="View.SignUp" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="blocks" source="Game.player.Player" target="Game.blocks.BasicBlocks" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="myMenu" source="View.LogIn" target="View.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="myMenu" source="View.SettingsMenu" target="View.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bulletHandler" source="Game.game_screen.GameScreen" target="Game.enemy.EnemyBulletHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Controller.LogInHandler" target="MVC.Interface.ImessageForUser"/>
+    <HasRelation name="e" source="Game.levels.Level1" target="Game.enemy.EnemyBasic" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="myLogIn" source="View.SignUp" target="View.LogIn" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.enemy.EnemyBulletHandler" target="Game.enemy.EnemyBasicBullet" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Controller.JSON" target="Controller.JSON" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="visible" source="View.Menu" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="visible" source="View.SettingsMenu" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.enemy.EnemyBulletHandler" target="Game.player.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="user" source="View.SignUp" target="Controller.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.enemy.EnemyBasicBullet" target="Game.blocks.BasicBlocks" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Controller.SignInHandler" target="Controller.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bestPlayers" source="View.Menu" target="Controller.BestPlayer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="number" source="Controller.SignInHandler" target="Controller.Maths" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="weaponTypes" source="Game.enemy.EnemyBulletHandler" target="Game.enemy.EnemyBasicBullet" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;EnemyBasicBullet&gt;"/>
+    <HasRelation name="blocks" source="Game.game_screen.GameScreen" target="Game.blocks.BasicBlocks" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="visible" source="View.BestPlayers" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="gameOverTimer" source="Game.game_screen.GameScreen" target="Game.timer.TickTimer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="beep" source="Game.levels.Level1" target="Game.sound.Sound" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="weapons" source="Game.player.PlayerWeapon" target="Game.player.MachineGun" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MachineGun&gt;"/>
+    <HasRelation name="visible" source="View.SignUp" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="show" source="Game.display.Display" target="Game.display.Display" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="View.ConfirmationCode" target="MVC.Interface.ImessageForUser"/>
+    <HasRelation name="visible" source="Controller.BestPlayer" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Controller.SignInHandler" target="MVC.Interface.Iencryption"/>
+    <HasRelation name="jsonHandler" source="Controller.BestPlayer" target="Controller.JSON" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="sesion" source="View.LogIn" target="Controller.Session" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="myMenu" source="View.BestPlayers" target="View.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.enemy.EnemyBasic" target="Game.enemy.EnemyBasic" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.levels.Level1" target="Game.blocks.BasicBlocks" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="confirmationCode" source="View.SignUp" target="View.ConfirmationCode" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
