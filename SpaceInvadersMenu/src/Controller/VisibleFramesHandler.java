@@ -1,7 +1,7 @@
 package Controller;
 
 /**
- *
+ * This generic class is used to manage the frames exchange.
  * @author InvadersTeam
  * @param <K> Extends javax.swing.JFrame.
  * @param <T> Extends javax.swing.JFrame.

@@ -13,6 +13,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * This class is used to get the best player using tree map and Json.
+ * User has Person as a superclass.
+ * @author InvadersTeam
+ * @since March 2019.
+ * @see User.
+ */
 public class BestPlayer {
 
     private SQL statement;
@@ -21,27 +28,34 @@ public class BestPlayer {
     private VisibleFramesHandler visible;
     private ArrayList<OnlyBestPlayerUser> users;
 
+    /**
+     *
+     */
     public BestPlayer() {
         visible = new VisibleFramesHandler();
         bestPlayersForm = new BestPlayers();
         users = new ArrayList<OnlyBestPlayerUser>();
     }
 
+    /**
+     * This class creates a Json object from a tree map of best players.
+     * @return String with a tree map of best players in Json format.
+     */
     public String treeMapToJSON() {
         statement = new SQL();
         jsonHandler = new JSON();
         TreeMap<Integer, String> players = statement.dataBaseToTreeMap();
-        JSONArray array = new JSONArray();
+        JSONArray jsonArray  = new JSONArray();
         JSONObject jsonObject = new JSONObject();
         try {
             for (Map.Entry<Integer, String> entry : players.entrySet()) {
                 Integer key = entry.getKey();
                 String value = entry.getValue();
 
-                array.put(jsonHandler.getFormatoJson(key, value));
+                jsonArray.put(jsonHandler.getFormatoJson(key, value));
             }
 
-            jsonObject.put("best players", array);
+            jsonObject.put("best players", jsonArray);
             jsonHandler.createJSON(jsonObject);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -52,6 +66,10 @@ public class BestPlayer {
         return jsonObject.toString();
     }
 
+    /**
+     * Gets the best player information.
+     * @throws JSONException
+     */
     public void JSONList() throws JSONException {
         JSONObject answer = new JSONObject(this.treeMapToJSON());
         JSONArray bestPlayersList = answer.getJSONArray("best players");
