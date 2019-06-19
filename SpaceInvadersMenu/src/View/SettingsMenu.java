@@ -38,10 +38,11 @@ public class SettingsMenu extends javax.swing.JFrame {
         jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(290, 360));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(102, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setLayout(null);
 
         changePassBtn.setText("Change password");
         changePassBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -49,10 +50,12 @@ public class SettingsMenu extends javax.swing.JFrame {
                 changePassBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(changePassBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 126, -1));
+        jPanel1.add(changePassBtn);
+        changePassBtn.setBounds(80, 80, 150, 21);
 
         skinsBtn.setText("Skins");
-        jPanel1.add(skinsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 126, -1));
+        jPanel1.add(skinsBtn);
+        skinsBtn.setBounds(80, 150, 150, 21);
 
         exitBtn.setText("Exit");
         exitBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -60,10 +63,12 @@ public class SettingsMenu extends javax.swing.JFrame {
                 exitBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 126, -1));
+        jPanel1.add(exitBtn);
+        exitBtn.setBounds(80, 210, 150, 21);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/pikachu2.gif"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 360));
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(0, 0, 290, 350);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 290, 360);

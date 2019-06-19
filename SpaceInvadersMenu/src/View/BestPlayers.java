@@ -33,12 +33,16 @@ public class BestPlayers extends javax.swing.JFrame {
         jTableBestPlayers = new javax.swing.JTable();
         btnBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTableBestPlayers.setAutoCreateRowSorter(true);
+        jTableBestPlayers.setBackground(new java.awt.Color(102, 102, 102));
+        jTableBestPlayers.setForeground(new java.awt.Color(255, 255, 255));
         jTableBestPlayers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {" ", " "},
@@ -55,10 +59,19 @@ public class BestPlayers extends javax.swing.JFrame {
             new String [] {
                 "Nickname", "Score"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTableBestPlayers.setSelectionBackground(new java.awt.Color(0, 51, 255));
         jScrollPane1.setViewportView(jTableBestPlayers);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 340, 180));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 340, 180));
 
         btnBack.setBackground(new java.awt.Color(0, 0, 0));
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
@@ -68,12 +81,17 @@ public class BestPlayers extends javax.swing.JFrame {
                 btnBackActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, 140, 30));
+        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 310, 140, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/banana.gif"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 370));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/computer.gif"))); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Microsoft YaHei", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("BEST PLAYERS");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, 180, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/starwars.gif"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 370, 370));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -116,6 +134,7 @@ public class BestPlayers extends javax.swing.JFrame {
     private javax.swing.JButton btnBack;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableBestPlayers;
