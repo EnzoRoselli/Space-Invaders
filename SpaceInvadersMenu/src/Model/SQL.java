@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- * This class
+ * This class is used to manage to connection with the data base.
  * @author InvadersTeam
  * @since March 2019
  * @see iquerys.
