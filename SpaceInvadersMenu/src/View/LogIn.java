@@ -37,24 +37,27 @@ public class LogIn extends javax.swing.JFrame implements ImessageForUser {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setLayout(null);
 
         userText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userTextActionPerformed(evt);
             }
         });
-        jPanel2.add(userText, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 220, 20));
+        jPanel2.add(userText);
+        userText.setBounds(100, 100, 220, 20);
 
         jLabel1.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("User");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 60, -1));
+        jPanel2.add(jLabel1);
+        jLabel1.setBounds(20, 100, 60, 14);
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Password");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 60, -1));
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(20, 150, 60, 14);
 
         logInBtn.setText("Log in");
         logInBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -67,7 +70,8 @@ public class LogIn extends javax.swing.JFrame implements ImessageForUser {
                 logInBtnActionPerformed(evt);
             }
         });
-        jPanel2.add(logInBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 100, -1));
+        jPanel2.add(logInBtn);
+        logInBtn.setBounds(100, 210, 100, 23);
 
         SignInBtn.setText("Sign up");
         SignInBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -75,8 +79,10 @@ public class LogIn extends javax.swing.JFrame implements ImessageForUser {
                 SignInBtnActionPerformed(evt);
             }
         });
-        jPanel2.add(SignInBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 210, 100, -1));
-        jPanel2.add(passwordText, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 220, -1));
+        jPanel2.add(SignInBtn);
+        SignInBtn.setBounds(216, 210, 100, 23);
+        jPanel2.add(passwordText);
+        passwordText.setBounds(100, 150, 220, 20);
 
         exitBtn.setText("Exit");
         exitBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -84,18 +90,22 @@ public class LogIn extends javax.swing.JFrame implements ImessageForUser {
                 exitBtnActionPerformed(evt);
             }
         });
-        jPanel2.add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, 80, -1));
+        jPanel2.add(exitBtn);
+        exitBtn.setBounds(660, 10, 80, 23);
 
         forgotPasswordBtn.setBackground(new java.awt.Color(51, 153, 255));
         forgotPasswordBtn.setForeground(new java.awt.Color(255, 255, 255));
         forgotPasswordBtn.setText("Forgot Password?");
-        jPanel2.add(forgotPasswordBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 251, 220, 30));
+        jPanel2.add(forgotPasswordBtn);
+        forgotPasswordBtn.setBounds(100, 251, 220, 30);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/invaderGif.gif"))); // NOI18N
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, -10, 370, 340));
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(380, -10, 370, 340);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/stars.gif"))); // NOI18N
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 320));
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(0, 0, 380, 320);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
