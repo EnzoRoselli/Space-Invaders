@@ -44,5 +44,5 @@ public interface Iquerys {
     /**
      *
      */
-    public final String INSERTUSER = "INSERT INTO base_usuarios.usuario (nickName, password, nombre, apellido, mail) VALUES (?,?,?,?,?);";
+    public final String INSERTUSER = "INSERT INTO base_usuarios.usuario (nickName, password, nombre, apellido, mail,score) VALUES (?,?,?,?,?,?);";
 }

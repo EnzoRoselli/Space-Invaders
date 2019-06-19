@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class LogIn extends javax.swing.JFrame implements ImessageForUser {
 
-    private SignIn mySignIn;
+    private SignUp mySignIn;
     private Menu myMenu;
     private LogInHandler control;
     private Session sesion;
@@ -116,7 +116,7 @@ public class LogIn extends javax.swing.JFrame implements ImessageForUser {
     }//GEN-LAST:event_userTextActionPerformed
 
     private void SignInBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignInBtnActionPerformed
-        mySignIn = new SignIn();
+        mySignIn = new SignUp();
         visible.invisibleAndVisibleFrame(this, mySignIn);
     }//GEN-LAST:event_SignInBtnActionPerformed
 

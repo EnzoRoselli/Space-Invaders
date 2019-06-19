@@ -38,7 +38,6 @@ public class SQL implements Iquerys, ImessageForUser {
         try {
             Class.forName(DRIVER);
             connection = DriverManager.getConnection(PORT, USER, PASSWORD);
-            System.out.println("Successful connection");
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Connection failed");//Provisional , acomodar bien con clase exceptions
             Logger.getLogger(SQL.class.getName()).log(Level.SEVERE, null, ex);

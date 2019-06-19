@@ -4,7 +4,7 @@ import Model.SQL;
 import View.BestPlayers;
 import View.Menu;
 import java.io.IOException;
-import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.logging.Level;
@@ -19,10 +19,12 @@ public class BestPlayer {
     private JSON jsonHandler;
     private BestPlayers bestPlayersForm;
     private VisibleFramesHandler visible;
-    
+    private ArrayList<OnlyBestPlayerUser> users;
+
     public BestPlayer() {
         visible = new VisibleFramesHandler();
         bestPlayersForm = new BestPlayers();
+        users = new ArrayList<OnlyBestPlayerUser>();
     }
 
     public String treeMapToJSON() {
@@ -36,7 +38,7 @@ public class BestPlayer {
                 Integer key = entry.getKey();
                 String value = entry.getValue();
 
-                array.put(jsonHandler.getFormatoJson(key,value));
+                array.put(jsonHandler.getFormatoJson(key, value));
             }
 
             jsonObject.put("best players", array);
@@ -46,25 +48,18 @@ public class BestPlayer {
         } catch (IOException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return jsonObject.toString();
     }
-    
-    public void listJSON() throws JSONException{
-    JSONObject answer = new JSONObject(this.treeMapToJSON()); 
-    JSONArray bestPlayersList = answer.getJSONArray("best players");
-    int x=20,y=100,width=60,height=-1;
-    String list="";
-    
-        for (int i = bestPlayersList.length()-1; i >= 0; i--) {
-            answer = bestPlayersList.getJSONObject(i);
-            list="Nick Name: "+answer.getString("nickName")+"\nScore: "+answer.getInt("score");
-            bestPlayersForm.listBestPlayers(list,x,y+=20,width,height);
-        }
-        
-        
-        visible.visibleFrame(bestPlayersForm);
-    }
-    
 
+    public void JSONList() throws JSONException {
+        JSONObject answer = new JSONObject(this.treeMapToJSON());
+        JSONArray bestPlayersList = answer.getJSONArray("best players");
+
+        for (int i = bestPlayersList.length()-1; i >=0 ; i--) {
+            answer = bestPlayersList.getJSONObject(i);
+            users.add(new OnlyBestPlayerUser(answer.getInt("score"), answer.getString("nickName"))); // variable anonima
+        }
+        bestPlayersForm.listBestPlayers(users);
+    }
 }

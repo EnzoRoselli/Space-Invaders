@@ -39,6 +39,7 @@ public class SettingsMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(102, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         changePassBtn.setText("Change password");
         changePassBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -46,8 +47,10 @@ public class SettingsMenu extends javax.swing.JFrame {
                 changePassBtnActionPerformed(evt);
             }
         });
+        jPanel1.add(changePassBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 126, -1));
 
         skinsBtn.setText("Skins");
+        jPanel1.add(skinsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 126, -1));
 
         exitBtn.setText("Exit");
         exitBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -55,40 +58,17 @@ public class SettingsMenu extends javax.swing.JFrame {
                 exitBtnActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(134, 134, 134)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(changePassBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
-                    .addComponent(skinsBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(exitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(140, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(changePassBtn)
-                .addGap(28, 28, 28)
-                .addComponent(skinsBtn)
-                .addGap(27, 27, 27)
-                .addComponent(exitBtn)
-                .addContainerGap(116, Short.MAX_VALUE))
-        );
+        jPanel1.add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 126, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

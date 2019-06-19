@@ -9,6 +9,7 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferStrategy;
 import javax.swing.JFrame;
 import Game.levels.Level1;
+import Model.SQL;
 
 /**
  *
@@ -27,15 +28,17 @@ public class Display extends Canvas implements Runnable {
     private VisibleFramesHandler visible;
     private static GameScreen game;
     private static JFrame frame;
+    private SQL statement;
 
     /**
      *
      */
     public Display() {
 
+        statement=new SQL();
         menu = new Menu();
         visible = new VisibleFramesHandler();
-
+        
         setSize(WIDTH, HEIGHT);
         setFocusable(true);
 
@@ -147,7 +150,7 @@ public class Display extends Canvas implements Runnable {
                 timer += 1000;
                 FPS = frames;
                 frames = 0;
-                System.out.println(FPS);
+                //System.out.println(FPS); //FPS
             }
 
             draw(bs);
@@ -159,7 +162,7 @@ public class Display extends Canvas implements Runnable {
             };
             
             if (bool) {
-
+                statement.updateScoreDB();
                 visible.invisibleAndVisibleFrame(frame, menu);
                 show.stop();
             }

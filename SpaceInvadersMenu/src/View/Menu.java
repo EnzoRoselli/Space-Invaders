@@ -34,6 +34,7 @@ public class Menu extends javax.swing.JFrame implements ImessageForUser {
      */
     public Menu() {
         initComponents();
+        bestPlayersForm=new BestPlayers();
         visible = new VisibleFramesHandler();
         setIconImage(new ImageIcon(getClass().getResource(ICON_ROUTE)).getImage());
         bestPlayers = new BestPlayer();
@@ -127,7 +128,7 @@ public class Menu extends javax.swing.JFrame implements ImessageForUser {
     private void bestPlayersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bestPlayersBtnActionPerformed
         try {
             visible.invisibleFrame(this);
-            bestPlayerHandler.listJSON();
+            bestPlayerHandler.JSONList();
         } catch (JSONException ex) {
             Logger.getLogger(BestPlayers.class.getName()).log(Level.SEVERE, null, ex);
         }

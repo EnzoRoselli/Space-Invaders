@@ -1,8 +1,13 @@
 package View;
 
 import Controller.BestPlayer;
+import Controller.OnlyBestPlayerUser;
+import Controller.VisibleFramesHandler;
+import static MVC.Interface.ImessageForUser.ICON_ROUTE;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import org.json.JSONException;
@@ -10,9 +15,13 @@ import org.json.JSONException;
 public class BestPlayers extends javax.swing.JFrame {
 
     private BestPlayer bestPlayerHandler;
+    private VisibleFramesHandler visible;
+    private Menu myMenu;
 
     public BestPlayers() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource(ICON_ROUTE)).getImage());
+        visible = new VisibleFramesHandler();
     }
 
     @SuppressWarnings("unchecked")
@@ -21,88 +30,94 @@ public class BestPlayers extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableBestPlayers = new javax.swing.JTable();
+        btnBack = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTableBestPlayers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {" ", " "},
+                {" ", " "},
+                {" ", " "},
+                {" ", " "},
+                {" ", " "},
+                {" ", " "},
+                {" ", " "},
+                {" ", " "},
+                {" ", " "},
+                {" ", "  "}
             },
             new String [] {
-                "null", "null"
+                "Nickname", "Score"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class
-            };
+        ));
+        jScrollPane1.setViewportView(jTableBestPlayers);
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 340, 180));
+
+        btnBack.setBackground(new java.awt.Color(0, 0, 0));
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, 140, 30));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(121, 121, 121)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(124, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/banana.gif"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 370));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/computer.gif"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 370, 370));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 738, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    public void listBestPlayers(String list,int x,int y,int width,int height) {
-        JLabel bestPlayersTxt = new JLabel();
-        
-        bestPlayersTxt.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
 
-        bestPlayersTxt.setForeground(new java.awt.Color(0, 0, 0));
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        visible.invisibleAndVisibleFrame(this, new Menu());
+    }//GEN-LAST:event_btnBackActionPerformed
+    public void listBestPlayers(ArrayList<OnlyBestPlayerUser> users) {
+        String matrix[][] = new String[users.size()][2];
 
-        bestPlayersTxt.setText("<html>"+list+"<html>");
+        for (int i = 0; i < users.size(); i++) {
+            matrix[i][0] = users.get(i).getNickName();
+            matrix[i][1] = users.get(i).getScore().toString();
+        }
 
-        //x y ancho alto
-        jPanel1.add(bestPlayersTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(x,y,width,height));
-        
+        jTableBestPlayers.setModel(new javax.swing.table.DefaultTableModel(
+                matrix,
+                new String[]{
+                    "Nickname", "Score"
+                }
+        ));
 
+        visible.visibleFrame(this);
     }
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableBestPlayers;
     // End of variables declaration//GEN-END:variables
 }
