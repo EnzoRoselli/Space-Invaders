@@ -8,7 +8,6 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferStrategy;
 import javax.swing.JFrame;
-import Game.levels.Level1;
 import Model.SQL;
 
 /**
@@ -20,9 +19,6 @@ public class Display extends Canvas implements Runnable {
     private static int WIDTH = 800, HEIGHT = 600;
     private boolean running = false;
     private Thread thread;
-    private static int frames = 0;
-    private Level1 level;
-    private int FPS;
     private static Display show;
     private static Menu menu;
     private VisibleFramesHandler visible;
@@ -93,7 +89,7 @@ public class Display extends Canvas implements Runnable {
     /**
      *
      */
-    public synchronized void start() {
+    private synchronized void start() {
 
         if (!running) {
 
@@ -108,7 +104,7 @@ public class Display extends Canvas implements Runnable {
     /**
      *
      */
-    public synchronized void stop() {
+    private synchronized void stop() {
 
         if (running) {
 
@@ -133,6 +129,7 @@ public class Display extends Canvas implements Runnable {
         final int TARGET_FPS = 60; //cuantas actualizaciones queremos por segundo
         final long OPTIMAL_TIME = 1000000000 / TARGET_FPS; //cuantos nanosegundos por actualizacion
         int frames = 0;
+        int FPS;
 
         this.createBufferStrategy(3); //creo los buffers
         BufferStrategy bs = getBufferStrategy(); //se los asigno 

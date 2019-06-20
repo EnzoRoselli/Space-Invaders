@@ -105,7 +105,7 @@ public class SpriteAnimation {
     /**
      * Stops sprite animation
      */
-    public void stopAnimation() {
+    private void stopAnimation() {
         loop = false;
         play = false;
     }
@@ -117,7 +117,7 @@ public class SpriteAnimation {
     /**
      * 
      */
-    public void resetSprite() {
+    private void resetSprite() {
         loop = false;
         play = false;
         currentSprite = 0;
@@ -231,7 +231,7 @@ public class SpriteAnimation {
      * @param width new invader width.
      * @param height new invader height.
      */
-    public void addSprite(BufferedImage spriteMap, int xPos, int yPos,
+    private void addSprite(BufferedImage spriteMap, int xPos, int yPos,
             int width, int height) {
         sprites.add(spriteMap.getSubimage(xPos, yPos, width, height));
     }

@@ -237,7 +237,7 @@
         <Method name="showWelcome" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="VisibleFramesHandler" package="Controller" visibility="public" xPosition="920.0" yPosition="420.0">
+    <Class name="VisibleFramesHandler" package="Controller" visibility="public" xPosition="938.0" yPosition="380.0">
       <Fields/>
       <Constructors>
         <Constructor visibility="public"/>
@@ -638,7 +638,7 @@
         <Method name="isPlaying" returnType="boolean" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="SpriteAnimation" package="Game.sprite" visibility="public" xPosition="2120.0" yPosition="820.0">
+    <Class name="SpriteAnimation" package="Game.sprite" visibility="public" xPosition="2153.0" yPosition="921.0">
       <Fields>
         <Field name="sprites" type="ArrayList&lt;BufferedImage&gt;" visibility="private"/>
         <Field name="currentSprite" type="byte" visibility="private"/>
@@ -798,19 +798,6 @@
         </Method>
       </Methods>
     </Class>
-    <Interface name="Iencryption" package="MVC.Interface" visibility="public" xPosition="1220.0" yPosition="1220.0">
-      <Methods>
-        <Method name="encryptedPassword" returnType="String" visibility="package">
-          <Argument type="String" name="pass"/>
-        </Method>
-      </Methods>
-    </Interface>
-    <Interface name="ImessageForUser" package="MVC.Interface" visibility="public" xPosition="1520.0" yPosition="1220.0">
-      <Methods/>
-    </Interface>
-    <Interface name="Iquerys" package="MVC.Interface" visibility="public" xPosition="1820.0" yPosition="1220.0">
-      <Methods/>
-    </Interface>
     <Class name="Main" package="MVC" visibility="public" xPosition="2120.0" yPosition="1220.0">
       <Fields>
         <Field name="visible" type="VisibleFramesHandler" visibility="public"/>
@@ -822,7 +809,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="BestPlayers" package="View" visibility="public" xPosition="20.0" yPosition="1620.0">
+    <Class name="BestPlayers" package="View" visibility="public" xPosition="20.0" yPosition="1537.0">
       <Fields>
         <Field name="bestPlayerHandler" type="BestPlayer" visibility="private"/>
         <Field name="visible" type="VisibleFramesHandler" visibility="private"/>
@@ -839,8 +826,7 @@
         <Constructor visibility="public"/>
       </Constructors>
       <Methods>
-        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
-void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
         <Method name="btnBackActionPerformed" returnType="void" visibility="private">
           <Argument type="java.awt.event.ActionEvent" name="evt"/>
         </Method>
@@ -849,7 +835,7 @@ void" visibility="private"/>
         </Method>
       </Methods>
     </Class>
-    <Class name="ConfirmationCode" package="View" visibility="public" xPosition="320.0" yPosition="1620.0">
+    <Class name="ConfirmationCode" package="View" visibility="public" xPosition="212.0" yPosition="1620.0">
       <Fields>
         <Field name="lastRandom" type="String" visibility="private"/>
         <Field name="myMenu" type="Menu" visibility="private"/>
@@ -869,14 +855,13 @@ void" visibility="private"/>
         </Constructor>
       </Constructors>
       <Methods>
-        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
-void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
         <Method name="insertBtnActionPerformed" returnType="void" visibility="private">
           <Argument type="java.awt.event.ActionEvent" name="evt"/>
         </Method>
       </Methods>
     </Class>
-    <Class name="LogIn" package="View" visibility="public" xPosition="620.0" yPosition="1620.0">
+    <Class name="LogIn" package="View" visibility="public" xPosition="456.0" yPosition="1677.0">
       <Fields>
         <Field name="mySignIn" type="SignUp" visibility="private"/>
         <Field name="myMenu" type="Menu" visibility="private"/>
@@ -899,8 +884,7 @@ void" visibility="private"/>
         <Constructor visibility="public"/>
       </Constructors>
       <Methods>
-        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
-void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
         <Method name="userTextActionPerformed" returnType="void" visibility="private">
           <Argument type="java.awt.event.ActionEvent" name="evt"/>
         </Method>
@@ -918,7 +902,7 @@ void" visibility="private"/>
         </Method>
       </Methods>
     </Class>
-    <Class name="Menu" package="View" visibility="public" xPosition="920.0" yPosition="1620.0">
+    <Class name="Menu" package="View" visibility="public" xPosition="692.0" yPosition="1652.0">
       <Fields>
         <Field name="myLogIn" type="LogIn" visibility="private"/>
         <Field name="mySettings" type="SettingsMenu" visibility="private"/>
@@ -938,8 +922,7 @@ void" visibility="private"/>
         <Constructor visibility="public"/>
       </Constructors>
       <Methods>
-        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
-void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
         <Method name="playBtnActionPerformed" returnType="void" visibility="private">
           <Argument type="java.awt.event.ActionEvent" name="evt"/>
         </Method>
@@ -954,7 +937,7 @@ void" visibility="private"/>
         </Method>
       </Methods>
     </Class>
-    <Class name="NewPassword" package="View" visibility="public" xPosition="1220.0" yPosition="1620.0">
+    <Class name="NewPassword" package="View" visibility="public" xPosition="1026.0" yPosition="1688.0">
       <Fields>
         <Field name="gmailTxt" type="javax.swing.JTextField" visibility="private"/>
         <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
@@ -971,11 +954,10 @@ void" visibility="private"/>
         <Constructor visibility="public"/>
       </Constructors>
       <Methods>
-        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
-void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
       </Methods>
     </Class>
-    <Class name="SettingsMenu" package="View" visibility="public" xPosition="1520.0" yPosition="1620.0">
+    <Class name="SettingsMenu" package="View" visibility="public" xPosition="1320.0" yPosition="1663.0">
       <Fields>
         <Field name="myMenu" type="Menu" visibility="private"/>
         <Field name="visible" type="VisibleFramesHandler" visibility="private"/>
@@ -991,8 +973,7 @@ void" visibility="private"/>
         <Constructor visibility="public"/>
       </Constructors>
       <Methods>
-        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
-void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
         <Method name="exitBtnActionPerformed" returnType="void" visibility="private">
           <Argument type="java.awt.event.ActionEvent" name="evt"/>
         </Method>
@@ -1001,7 +982,7 @@ void" visibility="private"/>
         </Method>
       </Methods>
     </Class>
-    <Class name="SignUp" package="View" visibility="public" xPosition="1820.0" yPosition="1620.0">
+    <Class name="SignUp" package="View" visibility="public" xPosition="1563.0" yPosition="1630.0">
       <Fields>
         <Field name="confirmationCode" type="ConfirmationCode" visibility="private"/>
         <Field name="control" type="SignInHandler" visibility="private"/>
@@ -1030,8 +1011,7 @@ void" visibility="private"/>
         <Constructor visibility="public"/>
       </Constructors>
       <Methods>
-        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
-void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
         <Method name="SignInBtnActionPerformed" returnType="void" visibility="private">
           <Argument type="java.awt.event.ActionEvent" name="evt"/>
         </Method>
@@ -1046,97 +1026,110 @@ void" visibility="private"/>
         </Method>
       </Methods>
     </Class>
+    <Interface name="Iencryption" package="MVC.Interface" visibility="public" xPosition="1220.0" yPosition="1220.0">
+      <Methods>
+        <Method name="encryptedPassword" returnType="String" visibility="package">
+          <Argument type="String" name="pass"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="ImessageForUser" package="MVC.Interface" visibility="public" xPosition="1520.0" yPosition="1220.0">
+      <Methods/>
+    </Interface>
+    <Interface name="Iquerys" package="MVC.Interface" visibility="public" xPosition="1820.0" yPosition="1220.0">
+      <Methods/>
+    </Interface>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="visible" source="MVC.Main" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="Game.player.Player" target="Game.player.PlayerWeapon" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="shootSound" source="Game.player.PlayerWeapon" target="Game.sound.Sound" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="control" source="View.SignUp" target="Controller.SignInHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="timer" source="Game.player.PlayerWeapon" target="Game.timer.Timer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Controller.SignInHandler" target="MVC.Interface.ImessageForUser"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="View.SignUp" target="MVC.Interface.ImessageForUser"/>
-    <HasRelation name="bulletHandler" source="Game.levels.Level1" target="Game.enemy.EnemyBulletHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="explosionSound" source="Game.enemy.EnemyBasic" target="Game.sound.Sound" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="game" source="Game.display.Display" target="Game.game_screen.GameScreen" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Model.SQL" target="MVC.Interface.Iquerys"/>
-    <HasRelation name="bulletHandler" source="Game.enemy.EnemyBasic" target="Game.enemy.EnemyBulletHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="completeTimer" source="Game.game_screen.GameScreen" target="Game.timer.TickTimer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="bestPlayerHandler" source="View.BestPlayers" target="Controller.BestPlayer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="statement" source="Controller.SignInHandler" target="Model.SQL" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Controller.LogInHandler" target="MVC.Interface.Iencryption"/>
-    <HasRelation name="user" source="View.ConfirmationCode" target="Controller.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="mySettings" source="View.Menu" target="View.SettingsMenu" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="SettingsMenu"/>
-    <HasRelation name="bestPlayersForm" source="Controller.BestPlayer" target="View.BestPlayers" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="statement" source="Game.display.Display" target="Model.SQL" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="control" source="View.LogIn" target="Controller.LogInHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="playerWeapons" source="Game.player.Player" target="Game.player.PlayerWeapon" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="menu" source="Game.display.Display" target="View.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="player" source="Game.levels.Level1" target="Game.player.Player" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="View.Menu" target="MVC.Interface.ImessageForUser"/>
-    <HasRelation name="enemySprite" source="Game.enemy.EnemyBasic" target="Game.sprite.SpriteAnimation" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="myLogIn" source="View.Menu" target="View.LogIn" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="timer" source="Game.sprite.SpriteAnimation" target="Game.timer.Timer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="control" source="View.ConfirmationCode" target="Controller.SignInHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="statement" source="View.Menu" target="Model.SQL" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="Game.player.PlayerWeapon" target="Game.player.MachineGun" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="statement" source="Controller.LogInHandler" target="Model.SQL" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="View.LogIn" target="MVC.Interface.ImessageForUser"/>
-    <HasRelation name="visible" source="Game.display.Display" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="enemies" source="Game.levels.Level1" target="Game.enemy.EnemyBasic" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;EnemyBasic&gt;"/>
-    <HasRelation name="level" source="Game.display.Display" target="Game.levels.Level1" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="View.BestPlayers" target="Game.player.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <IsRelation name="is" source="Controller.User" target="Controller.Person"/>
-    <UseRelation source="Game.enemy.EnemyBasic" target="Game.enemy.EnemyBulletHandler" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="Game.enemy.EnemyBasic" target="Game.player.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="player" source="Game.game_screen.GameScreen" target="Game.player.Player" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="visible" source="View.ConfirmationCode" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="shootTimer" source="Game.enemy.EnemyBasic" target="Game.timer.Timer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="visible" source="View.LogIn" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="bestPlayersForm" source="View.Menu" target="View.BestPlayers" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="number" source="View.SignUp" target="Controller.Maths" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="level" source="Game.game_screen.GameScreen" target="Game.levels.Level1" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="Game.player.MachineGun" target="Game.blocks.BasicBlocks" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="bestPlayerHandler" source="View.Menu" target="Controller.BestPlayer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="myMenu" source="View.ConfirmationCode" target="View.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Model.SQL" target="MVC.Interface.ImessageForUser"/>
-    <HasRelation name="statement" source="Controller.BestPlayer" target="Model.SQL" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="Game.player.PlayerWeapon" target="Game.blocks.BasicBlocks" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="users" source="Controller.BestPlayer" target="Controller.OnlyBestPlayerUser" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;OnlyBestPlayerUser&gt;"/>
-    <UseRelation source="Controller.LogInHandler" target="Controller.Session" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="mySignIn" source="View.LogIn" target="View.SignUp" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="blocks" source="Game.player.Player" target="Game.blocks.BasicBlocks" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="myMenu" source="View.LogIn" target="View.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="myMenu" source="View.SettingsMenu" target="View.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="bulletHandler" source="Game.game_screen.GameScreen" target="Game.enemy.EnemyBulletHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Controller.LogInHandler" target="MVC.Interface.ImessageForUser"/>
-    <HasRelation name="e" source="Game.levels.Level1" target="Game.enemy.EnemyBasic" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="myLogIn" source="View.SignUp" target="View.LogIn" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="Game.enemy.EnemyBulletHandler" target="Game.enemy.EnemyBasicBullet" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="Controller.JSON" target="Controller.JSON" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="visible" source="View.Menu" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="visible" source="View.SettingsMenu" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="Game.enemy.EnemyBulletHandler" target="Game.player.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="visible" source="Game.display.Display" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="user" source="View.SignUp" target="Controller.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="Game.enemy.EnemyBasicBullet" target="Game.blocks.BasicBlocks" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="Controller.SignInHandler" target="Controller.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.enemy.EnemyBulletHandler" target="Game.player.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="visible" source="View.SettingsMenu" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="statement" source="Game.display.Display" target="Model.SQL" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="visible" source="View.Menu" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Controller.SignInHandler" target="MVC.Interface.Iencryption"/>
+    <HasRelation name="bestPlayerHandler" source="View.Menu" target="Controller.BestPlayer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="blocks" source="Game.game_screen.GameScreen" target="Game.blocks.BasicBlocks" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="myMenu" source="View.LogIn" target="View.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bestPlayerHandler" source="View.BestPlayers" target="Controller.BestPlayer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="jsonHandler" source="Controller.BestPlayer" target="Controller.JSON" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="View.BestPlayers" target="Game.player.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="bestPlayers" source="View.Menu" target="Controller.BestPlayer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Controller.SignInHandler" target="Controller.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bulletHandler" source="Game.game_screen.GameScreen" target="Game.enemy.EnemyBulletHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="visible" source="View.SignUp" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="number" source="Controller.SignInHandler" target="Controller.Maths" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="weaponTypes" source="Game.enemy.EnemyBulletHandler" target="Game.enemy.EnemyBasicBullet" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;EnemyBasicBullet&gt;"/>
-    <HasRelation name="blocks" source="Game.game_screen.GameScreen" target="Game.blocks.BasicBlocks" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="visible" source="View.BestPlayers" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="gameOverTimer" source="Game.game_screen.GameScreen" target="Game.timer.TickTimer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="beep" source="Game.levels.Level1" target="Game.sound.Sound" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="weapons" source="Game.player.PlayerWeapon" target="Game.player.MachineGun" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MachineGun&gt;"/>
-    <HasRelation name="visible" source="View.SignUp" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="show" source="Game.display.Display" target="Game.display.Display" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Controller.LogInHandler" target="Controller.Session" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.player.PlayerWeapon" target="Game.player.MachineGun" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="users" source="Controller.BestPlayer" target="Controller.OnlyBestPlayerUser" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;OnlyBestPlayerUser&gt;"/>
+    <UseRelation source="Game.enemy.EnemyBasic" target="Game.enemy.EnemyBulletHandler" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Model.SQL" target="MVC.Interface.Iquerys"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="View.ConfirmationCode" target="MVC.Interface.ImessageForUser"/>
-    <HasRelation name="visible" source="Controller.BestPlayer" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Controller.SignInHandler" target="MVC.Interface.Iencryption"/>
-    <HasRelation name="jsonHandler" source="Controller.BestPlayer" target="Controller.JSON" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="sesion" source="View.LogIn" target="Controller.Session" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="myMenu" source="View.BestPlayers" target="View.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="Game.enemy.EnemyBasic" target="Game.enemy.EnemyBasic" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="Game.levels.Level1" target="Game.blocks.BasicBlocks" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="explosionSound" source="Game.enemy.EnemyBasic" target="Game.sound.Sound" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="show" source="Game.display.Display" target="Game.display.Display" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bestPlayersForm" source="Controller.BestPlayer" target="View.BestPlayers" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="visible" source="View.LogIn" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="menu" source="Game.display.Display" target="View.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.enemy.EnemyBulletHandler" target="Game.enemy.EnemyBasicBullet" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="number" source="View.SignUp" target="Controller.Maths" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Controller.SignInHandler" target="MVC.Interface.ImessageForUser"/>
     <HasRelation name="confirmationCode" source="View.SignUp" target="View.ConfirmationCode" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="shootSound" source="Game.player.PlayerWeapon" target="Game.sound.Sound" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mySettings" source="View.Menu" target="View.SettingsMenu" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="SettingsMenu"/>
+    <HasRelation name="control" source="View.ConfirmationCode" target="Controller.SignInHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.player.PlayerWeapon" target="Game.blocks.BasicBlocks" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="playerWeapons" source="Game.player.Player" target="Game.player.PlayerWeapon" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bestPlayersForm" source="View.Menu" target="View.BestPlayers" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="statement" source="Controller.BestPlayer" target="Model.SQL" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="enemies" source="Game.levels.Level1" target="Game.enemy.EnemyBasic" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;EnemyBasic&gt;"/>
+    <HasRelation name="control" source="View.SignUp" target="Controller.SignInHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="blocks" source="Game.player.Player" target="Game.blocks.BasicBlocks" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Controller.User" target="Controller.Person"/>
+    <HasRelation name="timer" source="Game.sprite.SpriteAnimation" target="Game.timer.Timer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="timer" source="Game.player.PlayerWeapon" target="Game.timer.Timer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="enemySprite" source="Game.enemy.EnemyBasic" target="Game.sprite.SpriteAnimation" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="myLogIn" source="View.SignUp" target="View.LogIn" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bulletHandler" source="Game.enemy.EnemyBasic" target="Game.enemy.EnemyBulletHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="level" source="Game.game_screen.GameScreen" target="Game.levels.Level1" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="user" source="View.ConfirmationCode" target="Controller.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="visible" source="Controller.BestPlayer" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="myMenu" source="View.BestPlayers" target="View.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Controller.LogInHandler" target="MVC.Interface.Iencryption"/>
+    <UseRelation source="Game.enemy.EnemyBasicBullet" target="Game.blocks.BasicBlocks" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="beep" source="Game.levels.Level1" target="Game.sound.Sound" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Controller.JSON" target="Controller.JSON" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.enemy.EnemyBasic" target="Game.enemy.EnemyBasic" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="View.Menu" target="MVC.Interface.ImessageForUser"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Model.SQL" target="MVC.Interface.ImessageForUser"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="View.SignUp" target="MVC.Interface.ImessageForUser"/>
+    <HasRelation name="control" source="View.LogIn" target="Controller.LogInHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="player" source="Game.levels.Level1" target="Game.player.Player" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="myMenu" source="View.SettingsMenu" target="View.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.player.MachineGun" target="Game.blocks.BasicBlocks" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="myLogIn" source="View.Menu" target="View.LogIn" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="statement" source="Controller.LogInHandler" target="Model.SQL" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="player" source="Game.game_screen.GameScreen" target="Game.player.Player" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.enemy.EnemyBasic" target="Game.player.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="statement" source="View.Menu" target="Model.SQL" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="visible" source="View.ConfirmationCode" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="game" source="Game.display.Display" target="Game.game_screen.GameScreen" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="level" source="Game.display.Display" target="Game.levels.Level1" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="visible" source="MVC.Main" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bulletHandler" source="Game.levels.Level1" target="Game.enemy.EnemyBulletHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="sesion" source="View.LogIn" target="Controller.Session" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.player.Player" target="Game.player.PlayerWeapon" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="myMenu" source="View.ConfirmationCode" target="View.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="visible" source="View.BestPlayers" target="Controller.VisibleFramesHandler" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="weapons" source="Game.player.PlayerWeapon" target="Game.player.MachineGun" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;MachineGun&gt;"/>
+    <HasRelation name="shootTimer" source="Game.enemy.EnemyBasic" target="Game.timer.Timer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Game.levels.Level1" target="Game.blocks.BasicBlocks" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="View.LogIn" target="MVC.Interface.ImessageForUser"/>
+    <HasRelation name="completeTimer" source="Game.game_screen.GameScreen" target="Game.timer.TickTimer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="e" source="Game.levels.Level1" target="Game.enemy.EnemyBasic" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="gameOverTimer" source="Game.game_screen.GameScreen" target="Game.timer.TickTimer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>

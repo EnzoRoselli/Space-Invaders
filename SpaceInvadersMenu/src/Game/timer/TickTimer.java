@@ -10,7 +10,7 @@ public class TickTimer {
     private float tick, tickTarget;
 
     /**
-     *
+     * 
      * @param tickTarget
      */
     public TickTimer(float tickTarget) {

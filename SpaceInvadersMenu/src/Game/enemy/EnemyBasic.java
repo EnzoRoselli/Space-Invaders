@@ -6,7 +6,6 @@ import Game.game_screen.GameScreen;
 import Game.player.Player;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Random;
 import Game.sound.Sound;
@@ -195,7 +194,7 @@ public class EnemyBasic {
 
     /**
      *
-     * @return true if it is out of the display bounds
+     * @return true if it is out of the display's panel size 
      */
     public boolean isOutOfBounds() {
 

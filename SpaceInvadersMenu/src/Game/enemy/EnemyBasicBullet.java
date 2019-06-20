@@ -2,7 +2,6 @@ package Game.enemy;
 
 import Game.display.Display;
 import Game.blocks.BasicBlocks;
-import Game.player.Player;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
