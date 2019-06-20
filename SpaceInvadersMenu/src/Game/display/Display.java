@@ -52,7 +52,7 @@ public class Display extends Canvas implements Runnable {
     }
 
     /**
-     *
+     * Creates and sets the variables that shapes the screen.
      */
     public static void executeGame() {
         show = new Display();
@@ -80,14 +80,14 @@ public class Display extends Canvas implements Runnable {
 
     /**
      *
-     * @return
+     * @return 
      */
     public static int getHEIGHT() {
         return HEIGHT;
     }
 
     /**
-     *
+     * Starts the application keeping the threads synchronized.
      */
     private synchronized void start() {
 
@@ -102,7 +102,7 @@ public class Display extends Canvas implements Runnable {
     }
 
     /**
-     *
+     * Synchronously stopts the thread execution
      */
     private synchronized void stop() {
 
@@ -197,7 +197,7 @@ public class Display extends Canvas implements Runnable {
 
     /**
      *
-     * @param delta
+     * @param delta Optimal speed.
      * @return
      */
     public boolean update(double delta) {

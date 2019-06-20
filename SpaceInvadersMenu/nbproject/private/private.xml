@@ -5,9 +5,12 @@
         <group>
             <file>file:/C:/Users/negro/Desktop/UTN/PROGRAMACION%203/Space-Invaders/SpaceInvadersMenu/src/Game/display/Display.java</file>
             <file>file:/C:/Users/negro/Desktop/UTN/PROGRAMACION%203/Space-Invaders/SpaceInvadersMenu/src/MVC/Main.java</file>
-            <file>file:/C:/Users/negro/Desktop/UTN/PROGRAMACION%203/Space-Invaders/SpaceInvadersMenu/src/View/ConfirmationCode.java</file>
+            <file>file:/C:/Users/negro/Desktop/UTN/PROGRAMACION%203/Space-Invaders/SpaceInvadersMenu/src/Controller/LogInHandler.java</file>
+            <file>file:/C:/Users/negro/Desktop/UTN/PROGRAMACION%203/Space-Invaders/SpaceInvadersMenu/src/Controller/OnlyBestPlayerUser.java</file>
+            <file>file:/C:/Users/negro/Desktop/UTN/PROGRAMACION%203/Space-Invaders/SpaceInvadersMenu/src/Controller/ScoreAndUserCatcher.java</file>
+            <file>file:/C:/Users/negro/Desktop/UTN/PROGRAMACION%203/Space-Invaders/SpaceInvadersMenu/src/Controller/Person.java</file>
             <file>file:/C:/Users/negro/Desktop/UTN/PROGRAMACION%203/Space-Invaders/SpaceInvadersMenu/src/Controller/BestPlayer.java</file>
-            <file>file:/C:/Users/negro/Desktop/UTN/PROGRAMACION%203/Space-Invaders/SpaceInvadersMenu/src/View/SignUp.java</file>
+            <file>file:/C:/Users/negro/Desktop/UTN/PROGRAMACION%203/Space-Invaders/SpaceInvadersMenu/src/Controller/Maths.java</file>
         </group>
     </open-files>
 </project-private>

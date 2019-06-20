@@ -119,9 +119,9 @@ public class SignInHandler implements Iencryption,ImessageForUser{
     }
 
     /**
-     * checks out if either nickname or gmail chosen by new user are available.
+     * checks out if either nickname or gmail chosen by the new user are available.
      * @param user New user.
-     * @return "NO" if either nickname or gmail chosen by new user are available.
+     * @return "NO" if either nickname or gmail chosen by the new user are available.
      * @see ImessageForUser.
      */
     public String gmailAndNicknameUsed(User user) {

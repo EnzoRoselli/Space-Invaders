@@ -20,7 +20,8 @@ public class JSON {
 
     /**
      * Adds an object to Json file using "nickname" as the object name.
-     * @param 
+     * @param score 
+     * @param nickName
      * @return Json object.
      * @throws JSONException
      */
@@ -34,7 +35,7 @@ public class JSON {
     
     /**
      * Creates a JSON file and writes it with an object.
-     * @param object JSON object tha is going to be writed on JSON file.
+     * @param object JSON object which is going to be writen on JSON file.
      * @throws IOException
      */
     public void createJSON(JSONObject object) throws IOException{
