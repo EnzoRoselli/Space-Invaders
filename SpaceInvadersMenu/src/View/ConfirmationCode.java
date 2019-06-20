@@ -37,7 +37,7 @@ public class ConfirmationCode extends javax.swing.JFrame implements ImessageForU
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("<html>Already almost complete its active incorporation to the resistance against the space invaders spaceman, for join definitely to our forces enter the code that we have sent to your email<html>");
+        jLabel1.setText("<html>Hey Spaceman! Your incorporation to the resistance against the space invaders is almost complete To definitely join our forces please enter the code we sent to your email account.<html>");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 24, 302, 117));
         jPanel1.add(insertCodeTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(133, 159, 136, -1));
 
@@ -71,7 +71,7 @@ public class ConfirmationCode extends javax.swing.JFrame implements ImessageForU
     private void insertBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertBtnActionPerformed
 
         if (!lastRandom.equals(this.insertCodeTxt.getText())) {
-            JOptionPane.showMessageDialog(null, "wrong code, check your inbox in gmail");
+            JOptionPane.showMessageDialog(null, "Wrong code, check your gmail inbox");
         } else {
             myMenu = new Menu();
             visible.invisibleAndVisibleFrame(this, myMenu);

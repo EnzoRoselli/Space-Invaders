@@ -47,7 +47,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;Already almost complete its active incorporation to the resistance against the space invaders spaceman, for join definitely to our forces enter the code that we have sent to your email&lt;html&gt;"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;Hey Spaceman! Your incorporation to the resistance against the space invaders is almost complete To definitely join our forces please enter the code we sent to your email account.&lt;html&gt;"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
