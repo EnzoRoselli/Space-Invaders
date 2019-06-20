@@ -2,22 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersMenu/src/Game/enemy/EnemyBasicBullet.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersMenu/src/View/Menu.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersMenu/src/Game/game_screen/GameScreen.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersMenu/src/Game/enemy/EnemyBasic.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersMenu/src/View/SignUp.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersMenu/src/Game/sprite/SpriteAnimation.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersMenu/src/View/LogIn.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersMenu/src/Game/player/MachineGun.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersMenu/src/Game/enemy/EnemyBulletHandler.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersMenu/src/View/ConfirmationCode.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersMenu/src/View/BestPlayers.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersMenu/src/Game/player/PlayerWeapon.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersMenu/src/View/SettingsMenu.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersMenu/src/MVC/Main.java</file>
-            <file>file:/C:/Users/usuario/Desktop/Space-Invaders/SpaceInvadersMenu/src/Game/timer/TickTimer.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
