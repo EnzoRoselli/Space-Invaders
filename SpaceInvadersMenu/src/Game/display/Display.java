@@ -44,14 +44,6 @@ public class Display extends Canvas implements Runnable {
     }
 
     /**
-     *
-     * @param args
-     */
-    public static void main(String args[]) {
-        executeGame();
-    }
-
-    /**
      * Creates and sets the variables that shapes the screen.
      */
     public static void executeGame() {
