@@ -18,7 +18,6 @@ import org.json.JSONObject;
  * User has Person as a superclass.
  * @author InvadersTeam
  * @since March 2019.
- * @see User.
  */
 public class BestPlayer {
 

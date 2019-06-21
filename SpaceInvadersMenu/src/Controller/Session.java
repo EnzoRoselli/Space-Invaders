@@ -1,7 +1,7 @@
 package Controller;
 
 /**
- * This class createsa new game session.
+ * This class creates a new game session.
  * @author InvadersTeam
  * @since March 2019.
  */

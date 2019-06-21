@@ -5,12 +5,7 @@ import Controller.OnlyBestPlayerUser;
 import Controller.VisibleFramesHandler;
 import static MVC.Interface.ImessageForUser.ICON_ROUTE;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import org.json.JSONException;
 
 public class BestPlayers extends javax.swing.JFrame {
 

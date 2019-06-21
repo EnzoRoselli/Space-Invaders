@@ -19,7 +19,7 @@ import javax.activation.DataHandler;
  * @author InvadersTeam
  * @since March 2019
  */
-public class SignInHandler implements Iencryption,ImessageForUser{
+public class SignUpHandler implements Iencryption,ImessageForUser{
 
     private SQL statement;
     private Maths number;
@@ -27,7 +27,7 @@ public class SignInHandler implements Iencryption,ImessageForUser{
     /**
      *
      */
-    public SignInHandler() {
+    public SignUpHandler() {
         statement = new SQL();
         number = new Maths();
     }

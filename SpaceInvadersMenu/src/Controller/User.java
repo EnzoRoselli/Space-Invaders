@@ -1,8 +1,5 @@
 package Controller;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 /**
  * This class creates a new player.
  * @author InvadersTeam
@@ -56,27 +53,11 @@ public class User extends Person {
     }
 
     /**
-     * Receives and assigns the player nickname.
-     * @param nickName Player nick name.
-     */
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
-
-    /**
      *
      * @return Player password.
      */
     public String getPassword() {
         return password;
-    }
-
-    /**
-     * Receives and assigns the player password.
-     * @param password Player password.
-     */
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     /**
@@ -86,15 +67,7 @@ public class User extends Person {
     public String getMail() {
         return gmail;
     }
-
-    /**
-     * Receives and assigns the player gmail account.
-     * @param gmail Player gmail account.
-     */
-    public void setMail(String gmail) {
-        this.gmail = gmail;
-    }
-
+    
     @Override
     public String showWelcome() {
         return "Welcome " + this.getName() + ", save us from the invasion with " + this.getNickName();

@@ -8,7 +8,6 @@ Game.player
 Game.sound
 Game.sprite
 Game.timer
-Juego
 Model
 MVC
 MVC.Interface

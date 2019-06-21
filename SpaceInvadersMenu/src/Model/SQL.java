@@ -3,7 +3,6 @@ package Model;
 import Controller.ScoreAndUserCatcher;
 import MVC.Interface.*;
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,7 +33,7 @@ public class SQL implements Iquerys, ImessageForUser {
      * Makes the connection with the data base.
      * @return Connection status.
      */
-    public Connection connectionDB() {
+    private Connection connectionDB() {
         try {
             Class.forName(DRIVER);
             connection = DriverManager.getConnection(PORT, USER, PASSWORD);
@@ -156,7 +155,7 @@ public class SQL implements Iquerys, ImessageForUser {
      * "user" if nickname is already used.<p>
      * "gmail" if nickname is already used.
      */
-    public String nicknameOrGmailUsed(String nickName, String gmail) { //agregar genericidad aca
+    public String nicknameOrGmailUsed(String nickName, String gmail) {
         String check = NO;
 
         try {
@@ -184,5 +183,4 @@ public class SQL implements Iquerys, ImessageForUser {
         }
         return check;
     }
-
 }

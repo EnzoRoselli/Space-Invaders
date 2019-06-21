@@ -2,14 +2,13 @@ package View;
 
 import MVC.Interface.ImessageForUser;
 import Controller.*;
-import java.util.Properties;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class SignUp extends javax.swing.JFrame implements ImessageForUser {
 
     private ConfirmationCode confirmationCode;
-    private SignInHandler control;
+    private SignUpHandler control;
     private User user;
     private Maths number;
     private VisibleFramesHandler visible;
@@ -133,7 +132,7 @@ public class SignUp extends javax.swing.JFrame implements ImessageForUser {
 
     private void SignInBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignInBtnActionPerformed
         String error = NO;
-        control = new SignInHandler();
+        control = new SignUpHandler();
         String pass = new String(this.passwordTxt.getPassword());
         String rePass = new String(this.rePasswordTxt.getPassword());
 

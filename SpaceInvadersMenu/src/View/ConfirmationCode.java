@@ -9,14 +9,14 @@ public class ConfirmationCode extends javax.swing.JFrame implements ImessageForU
 
     private String lastRandom;
     private Menu myMenu;
-    private SignInHandler control;
+    private SignUpHandler control;
     private User user;
     private VisibleFramesHandler visible;
 
     public ConfirmationCode(User user, String random) {
         initComponents();
         this.lastRandom = random;
-        control = new SignInHandler();
+        control = new SignUpHandler();
         this.user = user;
         visible = new VisibleFramesHandler();
         setIconImage(new ImageIcon(getClass().getResource(ICON_ROUTE)).getImage());
